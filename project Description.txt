@@ -1,0 +1,11 @@
+#The main files for the project so far are:
+
+# mbusasales.ui
+# This file is the user interface created in PyQt5 designer tool
+# I want to use this method to facilitete any change if necessary
+
+#mbusasales.pyw
+this is the file for the script. it is written in python 3.6 (last release)
+As you may see it is not finished and you will find a lot of Mistakes yet.
+
+
