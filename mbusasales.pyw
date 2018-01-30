@@ -18,67 +18,80 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
         self.setupUi(self)
         self.lEditYear.setEnabled(False)
         self.pBtnUpdate.setEnabled(False)
-        #self.lEditYear.clear()
-        #self.selected_year = 0
         self.table = 'mbusasales'
         self.lock_fields()
         self.main_Option()
-        #Señal cuando cambia el valor del año
-        self.lEditYear.editingFinished.connect(self.years)
         
-        
-        self.pBtnUpdate.clicked.connect(self.call_function)
+        # Signal when the button Update is clicked
+        self.pBtnUpdate.clicked.connect(self.update_totals)
+         #Signal When the value of the year field changes
+        self.lEditYear.editingFinished.connect(self.years) #Connects to the year function
         
     
     def main_Option (self):
-        #señal para Iniciar Nueva Captura
-        self.rBtnStartNewYear.toggled.connect(self.seleccion)
-        self.inicializar_campós()
-        
-    
-    def seleccion (self):
+        #Signal when Option Start a New Year is chosen
+        self.rBtnStartNewYear.toggled.connect(self.selection)
+        self.rBtnEditSaved.toggled.connect(self.selection)
+        self.rBtnZeroValues.toggled.connect(self.selection)
+        #self.inicializar_campós()
+
+    def selection (self):
         selected_Option = ''
         if self.rBtnStartNewYear.isChecked(): 
             selected_Option = 'new'
-            print('la opcion elegida fue ',selected_Option )
-            mensaje = 'Input New Data'
-            self.caja_mensaje('Option Selected ', mensaje,0)
+            message = 'Input New Data'
+            self.caja_mensaje('Option Selected ', message,0)
+            print('la opcion elegida fue ',selected_Option)    
+            self.inicializar_campós()
+            self.lEditYear.setEnabled(True)
         elif self.rBtnEditSaved.isChecked():
             selected_Option = 'edit'
-            print('la opcion elegida fue ',selected_Option )
+            message = 'All data will be set as Zero'
+            self.caja_mensaje('Option Selected ', message,0)
+            print('la opcion elegida fue ',selected_Option)    
         elif self.rBtnZeroValues.isChecked() :
             selected_Option = 'restart'
-            print('la opcion elegida fue ',selected_Option )
-            mensaje = 'Do you want to restart all Values?'
-            self.caja_mensaje('Alert ', mensaje,1)
-            
-        self.lEditYear.setEnabled(True)
-        
-        
+            message = 'All Values will be set Zero'
+            self.caja_mensaje('Option Selected ', message,0)
+            print('la opcion elegida fue ',selected_Option)    
+
         
     def years(self):
-        now = datetime.datetime.now()
-        act_year = now.year
+    	# Get the current year 
+        self.current_year = self.actual_Year()
+        print('the actual year is ',current_year)
+
+        # Call the function selected_year to get the year from the field
         self.selected_year = self.slected_Year()
+        print('Selected Year is :', self.selected_year)
         
-        self.actual_year = act_year
-        print('año seleccionado', self.selected_year)
-        
-        if  self.selected_year == self.actual_year:
-            print('usted trabajará con el año actual')
-            mensaje = 'Now you are working with this current year ' + str(self.actual_year)
-            
+        # Compares Selected Year Vs Actual Year
+        if  self.selected_year == self.current_year:
+            print('You are working with the current year')
+            message = 'Now you are working with this current year ' + str(self.actual_year)
+            self.caja_mensaje('message ', message,0)
+
             self.lEditYear.setEnabled(False)
             self.unlock_fields()
-            self.caja_mensaje('Alert ', mensaje,0)
+            
         elif self.selected_year > self.actual_year:
-            mensaje = 'no se puede trabajar con un año mayor al actual'
-            self.caja_mensaje('Error al momento de guardar ', mensaje,0)
+            message = ' Sorry, It is not possible to Work with future years'
+            self.caja_mensaje('Error ', message,0)
         else :
-            print('usted va a trabajar o editar un año del historial')
+        	message = ' You will be working with a previous year'
+            self.caja_mensaje('Error ', message,0)
+            print(message)
 
+    def actual_Year(self):
+        now = datetime.datetime.now()
+        act_year = now.year
+        return act_year 
     
-    def call_function(self):
+    def slected_Year(self): # function to collect the year from the Year field
+        self.sel_year= int(self.lEditYear.text())
+        return self.sel_year
+    
+    def update_totals(self):
         self.list_keys = self.issue_keys()
         self.read_data_from_fields()
         Tot_Conv_Jan = self.suma_Conv_Jan(self.broc_Conv_Jan, self.Caulif_Conv_Jan, self.BrSpr_Conv_Jan, self.Ssp_Conv_Jan, self.YSq_Conv_Jan, self.GZucc_Conv_Jan)
@@ -193,6 +206,9 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
         #csv_file = self.genera_archivo_csv(list_keys, self.selected_year)
     
     def inicializar_campós(self):
+    	"""
+    	This function set all field values as Zero
+    	"""
         self.lEditBrConvJan.insert(str(0))
         self.lEditBrConvFeb.insert(str(0))
         self.lEditBrConvMar.insert(str(0))
@@ -336,17 +352,12 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
         self.lEditEdamameOrgNov.insert(str(0))
         self.lEditEdamameOrgDec.insert(str(0))
         
-    def actual_Year(self):
-        now = datetime.datetime.now()
-        act_year = now.year
-        return act_year 
-    
-    def slected_Year(self):
-        self.sel_year= int(self.lEditYear.text())
-        return self.sel_year
+
         
     def issue_keys(self):
-        
+    	"""
+    	This function generate the keys for the dictionary
+    	"""
         self.KeyJan = str(self.selected_year) + str(self.table)+'jan'
         self.KeyFeb = str(self.selected_year) + str(self.table)+'feb'
         self.KeyMar = str(self.selected_year) + str(self.table)+'mar'
@@ -365,6 +376,9 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
         return list_keys
         
     def genera_archivo_csv(self, list_keys,year):
+    	"""
+    	this function generates the CSV file with the input data
+    	"""
         print('la lista de las claves desde la funcion para generar el archivo csv', list_keys)        
         #self.read_data_from_fields()
         print(year)
@@ -1253,7 +1267,8 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
        
     def caja_mensaje (self, text, title, style):
         import caja_mensaje as mensaje
-        mensaje.Caja_mensaje.mbox(text, title, style)  
+        mensaje.Caja_mensaje.mbox(text, title, style) 
+        return 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
