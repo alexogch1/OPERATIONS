@@ -3,6 +3,27 @@ The main files for the project so far are:
 mbusasales.ui
 This file is the user interface created in PyQt5 designer tool
 I want to use this method to facilitete any change if necessary
+this screen has a title "MB USA SALES"
+We are going to input the sales per month (rows) for each product
+Eeach column represents one product.
+Columns are divided in two main sections 
+	left side corresponds to conventional type products
+	Right side corresponds to Organic Type products
+at the right side of both sections there is a total columns per month
+at the bottom of each columns is a total for each product 
+the last column is the great total (sum of conventional and organic products)
+
+near the title is an menu options
+1) start a new year: this option is used when the user will be input data of a new year
+2) Edit Saved data: Once the used has been input data previously he will use this option to input new information.
+3) Restart Zero all fields: this option is used when the user has writen some information and for any reason he wants to delete all data from the screen. (I have not decided yet if this option will be in the screen).
+
+Year: This field is used to input the year in which the user wants to work. to teel the system that load this specific year.
+
+update button: is used to calculate totals.
+
+Save Data: This field is used to store the information in the CSV file
+
 
 mbusasales.pyw
 this is the file for the script. it is written in python 3.6 (last release)
@@ -10,5 +31,7 @@ As you may see it is not finished and you will find a lot of Mistakes yet.
 
 mbusasales.csv
 This is the file where date will be saved.
+
+
 
 
