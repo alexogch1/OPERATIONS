@@ -18,7 +18,7 @@ near the title is an menu options
 2) Edit Saved data: Once the used has been input data previously he will use this option to input new information.
 3) Restart Zero all fields: this option is used when the user has writen some information and for any reason he wants to delete all data from the screen. (I have not decided yet if this option will be in the screen).
 
-Year: This field is used to input the year in which the user wants to work. to teel the system that load this specific year.
+Year: This field is used to input the year in which the user wants to work. to tell the system that load this specific year.
 
 update button: is used to calculate totals.
 
