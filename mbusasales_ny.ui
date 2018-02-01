@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1683</width>
+    <width>1361</width>
     <height>548</height>
    </rect>
   </property>
@@ -1710,8 +1710,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>1270</x>
-     <y>480</y>
+     <x>120</x>
+     <y>470</y>
      <width>71</width>
      <height>23</height>
     </rect>
@@ -1766,6 +1766,19 @@
    </property>
    <property name="text">
     <string>Select Year</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbtnClose">
+   <property name="geometry">
+    <rect>
+     <x>1264</x>
+     <y>480</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close Window</string>
    </property>
   </widget>
   <zorder>lblTotConvMar</zorder>
@@ -1856,6 +1869,7 @@
   <zorder>label_2</zorder>
   <zorder>lbl_year_selected</zorder>
   <zorder>pBtnSelectYear</zorder>
+  <zorder>pbtnClose</zorder>
  </widget>
  <resources/>
  <connections/>

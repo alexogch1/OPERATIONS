@@ -45,7 +45,10 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 
 		# Signal when the button Update is clicked
 		self.pBtnUpdate.clicked.connect(self.update_totals)
-		
+
+		# Signal when the button close Window is clicked
+		self.pbtnClose.clicked.connect(self.close_window)		
+	
 	
 	def widget_year(self):
 		"""
@@ -60,24 +63,26 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		
 	def years(self, selected_year):
 		"""
-		This function is used to compare the selected year Vs the current Year
-		if the selected year is > than the actual year, displays a message error and
+		This function is used to compare the 
+		selected year Vs the current Year.
+		if the selected year is > than the actual year, 
+		displays a message error and
 		close the window
 		"""
 
 		# Get the current year 
 		self.current_year = self.actual_Year()
-		print('the actual year is ',self.current_year)
-
-		# Call the function selected_year to get the year from the field
+		
+		""" 
+		Call the function selected_year to get 
+		the year from the field
+		"""
 		self.selected_year = selected_year
-		print('Selected Year is :', self.selected_year)
+		
 
 		if self.selected_year > self.current_year:
-			message = ' Sorry, It is not possible to Work with future years, ' + str(self.selected_year)
+			message = ' Sorry, It is not possible to Work with future years, '+ str(self.selected_year)
 			self.caja_mensaje('Message ', message,0)
-			
-			
 		else :
 			self.search_In_File(self.selected_year)
 			self.inicializar_campós() # Set al fields as Zero
@@ -92,34 +97,26 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		return act_year 
 	
 	def search_In_File(self, year):
-		print("vamos a comparar si en el archivo ya están los datos", year)
 		self.list_keys = self.issue_keys()
-		print(self.list_keys)
-
 		datos = pd.read_csv('mbusasales.csv', index_col = 0, encoding = 'utf-8' )
 		datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 		num_datos = int(datos['indice'].count())
-		print(datos)
 		nuevo_Valor = num_datos+1
 		datos.index = range(datos.shape[0])
-		print('numero de datos',num_datos)
 		indice_archivo = list(datos.indice)
 		counter_flag=0
 		for i, valor in enumerate(self.list_keys):
 			if valor in indice_archivo:
-				print('los datos ya estan en la base dedatos')
 				counter_flag = counter_flag + 1
 			else:
-				print('los datos no estan en la base de datos', counter_flag)
-			print('hubo ', counter_flag, 'datos en la base')
+				counter_flag = counter_flag
 		if counter_flag >1:
-			message = "LOS DATOS YA EXISTEN EN LA BASE DE DATOS"
+			message = "THE DATA IS ALREADY IN THE DATABASE"
 			self.caja_mensaje('Error;', message,0)
 			self.close()
 		else:
 			pass
 		return
-
 
 	def save_data(self):
 		self.genera_archivo_csv(self.list_keys,self.selected_year)
@@ -132,64 +129,153 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		"""
 		self.list_keys = self.issue_keys()
 		self.read_data_from_fields()
-		Tot_Conv_Jan = self.suma_Conv_Jan(self.broc_Conv_Jan, self.Caulif_Conv_Jan, self.BrSpr_Conv_Jan, self.Ssp_Conv_Jan, self.YSq_Conv_Jan, self.GZucc_Conv_Jan)
-		Tot_Conv_Feb = self.suma_Conv_Feb(self.broc_Conv_Feb, self.Caulif_Conv_Feb, self.BrSpr_Conv_Feb, self.Ssp_Conv_Feb, self.YSq_Conv_Feb, self.GZucc_Conv_Feb)
-		Tot_Conv_Mar = self.suma_Conv_Mar(self.broc_Conv_Mar, self.Caulif_Conv_Mar, self.BrSpr_Conv_Mar, self.Ssp_Conv_Mar, self.YSq_Conv_Mar, self.GZucc_Conv_Mar)
-		Tot_Conv_Apr = self.suma_Conv_Apr(self.broc_Conv_Apr, self.Caulif_Conv_Apr, self.BrSpr_Conv_Apr, self.Ssp_Conv_Apr, self.YSq_Conv_Apr, self.GZucc_Conv_Apr)
-		Tot_Conv_May = self.suma_Conv_May(self.broc_Conv_May, self.Caulif_Conv_May, self.BrSpr_Conv_May, self.Ssp_Conv_May, self.YSq_Conv_May, self.GZucc_Conv_May)
-		Tot_Conv_Jun = self.suma_Conv_Jun(self.broc_Conv_Jun, self.Caulif_Conv_Jun, self.BrSpr_Conv_Jun, self.Ssp_Conv_Jun, self.YSq_Conv_Jun, self.GZucc_Conv_Jun)
-		Tot_Conv_Jul = self.suma_Conv_Jul(self.broc_Conv_Jul, self.Caulif_Conv_Jul, self.BrSpr_Conv_Jul, self.Ssp_Conv_Jul, self.YSq_Conv_Jul, self.GZucc_Conv_Jul)
-		Tot_Conv_Aug = self.suma_Conv_Aug(self.broc_Conv_Aug, self.Caulif_Conv_Aug, self.BrSpr_Conv_Aug, self.Ssp_Conv_Aug, self.YSq_Conv_Aug, self.GZucc_Conv_Aug)
-		Tot_Conv_Sep = self.suma_Conv_Sep(self.broc_Conv_Sep, self.Caulif_Conv_Sep, self.BrSpr_Conv_Sep, self.Ssp_Conv_Sep, self.YSq_Conv_Sep, self.GZucc_Conv_Sep)
-		Tot_Conv_Oct = self.suma_Conv_Oct(self.broc_Conv_Oct, self.Caulif_Conv_Oct, self.BrSpr_Conv_Oct, self.Ssp_Conv_Oct, self.YSq_Conv_Oct, self.GZucc_Conv_Oct)
-		Tot_Conv_Nov = self.suma_Conv_Nov(self.broc_Conv_Nov, self.Caulif_Conv_Nov, self.BrSpr_Conv_Nov, self.Ssp_Conv_Nov, self.YSq_Conv_Nov, self.GZucc_Conv_Nov)
-		Tot_Conv_Dec = self.suma_Conv_Dec(self.broc_Conv_Dec, self.Caulif_Conv_Dec, self.BrSpr_Conv_Dec, self.Ssp_Conv_Dec, self.YSq_Conv_Dec, self.GZucc_Conv_Dec)
+		"""
+		Sum of all conventional products per month
+		"""
+		Tot_Conv_Jan = self.suma_Conv_Jan(
+			self.broc_Conv_Jan, self.Caulif_Conv_Jan, self.BrSpr_Conv_Jan, 
+			self.Ssp_Conv_Jan, self.YSq_Conv_Jan, self.GZucc_Conv_Jan)
+		Tot_Conv_Feb = self.suma_Conv_Feb(
+			self.broc_Conv_Feb, self.Caulif_Conv_Feb, self.BrSpr_Conv_Feb, 
+			self.Ssp_Conv_Feb, self.YSq_Conv_Feb, self.GZucc_Conv_Feb)
+		Tot_Conv_Mar = self.suma_Conv_Mar(
+			self.broc_Conv_Mar, self.Caulif_Conv_Mar, self.BrSpr_Conv_Mar, 
+			self.Ssp_Conv_Mar, self.YSq_Conv_Mar, self.GZucc_Conv_Mar)
+		Tot_Conv_Apr = self.suma_Conv_Apr(
+			self.broc_Conv_Apr, self.Caulif_Conv_Apr, self.BrSpr_Conv_Apr, 
+			self.Ssp_Conv_Apr, self.YSq_Conv_Apr, self.GZucc_Conv_Apr)
+		Tot_Conv_May = self.suma_Conv_May(
+			self.broc_Conv_May, self.Caulif_Conv_May, self.BrSpr_Conv_May, 
+			self.Ssp_Conv_May, self.YSq_Conv_May, self.GZucc_Conv_May)
+		Tot_Conv_Jun = self.suma_Conv_Jun(
+			self.broc_Conv_Jun, self.Caulif_Conv_Jun, self.BrSpr_Conv_Jun, 
+			self.Ssp_Conv_Jun, self.YSq_Conv_Jun, self.GZucc_Conv_Jun)
+		Tot_Conv_Jul = self.suma_Conv_Jul(
+			self.broc_Conv_Jul, self.Caulif_Conv_Jul, self.BrSpr_Conv_Jul, 
+			self.Ssp_Conv_Jul, self.YSq_Conv_Jul, self.GZucc_Conv_Jul)
+		Tot_Conv_Aug = self.suma_Conv_Aug(
+			self.broc_Conv_Aug, self.Caulif_Conv_Aug, self.BrSpr_Conv_Aug, 
+			self.Ssp_Conv_Aug, self.YSq_Conv_Aug, self.GZucc_Conv_Aug)
+		Tot_Conv_Sep = self.suma_Conv_Sep(
+			self.broc_Conv_Sep, self.Caulif_Conv_Sep, self.BrSpr_Conv_Sep, 
+			self.Ssp_Conv_Sep, self.YSq_Conv_Sep, self.GZucc_Conv_Sep)
+		Tot_Conv_Oct = self.suma_Conv_Oct(
+			self.broc_Conv_Oct, self.Caulif_Conv_Oct, self.BrSpr_Conv_Oct, 
+			self.Ssp_Conv_Oct, self.YSq_Conv_Oct, self.GZucc_Conv_Oct)
+		Tot_Conv_Nov = self.suma_Conv_Nov(
+			self.broc_Conv_Nov, self.Caulif_Conv_Nov, self.BrSpr_Conv_Nov, 
+			self.Ssp_Conv_Nov, self.YSq_Conv_Nov, self.GZucc_Conv_Nov)
+		Tot_Conv_Dec = self.suma_Conv_Dec(
+			self.broc_Conv_Dec, self.Caulif_Conv_Dec, self.BrSpr_Conv_Dec, 
+			self.Ssp_Conv_Dec, self.YSq_Conv_Dec, self.GZucc_Conv_Dec)
 		
-		Tot_Org_Jan = self.suma_Org_Jan(self.broc_Org_Jan, self.Caulif_Org_Jan, self.Carrots_Org_Jan, self.Corn_Org_Jan, self.Edamame_Org_Jan)
-		Tot_Org_Feb = self.suma_Org_Feb(self.broc_Org_Feb, self.Caulif_Org_Feb, self.Carrots_Org_Feb, self.Corn_Org_Feb, self.Edamame_Org_Feb)
-		Tot_Org_Mar = self.suma_Org_Mar(self.broc_Org_Mar, self.Caulif_Org_Mar, self.Carrots_Org_Mar, self.Corn_Org_Mar, self.Edamame_Org_Mar)
-		Tot_Org_Apr = self.suma_Org_Apr(self.broc_Org_Apr, self.Caulif_Org_Apr, self.Carrots_Org_Apr, self.Corn_Org_Apr, self.Edamame_Org_Apr)
-		Tot_Org_May = self.suma_Org_May(self.broc_Org_May, self.Caulif_Org_May, self.Carrots_Org_May, self.Corn_Org_May, self.Edamame_Org_May)
-		Tot_Org_Jun = self.suma_Org_Jun(self.broc_Org_Jun, self.Caulif_Org_Jun, self.Carrots_Org_Jun, self.Corn_Org_Jun, self.Edamame_Org_Jun)
-		Tot_Org_Jul = self.suma_Org_Jul(self.broc_Org_Jul, self.Caulif_Org_Jul, self.Carrots_Org_Jul, self.Corn_Org_Jul, self.Edamame_Org_Jul)
-		Tot_Org_Aug = self.suma_Org_Aug(self.broc_Org_Aug, self.Caulif_Org_Aug, self.Carrots_Org_Aug, self.Corn_Org_Aug, self.Edamame_Org_Aug)
-		Tot_Org_Sep = self.suma_Org_Sep(self.broc_Org_Sep, self.Caulif_Org_Sep, self.Carrots_Org_Sep, self.Corn_Org_Sep, self.Edamame_Org_Sep)
-		Tot_Org_Oct = self.suma_Org_Oct(self.broc_Org_Oct, self.Caulif_Org_Oct, self.Carrots_Org_Oct, self.Corn_Org_Oct, self.Edamame_Org_Oct)
-		Tot_Org_Nov = self.suma_Org_Nov(self.broc_Org_Nov, self.Caulif_Org_Nov, self.Carrots_Org_Nov, self.Corn_Org_Nov, self.Edamame_Org_Nov)
-		Tot_Org_Dec = self.suma_Org_Dec(self.broc_Org_Dec, self.Caulif_Org_Dec, self.Carrots_Org_Dec, self.Corn_Org_Dec, self.Edamame_Org_Dec)
+		"""
+		Sum of all Organic Products per month
+		"""
+		Tot_Org_Jan = self.suma_Org_Jan(
+			self.broc_Org_Jan, self.Caulif_Org_Jan, self.Carrots_Org_Jan, 
+			self.Corn_Org_Jan, self.Edamame_Org_Jan)
+		Tot_Org_Feb = self.suma_Org_Feb(
+			self.broc_Org_Feb, self.Caulif_Org_Feb, self.Carrots_Org_Feb, 
+			self.Corn_Org_Feb, self.Edamame_Org_Feb)
+		Tot_Org_Mar = self.suma_Org_Mar(
+			self.broc_Org_Mar, self.Caulif_Org_Mar, self.Carrots_Org_Mar, 
+			self.Corn_Org_Mar, self.Edamame_Org_Mar)
+		Tot_Org_Apr = self.suma_Org_Apr(
+			self.broc_Org_Apr, self.Caulif_Org_Apr, self.Carrots_Org_Apr, 
+			self.Corn_Org_Apr, self.Edamame_Org_Apr)
+		Tot_Org_May = self.suma_Org_May(
+			self.broc_Org_May, self.Caulif_Org_May, self.Carrots_Org_May, 
+			self.Corn_Org_May, self.Edamame_Org_May)
+		Tot_Org_Jun = self.suma_Org_Jun(
+			self.broc_Org_Jun, self.Caulif_Org_Jun, self.Carrots_Org_Jun, 
+			self.Corn_Org_Jun, self.Edamame_Org_Jun)
+		Tot_Org_Jul = self.suma_Org_Jul(
+			self.broc_Org_Jul, self.Caulif_Org_Jul, self.Carrots_Org_Jul, 
+			self.Corn_Org_Jul, self.Edamame_Org_Jul)
+		Tot_Org_Aug = self.suma_Org_Aug(
+			self.broc_Org_Aug, self.Caulif_Org_Aug, self.Carrots_Org_Aug, 
+			self.Corn_Org_Aug, self.Edamame_Org_Aug)
+		Tot_Org_Sep = self.suma_Org_Sep(
+			self.broc_Org_Sep, self.Caulif_Org_Sep, self.Carrots_Org_Sep, 
+			self.Corn_Org_Sep, self.Edamame_Org_Sep)
+		Tot_Org_Oct = self.suma_Org_Oct(
+			self.broc_Org_Oct, self.Caulif_Org_Oct, self.Carrots_Org_Oct, 
+			self.Corn_Org_Oct, self.Edamame_Org_Oct)
+		Tot_Org_Nov = self.suma_Org_Nov(
+			self.broc_Org_Nov, self.Caulif_Org_Nov, self.Carrots_Org_Nov, 
+			self.Corn_Org_Nov, self.Edamame_Org_Nov)
+		Tot_Org_Dec = self.suma_Org_Dec(
+			self.broc_Org_Dec, self.Caulif_Org_Dec, self.Carrots_Org_Dec, 
+			self.Corn_Org_Dec, self.Edamame_Org_Dec)
 			   
-		broc_Conv_Total_Anual = self.suma_Broc_Conv(self.broc_Conv_Jan, self.broc_Conv_Feb, self.broc_Conv_Mar, self.broc_Conv_Apr, self.broc_Conv_May, self.broc_Conv_Jun, 
-											   self.broc_Conv_Jul, self.broc_Conv_Aug, self.broc_Conv_Sep, self.broc_Conv_Oct, self.broc_Conv_Nov, self.broc_Conv_Dec)
+		#Sum of Conventional Broccoli
+		broc_Conv_Total_Anual = self.suma_Broc_Conv(
+			self.broc_Conv_Jan, self.broc_Conv_Feb, self.broc_Conv_Mar, 
+			self.broc_Conv_Apr, self.broc_Conv_May, self.broc_Conv_Jun,
+			self.broc_Conv_Jul, self.broc_Conv_Aug, self.broc_Conv_Sep, 
+			self.broc_Conv_Oct, self.broc_Conv_Nov, self.broc_Conv_Dec)
 		
-		caulif_Conv_Total_Anual = self.suma_Caulif_Conv(self.Caulif_Conv_Jan, self.Caulif_Conv_Feb, self.Caulif_Conv_Mar, self.Caulif_Conv_Apr, self.Caulif_Conv_May, self.Caulif_Conv_Jun, 
-											   self.Caulif_Conv_Jul, self.Caulif_Conv_Aug, self.Caulif_Conv_Sep, self.Caulif_Conv_Oct, self.Caulif_Conv_Nov, self.Caulif_Conv_Dec)
+		#Sum of Conventional Cauliflower
+		caulif_Conv_Total_Anual = self.suma_Caulif_Conv(
+			self.Caulif_Conv_Jan, self.Caulif_Conv_Feb, self.Caulif_Conv_Mar, 
+			self.Caulif_Conv_Apr, self.Caulif_Conv_May, self.Caulif_Conv_Jun, 
+			self.Caulif_Conv_Jul, self.Caulif_Conv_Aug, self.Caulif_Conv_Sep, 
+			self.Caulif_Conv_Oct, self.Caulif_Conv_Nov, self.Caulif_Conv_Dec)
 		
-		brSpr_Conv_Total_Anual = self.suma_BrSpr_Conv(self.BrSpr_Conv_Jan, self.BrSpr_Conv_Feb, self.BrSpr_Conv_Mar, self.BrSpr_Conv_Apr, self.BrSpr_Conv_May, self.BrSpr_Conv_Jun, 
-											   self.BrSpr_Conv_Jul, self.BrSpr_Conv_Aug, self.BrSpr_Conv_Sep, self.BrSpr_Conv_Oct, self.BrSpr_Conv_Nov, self.BrSpr_Conv_Dec)
+		brSpr_Conv_Total_Anual = self.suma_BrSpr_Conv(
+			self.BrSpr_Conv_Jan, self.BrSpr_Conv_Feb, self.BrSpr_Conv_Mar, 
+			self.BrSpr_Conv_Apr, self.BrSpr_Conv_May, self.BrSpr_Conv_Jun, 
+			self.BrSpr_Conv_Jul, self.BrSpr_Conv_Aug, self.BrSpr_Conv_Sep, 
+			self.BrSpr_Conv_Oct, self.BrSpr_Conv_Nov, self.BrSpr_Conv_Dec)
 		
-		Ssp_Conv_Total_Anual = self.suma_Ssp_Conv(self.Ssp_Conv_Jan, self.Ssp_Conv_Feb, self.Ssp_Conv_Mar, self.Ssp_Conv_Apr, self.Ssp_Conv_May, self.Ssp_Conv_Jun, 
-											   self.Ssp_Conv_Jul, self.Ssp_Conv_Aug, self.Ssp_Conv_Sep, self.Ssp_Conv_Oct, self.Ssp_Conv_Nov, self.Ssp_Conv_Dec)
+		Ssp_Conv_Total_Anual = self.suma_Ssp_Conv(
+			self.Ssp_Conv_Jan, self.Ssp_Conv_Feb, self.Ssp_Conv_Mar, 
+			self.Ssp_Conv_Apr, self.Ssp_Conv_May, self.Ssp_Conv_Jun, 
+			self.Ssp_Conv_Jul, self.Ssp_Conv_Aug, self.Ssp_Conv_Sep, 
+			self.Ssp_Conv_Oct, self.Ssp_Conv_Nov, self.Ssp_Conv_Dec)
 		
-		YSq_Conv_Total_Anual = self.suma_YSq_Conv(self.YSq_Conv_Jan, self.YSq_Conv_Feb, self.YSq_Conv_Mar, self.YSq_Conv_Apr, self.YSq_Conv_May, self.YSq_Conv_Jun, 
-											   self.YSq_Conv_Jul, self.YSq_Conv_Aug, self.YSq_Conv_Sep, self.YSq_Conv_Oct, self.YSq_Conv_Nov, self.YSq_Conv_Dec)
+		YSq_Conv_Total_Anual = self.suma_YSq_Conv(
+			self.YSq_Conv_Jan, self.YSq_Conv_Feb, self.YSq_Conv_Mar, 
+			self.YSq_Conv_Apr, self.YSq_Conv_May, self.YSq_Conv_Jun, 
+			self.YSq_Conv_Jul, self.YSq_Conv_Aug, self.YSq_Conv_Sep, 
+			self.YSq_Conv_Oct, self.YSq_Conv_Nov, self.YSq_Conv_Dec)
 		
-		GZucc_Conv_Total_Anual = self.suma_GZucc_Conv(self.GZucc_Conv_Jan, self.GZucc_Conv_Feb, self.GZucc_Conv_Mar, self.GZucc_Conv_Apr, self.GZucc_Conv_May, self.GZucc_Conv_Jun, 
-											   self.GZucc_Conv_Jul, self.GZucc_Conv_Aug, self.GZucc_Conv_Sep, self.GZucc_Conv_Oct, self.GZucc_Conv_Nov, self.GZucc_Conv_Dec)
+		GZucc_Conv_Total_Anual = self.suma_GZucc_Conv(
+			self.GZucc_Conv_Jan, self.GZucc_Conv_Feb, self.GZucc_Conv_Mar, 
+			self.GZucc_Conv_Apr, self.GZucc_Conv_May, self.GZucc_Conv_Jun, 
+			self.GZucc_Conv_Jul, self.GZucc_Conv_Aug, self.GZucc_Conv_Sep, 
+			self.GZucc_Conv_Oct, self.GZucc_Conv_Nov, self.GZucc_Conv_Dec)
 		
-		Brocc_Org_Total_Anual = self.suma_Brocc_Org(self.broc_Org_Jan, self.broc_Org_Feb, self.broc_Org_Mar, self.broc_Org_Apr, self.broc_Org_May, self.broc_Org_Jun, 
-													self.broc_Org_Jul, self.broc_Org_Aug, self.broc_Org_Sep, self.broc_Org_Oct, self.broc_Org_Nov, self.broc_Org_Dec)
+		Brocc_Org_Total_Anual = self.suma_Brocc_Org(
+			self.broc_Org_Jan, self.broc_Org_Feb, self.broc_Org_Mar, 
+			self.broc_Org_Apr, self.broc_Org_May, self.broc_Org_Jun, 
+			self.broc_Org_Jul, self.broc_Org_Aug, self.broc_Org_Sep, 
+			self.broc_Org_Oct, self.broc_Org_Nov, self.broc_Org_Dec)
 		
-		Cauliflower_Org_Total_Anual = self.suma_Cauliflower_Org(self.Caulif_Org_Jan, self.Caulif_Org_Feb, self.Caulif_Org_Mar, self.Caulif_Org_Apr, self.Caulif_Org_May, self.Caulif_Org_Jun, 
-													self.Caulif_Org_Jul, self.Caulif_Org_Aug, self.Caulif_Org_Sep, self.Caulif_Org_Oct, self.Caulif_Org_Nov, self.Caulif_Org_Dec)
+		Cauliflower_Org_Total_Anual = self.suma_Cauliflower_Org(
+			self.Caulif_Org_Jan, self.Caulif_Org_Feb, self.Caulif_Org_Mar, 
+			self.Caulif_Org_Apr, self.Caulif_Org_May, self.Caulif_Org_Jun, 
+			self.Caulif_Org_Jul, self.Caulif_Org_Aug, self.Caulif_Org_Sep, 
+			self.Caulif_Org_Oct, self.Caulif_Org_Nov, self.Caulif_Org_Dec)
 		
-		Carrots_Org_Total_Anual = self.suma_Carrots_Org(self.Carrots_Org_Jan, self.Carrots_Org_Feb, self.Carrots_Org_Mar, self.Carrots_Org_Apr, self.Carrots_Org_May, self.Carrots_Org_Jun, 
-													self.Carrots_Org_Jul, self.Carrots_Org_Aug, self.Carrots_Org_Sep, self.Carrots_Org_Oct, self.Carrots_Org_Nov, self.Carrots_Org_Dec)
+		Carrots_Org_Total_Anual = self.suma_Carrots_Org(
+			self.Carrots_Org_Jan, self.Carrots_Org_Feb, self.Carrots_Org_Mar,
+			 self.Carrots_Org_Apr, self.Carrots_Org_May, self.Carrots_Org_Jun, 
+			self.Carrots_Org_Jul, self.Carrots_Org_Aug, self.Carrots_Org_Sep, 
+			self.Carrots_Org_Oct, self.Carrots_Org_Nov, self.Carrots_Org_Dec)
 		
-		Corm_Org_Total_Anual = self.suma_Corn_Org(self.Corn_Org_Jan, self.Corn_Org_Feb, self.Corn_Org_Mar, self.Corn_Org_Apr, self.Corn_Org_May, self.Corn_Org_Jun, 
-													self.Corn_Org_Jul, self.Corn_Org_Aug, self.Corn_Org_Sep, self.Corn_Org_Oct, self.Corn_Org_Nov, self.Corn_Org_Dec)
+		Corm_Org_Total_Anual = self.suma_Corn_Org(
+			self.Corn_Org_Jan, self.Corn_Org_Feb, self.Corn_Org_Mar, 
+			self.Corn_Org_Apr, self.Corn_Org_May, self.Corn_Org_Jun, 
+			self.Corn_Org_Jul, self.Corn_Org_Aug, self.Corn_Org_Sep, 
+			self.Corn_Org_Oct, self.Corn_Org_Nov, self.Corn_Org_Dec)
 		
-		Edamame_Org_Total_Anual = self.suma_Edamame_Org(self.Edamame_Org_Jan, self.Edamame_Org_Feb, self.Edamame_Org_Mar, self.Edamame_Org_Apr, self.Edamame_Org_May, self.Edamame_Org_Jun, 
-													self.Edamame_Org_Jul, self.Edamame_Org_Aug, self.Edamame_Org_Sep, self.Edamame_Org_Oct, self.Edamame_Org_Nov, self.Edamame_Org_Dec)
+		Edamame_Org_Total_Anual = self.suma_Edamame_Org(
+			self.Edamame_Org_Jan, self.Edamame_Org_Feb, self.Edamame_Org_Mar, 
+			self.Edamame_Org_Apr, self.Edamame_Org_May, self.Edamame_Org_Jun, 
+			self.Edamame_Org_Jul, self.Edamame_Org_Aug, self.Edamame_Org_Sep, 
+			self.Edamame_Org_Oct, self.Edamame_Org_Nov, self.Edamame_Org_Dec)
 
 		self.Total_Jan = self.suma (Tot_Conv_Jan, Tot_Org_Jan )
 		self.lblTotalJan.setText(str(self.Total_Jan))
@@ -227,17 +313,23 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.Total_Dec = self.suma (Tot_Conv_Dec, Tot_Org_Dec )
 		self.lblTotalDec.setText(str(self.Total_Dec))
 
-		self.total_Anual = self.suma(self.Total_Jan, self.Total_Feb, self.Total_Mar, self.Total_Apr, self.Total_May, self.Total_Jun,
-									 self.Total_Jul, self.Total_Aug, self.Total_Sep, self.Total_Oct, self.Total_Nov, self.Total_Dec)
-		
+		self.total_Anual = self.suma(
+			self.Total_Jan, self.Total_Feb, self.Total_Mar, 
+			self.Total_Apr, self.Total_May, self.Total_Jun,
+			 self.Total_Jul, self.Total_Aug, self.Total_Sep, 
+			 self.Total_Oct, self.Total_Nov, self.Total_Dec)
 		self.lblTotalAnual.setText(str(self.total_Anual))
 		
-		Total_Conv_Anual = self.suma(Tot_Conv_Jan, Tot_Conv_Feb, Tot_Conv_Mar, Tot_Conv_Apr, Tot_Conv_May, Tot_Conv_Jun,
-									 Tot_Conv_Jul, Tot_Conv_Aug, Tot_Conv_Sep, Tot_Conv_Oct, Tot_Conv_Nov, Tot_Conv_Dec )
+		Total_Conv_Anual = self.suma(
+			Tot_Conv_Jan, Tot_Conv_Feb, Tot_Conv_Mar, Tot_Conv_Apr, 
+			Tot_Conv_May, Tot_Conv_Jun, Tot_Conv_Jul, Tot_Conv_Aug, 
+			Tot_Conv_Sep, Tot_Conv_Oct, Tot_Conv_Nov, Tot_Conv_Dec)
 		self.lblTotConvAnual.setText(str(Total_Conv_Anual))
 		
-		Total_Org_Anual = self.suma(Tot_Org_Jan, Tot_Org_Feb, Tot_Org_Mar, Tot_Org_Apr, Tot_Org_May, Tot_Org_Jun,
-									 Tot_Org_Jul, Tot_Org_Aug, Tot_Org_Sep, Tot_Org_Oct, Tot_Org_Nov, Tot_Org_Dec )
+		Total_Org_Anual = self.suma(
+			Tot_Org_Jan, Tot_Org_Feb, Tot_Org_Mar, Tot_Org_Apr, 
+			Tot_Org_May, Tot_Org_Jun, Tot_Org_Jul, Tot_Org_Aug, 
+			Tot_Org_Sep, Tot_Org_Oct, Tot_Org_Nov, Tot_Org_Dec)
 		
 		self.lblTotOrgAnual.setText(str(Total_Org_Anual))
 		self.pBtnSave.setEnabled(True)
@@ -389,9 +481,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.lEditEdamameOrgNov.insert(str(0))
 		self.lEditEdamameOrgDec.insert(str(0))
 		self.unlock_fields()
-		
 
-		
 	def issue_keys(self):
 		"""
 		This function generate the keys for the dictionary
@@ -409,20 +499,18 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.KeyNov = str(self.selected_year) + str(self.table)+'nov'
 		self.KeyDec = str(self.selected_year) + str(self.table)+'dec'
 		
-		list_keys = [self.KeyJan, self.KeyFeb, self.KeyMar, self.KeyApr, self.KeyMay, self.KeyJun, 
-					 self.KeyJul, self.KeyAug, self.KeySep, self.KeyOct, self.KeyNov, self.KeyDec]
+		list_keys = [self.KeyJan, self.KeyFeb, self.KeyMar, self.KeyApr, 
+			self.KeyMay, self.KeyJun, self.KeyJul, self.KeyAug, 
+			self.KeySep, self.KeyOct, self.KeyNov, self.KeyDec]
 		return list_keys
 		
 	def genera_archivo_csv(self, list_keys,year):
 		"""
 		this function generates the CSV file with the input data
 		"""
-		print('la lista de las claves desde la funcion para generar el archivo csv', list_keys)        
-		print(year)
 		data = {}
 		data_dict = {}
 		for sequence, values in enumerate(list_keys):
-				
 			if values.find('jan')>0:
 				indice = values
 				month = 'January'
@@ -603,235 +691,245 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Corn_Org = self.Corn_Org_Dec
 				Edamame_Org = self.Edamame_Org_Dec
 				
-			data = {values : [sequence , indice, year, month, brocc_Conv, cauliflower_Conv, BrSp_Conv, Ssp_Conv, YSq_Conv, GZucc_Conv, 
-							  brocc_Org, Caulif_Org, Carrots_Org, Corn_Org, Edamame_Org]}
+			data = {values : [sequence , indice, year, month, brocc_Conv, 
+				cauliflower_Conv, BrSp_Conv, Ssp_Conv, YSq_Conv, GZucc_Conv, 
+				  brocc_Org, Caulif_Org, Carrots_Org, Corn_Org, Edamame_Org]}
 			data_dict.update(data)
 
-
-		mensaje = 'Se va a guardar el archivo'
-		self.caja_mensaje('Datos a Guardar;', mensaje,0)
+		message = 'Now we are going to save the file'
+		self.caja_mensaje('Save data;', message,0)
 		datos_Sales_Mbusa =pd.read_csv('mbusasales.csv', index_col = 0, encoding = 'utf-8')
-		
-		datos_Sales_Mbusa.apply(lambda x: pd.api.types.infer_dtype(x.values))
-		print('los datos en el archivo de ventasmb usa son:',datos_Sales_Mbusa)
+		datos_Sales_Mbusa.apply(lambda x: pd.lib.infer_dtype(x.values))
 		num_datos = int(datos_Sales_Mbusa['indice'].count())
-		print('No. de datos en el archivo', num_datos)
 		datos_Sales_Mbusa.index = range(datos_Sales_Mbusa.shape[0])
 		indice_archivo = list(datos_Sales_Mbusa.indice)
-		print(indice_archivo)
 		llaves = data_dict.keys()
-		print('llaves del diccionario',llaves)
 		nuevo_Valor = num_datos+1
-		print('data diccionario',data_dict)
 		valores = list(data_dict.values())
-		print(valores)
-
-		for i, valor in enumerate(valores):
-			print(i, valor)
-			nuevo_valor = int(nuevo_Valor)+i
-			print('el nuevo valor es', nuevo_valor, valor)
-			datos_Sales_Mbusa.loc[int(nuevo_valor)]= [valor[1], valor[2], valor[3], valor[4], valor[5], valor[6], valor[7], valor[8], valor[9],
-													  valor[10], valor[11], valor[12], valor[13],valor[14] ]
-				
-		print(datos_Sales_Mbusa)
 		
+		for i, valor in enumerate(valores):
+			nuevo_valor = int(nuevo_Valor)+i
+			datos_Sales_Mbusa.loc[int(nuevo_valor)]= [
+				valor[1], valor[2], valor[3], valor[4], valor[5], valor[6], 
+				valor[7], valor[8], valor[9], valor[10], valor[11], 
+				valor[12], valor[13],valor[14]]
 		try: 
 			datos_Sales_Mbusa.to_csv('mbusasales.csv',  encoding = 'utf-8',) 
-			self.caja_mensaje('Guadar Datos;', 'Datos guardados con Exito!!!',1)
+			self.caja_mensaje('Data Saved;', 'Data saved Succesfully!!!',1)
 		except Exception as ex:
-			ex = 'El archivo mbusasales.csv se encuentra abierto: ' + str(ex)
-			print(ex)
-			self.caja_mensaje('Error al momento de guardar ', ex,0)
-		
-		 
-		
+			ex = 'The file wou want to save is already open: ' + str(ex)
+			self.caja_mensaje('Error when saving data ', ex,0)
 	
 	def suma_Conv_Jan(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv,):
-		self.sum_Conv_Jan = self.suma( broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Jan = self.suma( 
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvJan.setText(str(self.sum_Conv_Jan))
 		return self.sum_Conv_Jan      
 
 	def suma_Conv_Feb(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Feb = self.suma(  broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Feb = self.suma(  
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvFeb.setText(str(self.sum_Conv_Feb))
 		return self.sum_Conv_Feb
 		
 	def suma_Conv_Mar(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Mar = self.suma( broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Mar = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvMar.setText(str(self.sum_Conv_Mar))
 		return self.sum_Conv_Mar
 		
 	
 	def suma_Conv_Apr(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Apr = self.suma(  broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Apr = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvApr.setText(str(self.sum_Conv_Apr))
 		return self.sum_Conv_Apr
 	
 	def suma_Conv_May(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_May = self.suma( broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_May = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvMay.setText(str(self.sum_Conv_May))
 		return self.sum_Conv_May
 		
 	def suma_Conv_Jun(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Jun = self.suma( broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Jun = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvJun.setText(str(self.sum_Conv_Jun))
 		return self.sum_Conv_Jun
 		
 	def suma_Conv_Jul(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Jul = self.suma( broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Jul = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvJul.setText(str(self.sum_Conv_Jul))
 		return self.sum_Conv_Jul
 		
 	def suma_Conv_Aug(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Aug = self.suma(broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Aug = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvAug.setText(str(self.sum_Conv_Aug))
 		return self.sum_Conv_Aug
 		
 	def suma_Conv_Sep(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Sep = self.suma(broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Sep = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvSep.setText(str(self.sum_Conv_Sep))
 		return self.sum_Conv_Sep
 		
 	def suma_Conv_Oct(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Oct = self.suma(broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Oct = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvOct.setText(str(self.sum_Conv_Oct))
 		return self.sum_Conv_Oct
 		
 	def suma_Conv_Nov(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Nov = self.suma(broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Nov = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvNov.setText(str(self.sum_Conv_Nov))
 		return self.sum_Conv_Nov
 		
 		
 	def suma_Conv_Dec(self, broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv):
-		self.sum_Conv_Dec = self.suma(broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
+		self.sum_Conv_Dec = self.suma(
+			broccConv, CaulifConv, BrSpCon, SspConv, QSqConv, GZuccConv)
 		self.lblTotConvDec.setText(str(self.sum_Conv_Dec))
 		return self.sum_Conv_Dec
 		
 	def suma_Org_Jan(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Jan = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Jan = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgJan.setText(str(self.sum_Org_Jan))
 		return self.sum_Org_Jan
 		
 	def suma_Org_Feb(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Feb = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Feb = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgFeb.setText(str(self.sum_Org_Feb))
 		return self.sum_Org_Feb
 	
 	def suma_Org_Mar(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Mar = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Mar = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgMar.setText(str(self.sum_Org_Mar))
 		return self.sum_Org_Mar
 	
 	def suma_Org_Apr(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Apr = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Apr = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgApr.setText(str(self.sum_Org_Apr))
 		return self.sum_Org_Apr
 	
 	def suma_Org_May(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_May = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_May = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgMay.setText(str(self.sum_Org_May))
 		return self.sum_Org_May
 	
 	def suma_Org_Jun(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Jun = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Jun = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgJun.setText(str(self.sum_Org_Jun))
 		return self.sum_Org_Jun
 	
 	def suma_Org_Jul(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Jul = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Jul = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgJul.setText(str(self.sum_Org_Jul))
 		return self.sum_Org_Jul
 	
 	def suma_Org_Aug(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Aug = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Aug = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgAug.setText(str(self.sum_Org_Aug))
 		return self.sum_Org_Aug
 	
 	def suma_Org_Sep(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Sep = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Sep = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgSep.setText(str(self.sum_Org_Sep))
 		return self.sum_Org_Sep
 	
 	def suma_Org_Oct(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Oct = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Oct = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgOct.setText(str(self.sum_Org_Oct))
 		return self.sum_Org_Oct
 	
 	def suma_Org_Nov(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Nov = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Nov = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgNov.setText(str(self.sum_Org_Nov))
 		return self.sum_Org_Nov
 	
 	def suma_Org_Dec(self, broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg):
-		self.sum_Org_Dec = self.suma(broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
+		self.sum_Org_Dec = self.suma(
+			broccOrg, CaulifOrg, CarrotsOrg, CornOrg, EdamameOrg)
 		self.lblTotalOrgDec.setText(str(self.sum_Org_Dec))
 		return self.sum_Org_Dec
 	
 	
 	def suma_Broc_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.broc_Conv_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Broccoli anual',self.broc_Conv_Total_Anual )
+		self.broc_Conv_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualBrocConv.setText(str(self.broc_Conv_Total_Anual))
 		return self.broc_Conv_Total_Anual
 		
 	def suma_Brocc_Org(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.broc_Org_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Broccoli anual',self.broc_Org_Total_Anual )
+		self.broc_Org_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualBrocOrg.setText(str(self.broc_Org_Total_Anual))
 		return self.broc_Org_Total_Anual
 	
 	def suma_Caulif_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.caulif_Conv_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Coliflor anual',self.caulif_Conv_Total_Anual )
+		self.caulif_Conv_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualCaulifConv.setText(str(self.caulif_Conv_Total_Anual))
 		return self.broc_Conv_Total_Anual
 		
 	def suma_Cauliflower_Org(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.caulif_Org_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Coliflor anual',self.caulif_Org_Total_Anual )
+		self.caulif_Org_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualCaulOrg.setText(str(self.caulif_Org_Total_Anual))
 		return self.broc_Org_Total_Anual    
 	
 	def suma_BrSpr_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.BrSpr_Conv_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.BrSpr_Conv_Total_Anual )
+		self.BrSpr_Conv_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualBSprConv.setText(str(self.BrSpr_Conv_Total_Anual))
 		return self.BrSpr_Conv_Total_Anual
 
 	def suma_Carrots_Org(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.Carrots_Org_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.Carrots_Org_Total_Anual )
+		self.Carrots_Org_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotAnualCarrotOrg.setText(str(self.Carrots_Org_Total_Anual))
 		return self.Carrots_Org_Total_Anual
 
 	def suma_Corn_Org(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.Corn_Org_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.Corn_Org_Total_Anual )
+		self.Corn_Org_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualCornOrg.setText(str(self.Corn_Org_Total_Anual))
 		return self.Corn_Org_Total_Anual
 
 	def suma_Edamame_Org(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.Edamame_Org_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.Edamame_Org_Total_Anual )
+		self.Edamame_Org_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotAnualEdamOrg.setText(str(self.Edamame_Org_Total_Anual))
 		return self.Edamame_Org_Total_Anual
 
 	def suma_Ssp_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.Ssp_Conv_Total_Anual = self.suma( jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.Ssp_Conv_Total_Anual )
+		self.Ssp_Conv_Total_Anual = self.suma(
+		jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualSnpConv.setText(str(self.Ssp_Conv_Total_Anual))
 		return self.Ssp_Conv_Total_Anual
 		
 	def suma_YSq_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.YSq_Conv_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.YSq_Conv_Total_Anual )
+		self.YSq_Conv_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualYSConv.setText(str(self.YSq_Conv_Total_Anual))
 		return self.YSq_Conv_Total_Anual
 	
 	def suma_GZucc_Conv(self, jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec):
-		self.GZucc_Conv_Total_Anual = self.suma(jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
-		print('Col de Brusela anual',self.GZucc_Conv_Total_Anual )
+		self.GZucc_Conv_Total_Anual = self.suma(
+			jan, feb, mar, apr, may, jun, jul, aug, sep, octo, nov, dec)
 		self.lblTotalAnualGZuccConv.setText(str(self.GZucc_Conv_Total_Anual))
 		return self.GZucc_Conv_Total_Anual
 	
@@ -1298,7 +1396,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 	def suma(self, *args ):
 		result = 0
 		for valor in args:
-			print(valor)
 			result = result + valor
 		return result
 	   
@@ -1306,6 +1403,9 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		import caja_mensaje as mensaje
 		mensaje.Caja_mensaje.mbox(text, title, style) 
 		return 
+
+	def close_window(self):
+		self.close()
 
 if __name__ == "__main__":
 	app = QtWidgets.QApplication(sys.argv)

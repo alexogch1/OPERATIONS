@@ -1,5 +1,5 @@
 #!/usr/bin/python34
-
+# -*- coding: utf-8 -*-
 """
 Este módulo tiene las instrucciones para salir del programa
 """
@@ -13,19 +13,9 @@ __maintainer__ = "Alejandro Othoniel Gomez Chavez"
 __email__ = "agomez@marbran.com.mx"
 __status__ = "Developer"
 
-# -*- coding: utf-8 -*-
-
-
 import sys
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui, QtCore
 class salir:
-    
-
-
-    
     def __init__(self):
-        print("SALIR DEL PROGRAMA")
-        #exit()
-        
         sys.exit(1)
