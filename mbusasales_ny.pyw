@@ -1,6 +1,20 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+"""
+In thismodule it is input the data of MB USA sales
+"""
+__author__ = "Alejandro Othoniel Gomez Chavez"
+__copyright__ = "Copyright 2017 AOGCH"
+__credits__ = "Mar Bran S.A. de C.V."
+
+__licence__= "Open Code"
+__version__ = "0.1"
+__maintainer__ = "Alejandro Othoniel Gomez Chavez"
+__email__ = "agomez@marbran.com.mx"
+__status__ = "Developer"
+
+
 import sys
 from PyQt5 import QtCore, QtGui, uic, QtWidgets
 from PyQt5.QtWidgets import  QTableWidget, QTableWidgetItem
@@ -16,7 +30,9 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 	def __init__(self, parent=None):
 		
 		QtWidgets.QDialog.__init__(self, parent)
+
 		self.setupUi(self)
+
 		self.pBtnSelectYear.setEnabled(True)
 		self.pBtnUpdate.setEnabled(False)
 		self.table = 'mbusasales'
@@ -60,7 +76,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		if self.selected_year > self.current_year:
 			message = ' Sorry, It is not possible to Work with future years, ' + str(self.selected_year)
 			self.caja_mensaje('Message ', message,0)
-			MyWindow.close()
+			
 			
 		else :
 			self.search_In_File(self.selected_year)
@@ -98,21 +114,16 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			print('hubo ', counter_flag, 'datos en la base')
 		if counter_flag >1:
 			message = "LOS DATOS YA EXISTEN EN LA BASE DE DATOS"
-			self.caja_mensaje('Datos a Guardar;', message,0)
-			MyWindow.close()
+			self.caja_mensaje('Error;', message,0)
+			self.close()
 		else:
 			pass
-
-
 		return
 
 
 	def save_data(self):
-		#csv_file = self.genera_archivo_csv(list_keys, self.selected_year)		
-		print('Guardaremos los datos')
-		print('correspondientes al año', self.selected_year)
 		self.genera_archivo_csv(self.list_keys,self.selected_year)
-		MyWindow.close()
+		self.close()
 
 
 	def update_totals(self):
@@ -231,8 +242,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.lblTotOrgAnual.setText(str(Total_Org_Anual))
 		self.pBtnSave.setEnabled(True)
 
-	
-	
 	def inicializar_campós(self):
 		"""
 		This function set all field values as Zero
