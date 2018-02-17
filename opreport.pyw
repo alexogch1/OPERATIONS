@@ -62,11 +62,14 @@ class Principal(QMainWindow):
             
     def menu_start_mbusasales_data_table(self):
         QMessageBox.information(self,"MBUSA Sales","You will open the saved data of MB USA Sales", QMessageBox.Discard)       
+        import mbusasales_table_edit2
+        Dialog =  mbusasales_table_edit2.Dialogo()
+        Dialog.exec_()
 
     def menu_start_mbusasales_new_year(self):
         QMessageBox.information(self,"MBUSA Sales","You will start capturing MBUSA Sales", QMessageBox.Discard)       
-        import mbusasales_ny
-        Dialog =  mbusasales_ny.MyWindowClass()
+        import mbusasales_ny2
+        Dialog =  mbusasales_ny2.MyWindowClass()
         Dialog.exec_()
     
     def menu_exit(self):
