@@ -51,6 +51,13 @@ class Principal(QMainWindow):
         menu_start_mbusasales_ny_table_data.setStatusTip("Open and edit saved data")#Message in status bar
         menu_start_mbusasales_ny_table_data.triggered.connect(self.menu_start_mbusasales_data_table)#Launcher
         menu_start_mbusasales_ny.addAction(menu_start_mbusasales_ny_table_data)
+
+        #Add an action elemento to the menu start
+        menu_start_mbusasales_csv_report = QAction(QIcon(), "&MBUSA Sales Generate CSV file ",self)
+        menu_start_mbusasales_csv_report.setShortcut("Ctrl+C") # keyboard Shortcut
+        menu_start_mbusasales_csv_report.setStatusTip("Open and save data with calculations")#Message in status bar
+        menu_start_mbusasales_csv_report.triggered.connect(self.menu_start_mbusasales_Csv)#Launcher
+        menu_start_mbusasales_ny.addAction(menu_start_mbusasales_csv_report)
      
         # Menu Father
         menu_exit = menu.addMenu("&Exit")
@@ -71,7 +78,9 @@ class Principal(QMainWindow):
         import mbusasales_ny2
         Dialog =  mbusasales_ny2.MyWindowClass()
         Dialog.exec_()
-    
+
+    def menu_start_mbusasales_Csv(self):
+        QMessageBox.information(self,"MBUSA Sales","You will generate a CSV file", QMessageBox.Discard)       
     def menu_exit(self):
         import salir_programa
         salir = salir_programa.salir()

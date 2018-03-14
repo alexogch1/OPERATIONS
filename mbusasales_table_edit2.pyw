@@ -320,7 +320,7 @@ class Dialogo(QDialog):
 						pass
 				
 	def Eliminar(self):
-		supervisores = pd.read_csv('supervisores.csv', index_col = 0)
+		datos = pd.read_csv('mbusasales.csv', index_col = 0)
 		QMessageBox.information(self,"Mensaje","Se eliminará el renglón seleccionado", QMessageBox.Discard) 
 
 		datos = pd.read_csv('mbusasales.csv', index_col = 0, encoding = 'utf-8')
