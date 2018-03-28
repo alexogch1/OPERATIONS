@@ -81,6 +81,11 @@ class Principal(QMainWindow):
 
     def menu_start_mbusasales_Csv(self):
         QMessageBox.information(self,"MBUSA Sales","You will generate a CSV file", QMessageBox.Discard)       
+        import mbusasales_csv_report
+        Dialog =  mbusasales_csv_report.MyWindowClass()
+        Dialog.exec_()
+
+
     def menu_exit(self):
         import salir_programa
         salir = salir_programa.salir()

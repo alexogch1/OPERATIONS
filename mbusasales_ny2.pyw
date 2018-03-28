@@ -5,7 +5,7 @@
 In thismodule it is input the data of MB USA sales
 """
 __author__ = "Alejandro Othoniel Gomez Chavez"
-__copyright__ = "Copyright 2017 AOGCH"
+__copyright__ = "Copyright 2018 AOGCH"
 __credits__ = "Mar Bran S.A. de C.V."
 
 __licence__= "Open Code"

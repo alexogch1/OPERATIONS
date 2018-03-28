@@ -5,7 +5,7 @@
 In thismodule it is input the data of MB USA sales
 """
 __author__ = "Alejandro Othoniel Gomez Chavez"
-__copyright__ = "Copyright 2017 AOGCH"
+__copyright__ = "Copyright 2018 AOGCH"
 __credits__ = "Mar Bran S.A. de C.V."
 
 __licence__= "Open Code"
@@ -24,7 +24,7 @@ import pandas as pd
 import cajaMensajePregunta as cajaMensaje
 
 # Cargar nuestro archivo .ui
-form_class = uic.loadUiType("mbusasales2_ny.ui")[0]
+form_class = uic.loadUiType("mbusasales3_ny.ui")[0]
 
 class MyWindowClass(QtWidgets.QDialog, form_class):
 	def __init__(self, parent=None):
@@ -38,7 +38,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.table = 'mbusasales'
 		self.lock_fields()
 		
-		self.pBtnSave.clicked.connect(self.save_data)
+		self.pBtnReport.clicked.connect(self.save_data)
 
 		# Signal when the button SelectYear is Clicked				
 		self.pBtnSelectYear.clicked.connect(self.widget_year)
@@ -49,7 +49,8 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		# Signal when the button close Window is clicked
 		self.pbtnClose.clicked.connect(self.close_window)		
 	
-	
+
+
 	def widget_year(self):
 		"""
 		In this function we open de Widget to capture the Year
@@ -84,8 +85,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			message = ' Sorry, It is not possible to Work with future years, '+ str(self.selected_year)
 			self.caja_mensaje('Message ', message,0)
 		else :
-			#self.search_In_File(self.selected_year)
-			#self.inicializar_campós() # Set al fields as Zero
 			self.read_data_from_file(self.selected_year)
 	
 	def read_data_from_file(self, year):	
@@ -98,39 +97,35 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			print('los datos son: \n',datos)
 			datos = datos.loc [datos['year'] == year]
 			datos.index = range(datos.shape[0])
+	
+			Dict_Total_Sales =   {'Total_Sales':list(datos['totsales'])}
+			Dict_Brocc =   {'broc':list(datos['broc'])}
+			Dict_Caulif =   {'cauliflower':list(datos['cauliflower'])}
+			Dict_Br_Spr =   {'br spr':list(datos['br spr'])}
+			Dict_Sugar_Snap_Peas =   {'Sugar Snap Peas':list(datos['Sugar Snap Peas'])}
+			Dict_Yllw_Sq = {'Yellow Sq': list(datos['Yellow Sq'])}
+			Dict_Green_Zch = {'Green Zucch': list(datos['Green Zucch'])}
+			Dict_Brocc_Org = {'Brocc Org': list(datos['Brocc Org'])}
+			Dict_Caulif_Org = {'Caulif Org': list(datos['Caulif Org'])}
+			Dict_Carrots_Org = {'Carrots Org': list(datos['Carrots Org'])}
+			Dict_Corn_Org = {'Corn Org': list(datos['Corn Org'])}
+			Dict_Edamame_Org = {'Edamame Org': list(datos['Edamame Org'])}
+
+			Dict_Final = {}
+			Dict_Final['Total_Sales'] = list(datos['totsales'])
+			Dict_Final['broc'] = list(datos['broc'])
+			Dict_Final['cauliflower'] = list(datos['cauliflower'])
+			Dict_Final['br spr'] = list(datos['br spr'])
+			Dict_Final['Sugar Snap Peas'] = list(datos['Sugar Snap Peas'])
+			Dict_Final['Yellow Sq'] = list(datos['Yellow Sq'])
+			Dict_Final['Green Zucch'] = list(datos['Green Zucch'])
+			Dict_Final['Brocc Org'] = list(datos['Brocc Org'])
+			Dict_Final['Caulif Org'] = list(datos['Caulif Org'])
+			Dict_Final['Carrots Org'] = list(datos['Carrots Org'])
+			Dict_Final['Corn Org'] = list(datos['Corn Org'])
+			Dict_Final['Edamame Org'] = list(datos['Edamame Org'])
+			self.inicializar_campós(Dict_Final)
 			
-			
-			print(datos)
-			
-
-			List_Total_Sales =   {'Total_Sales':list(datos['totsales'])}
-			List_Brocc =   {'broc':list(datos['broc'])}
-			List_Caulif =   {'cauliflower':list(datos['cauliflower'])}
-			List_Br_Spr =   {'br spr':list(datos['br spr'])}
-			List_Sugar_Snap_Peas =   {'Sugar Snap Peas':list(datos['Sugar Snap Peas'])}
-			List_Yllw_Sq = {'Yellow Sq': list(datos['Yellow Sq'])}
-			List_Green_Zch = {'Green Zucch': list(datos['Green Zucch'])}
-			List_Brocc_Org = {'Brocc Org': list(datos['Brocc Org'])}
-			List_Caulif_Org = {'Caulif Org': list(datos['Caulif Org'])}
-			List_Carrots_Org = {'Carrots Org': list(datos['Carrots Org'])}
-			List_Corn_Org = {'Corn Org': list(datos['Corn Org'])}
-			List_Edamame_Org = {'Edamame Org': list(datos['Edamame Org'])}
-
-
-
-			self.update_labels(List_Total_Sales)
-			print(List_Total_Sales)
-			print(List_Brocc)
-			print(List_Caulif)
-			print(List_Br_Spr)
-			print(List_Sugar_Snap_Peas)
-			print (List_Yllw_Sq)
-			print(List_Green_Zch)
-			print(List_Brocc_Org)
-			print(List_Caulif_Org)
-			print(List_Carrots_Org)
-			print(List_Corn_Org)
-			print(List_Edamame_Org)
 
 	def actual_Year(self):
 		"""
@@ -141,14 +136,11 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		return act_year 
 	
 	def update_labels(self,datos):
-		print('los datos que se van a usar para las etiquetas son:\n', datos)
 		datos2 = datos.items()
-		print(datos2)
-		#self.lblTotalJanConv.setText(str(datos[0]))
+		Jan_Total_Sales = datos.get('Total_Sales')
+
 
 		
-
-
 	def search_In_File(self, year):
 		self.list_keys = self.issue_keys()
 		datos = pd.read_csv('mbusasales.csv', index_col = 0, encoding = 'utf-8' )
@@ -178,7 +170,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 
 	def update_totals(self):
 		"""
-		This function is used to get the totals  that will be displayed 
+		This function is used to get the totals that will be displayed 
 		"""
 		self.list_keys = self.issue_keys()
 		self.read_data_from_fields()
@@ -190,6 +182,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.broc_Jan, self.Caulif_Jan, self.BrSpr_Jan, 
 			self.Ssp_Jan, self.YSq_Jan, self.GZucc_Jan)
 		self.lblOtherJan.setText(str(round(Tot_Jan_Others,0)))
+
 
 		Tot_Feb_Others = self.other_Month(
 			self.total_Sales_Feb,
@@ -263,13 +256,14 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			Tot_Sep_Others, Tot_Oct_Others, Tot_Nov_Others,
 			Tot_Dec_Others)
 		self.lblTotAnualOther.setText(str(Tot_Anual_Others))
+
+
 		"""
 		Sum of all Organic Products per month
 		"""
 		Tot_Org_Jan = self.suma_Org_Jan(
 			self.broc_Org_Jan, self.Caulif_Org_Jan, self.Carrots_Org_Jan, 
 			self.Corn_Org_Jan, self.Edamame_Org_Jan)
-
 		Tot_Org_Feb = self.suma_Org_Feb(
 			self.broc_Org_Feb, self.Caulif_Org_Feb, self.Carrots_Org_Feb, 
 			self.Corn_Org_Feb, self.Edamame_Org_Feb)
@@ -303,7 +297,8 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		Tot_Org_Dec = self.suma_Org_Dec(
 			self.broc_Org_Dec, self.Caulif_Org_Dec, self.Carrots_Org_Dec, 
 			self.Corn_Org_Dec, self.Edamame_Org_Dec)
-			   
+
+
 		#Sum of  Total Sales
 		Total_Sales_Anual = self.suma_Total_sales_Anual(
 			self.total_Sales_Jan, self.total_Sales_Feb, self.total_Sales_Mar, 
@@ -311,6 +306,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.total_Sales_Jul, self.total_Sales_Aug, self.total_Sales_Sep, 
 			self.total_Sales_Oct, self.total_Sales_Nov, self.total_Sales_Dec)
 
+		
 		#Sum of  Broccoli
 		broc_Total_Anual = self.suma_Broc_Tot(
 			self.broc_Jan, self.broc_Feb, self.broc_Mar, 
@@ -432,170 +428,308 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			Tot_Org_Jan, Tot_Org_Feb, Tot_Org_Mar, Tot_Org_Apr, 
 			Tot_Org_May, Tot_Org_Jun, Tot_Org_Jul, Tot_Org_Aug, 
 			Tot_Org_Sep, Tot_Org_Oct, Tot_Org_Nov, Tot_Org_Dec)
-		
 		self.lblTotOrgAnual.setText(str(Total_Org_Anual))
-		self.pBtnSave.setEnabled(True)
 
-	def inicializar_campós(self):
+
+		Dict_Total_Brocc = {}
+		Dict_Total_Brocc['Tota Broccoli'] = list([
+			self.broc_Jan, self.broc_Feb, self.broc_Mar, 
+			self.broc_Apr, self.broc_May, self.broc_Jun, 
+			self.broc_Jul, self.broc_Aug, self.broc_Sep, 
+			self.broc_Oct, self.broc_Nov, self.broc_Dec])
+		
+		Dict_Total_Caulif = {}
+		Dict_Total_Caulif['Total Cauliflower'] = list([
+			self.Caulif_Jan, self.Caulif_Feb, self.Caulif_Mar, 
+			self.Caulif_Apr, self.Caulif_May, self.Caulif_Jun, 
+			self.Caulif_Jul, self.Caulif_Aug, self.Caulif_Sep, 
+			self.Caulif_Oct, self.Caulif_Nov, self.Caulif_Dec])
+
+		Dict_Total_Br_Spr = {}
+		Dict_Total_Br_Spr['Total Brussel Sprouts'] = list([
+			self.BrSpr_Jan, self.BrSpr_Feb, self.BrSpr_Mar, 
+			self.BrSpr_Apr, self.BrSpr_May, self.BrSpr_Jun, 
+			self.BrSpr_Jul, self.BrSpr_Aug, self.BrSpr_Sep, 
+			self.BrSpr_Oct, self.BrSpr_Nov, self.BrSpr_Dec])
+		
+		Dict_Total_SSP = {}
+		Dict_Total_SSP['Total Sugar Snap Peas'] = list([
+			self.Ssp_Jan, self.Ssp_Feb, self.Ssp_Mar, 
+			self.Ssp_Apr, self.Ssp_May, self.Ssp_Jun, 
+			self.Ssp_Jul, self.Ssp_Aug, self.Ssp_Sep, 
+			self.Ssp_Oct, self.Ssp_Nov, self.Ssp_Dec])
+		
+		Dict_Total_Yllow_Sq = {}
+		Dict_Total_Yllow_Sq['Total Yellow Squash'] = list([
+			self.YSq_Jan, self.YSq_Feb, self.YSq_Mar, 
+			self.YSq_Apr, self.YSq_May, self.YSq_Jun, 
+			self.YSq_Jul, self.YSq_Aug, self.YSq_Sep, 
+			self.YSq_Oct, self.YSq_Nov, self.YSq_Dec])
+
+		Dict_Total_Green_Zucc = {}
+		Dict_Total_Green_Zucc['Total Green Zucchini'] = list([
+			self.GZucc_Jan, self.GZucc_Feb, self.GZucc_Mar, 
+			self.GZucc_Apr, self.GZucc_May, self.GZucc_Jun, 
+			self.GZucc_Jul, self.GZucc_Aug, self.GZucc_Sep, 
+			self.GZucc_Oct, self.GZucc_Nov, self.GZucc_Dec])
+		
+		dict_others = {}
+		dict_others['Other_Ings'] = list([
+			Tot_Jan_Others,Tot_Feb_Others, Tot_Mar_Others, 
+			Tot_Apr_Others, Tot_May_Others, Tot_Jun_Others, 
+			Tot_Jul_Others, Tot_Aug_Others, Tot_Sep_Others, 
+			Tot_Oct_Others, Tot_Nov_Others, Tot_Dec_Others])
+		
+		Dict_Brocc_Org = {}
+		Dict_Brocc_Org['Broccoli Org'] = list([
+			self.broc_Org_Jan,self.broc_Org_Feb, self.broc_Org_Mar, 
+			self.broc_Org_Apr, self.broc_Org_May, self.broc_Org_Jun, 
+			self.broc_Org_Jul, self.broc_Org_Aug, self.broc_Org_Sep, 
+			self.broc_Org_Oct, self.broc_Org_Nov, self.broc_Org_Dec])
+		
+		Dict_Caulif_Org = {}
+		Dict_Caulif_Org['Cauliflower Org'] = list([
+			self.Caulif_Org_Jan,self.Caulif_Org_Feb, self.Caulif_Org_Mar, 
+			self.Caulif_Org_Apr, self.Caulif_Org_May, self.Caulif_Org_Jun, 
+			self.Caulif_Org_Jul, self.Caulif_Org_Aug, self.Caulif_Org_Sep, 
+			self.Caulif_Org_Oct, self.Caulif_Org_Nov, self.Caulif_Org_Dec])
+		
+		Dict_Carrots_Org = {}
+		Dict_Carrots_Org['Carrots Org'] = list([
+			self.Carrots_Org_Jan,self.Carrots_Org_Feb, self.Carrots_Org_Mar, 
+			self.Carrots_Org_Apr, self.Carrots_Org_May, self.Carrots_Org_Jun, 
+			self.Carrots_Org_Jul, self.Carrots_Org_Aug, self.Carrots_Org_Sep, 
+			self.Carrots_Org_Oct, self.Carrots_Org_Nov, self.Carrots_Org_Dec])
+		
+		Dict_Corn_Org = {}
+		Dict_Corn_Org['Corn Org'] = list([
+			self.Corn_Org_Jan,self.Corn_Org_Feb, self.Corn_Org_Mar, 
+			self.Corn_Org_Apr, self.Corn_Org_May, self.Corn_Org_Jun, 
+			self.Corn_Org_Jul, self.Corn_Org_Aug, self.Corn_Org_Sep, 
+			self.Corn_Org_Oct, self.Corn_Org_Nov, self.Corn_Org_Dec])
+		
+		Dict_Edamame_Org = {}
+		Dict_Edamame_Org['Edamame Org'] = list([
+			self.Edamame_Org_Jan,self.Edamame_Org_Feb, self.Edamame_Org_Mar, 
+			self.Edamame_Org_Apr, self.Edamame_Org_May, self.Edamame_Org_Jun, 
+			self.Edamame_Org_Jul, self.Edamame_Org_Aug, self.Edamame_Org_Sep, 
+			self.Edamame_Org_Oct, self.Edamame_Org_Nov, self.Edamame_Org_Dec])
+		
+		dict_Tot_Org = {}
+		dict_Tot_Org['Total_Org'] = list([
+			Tot_Org_Jan,Tot_Org_Feb, Tot_Org_Mar, 
+			Tot_Org_Apr, Tot_Org_May, Tot_Org_Jun, 
+			Tot_Org_Jul, Tot_Org_Aug, Tot_Org_Sep, 
+			Tot_Org_Oct, Tot_Org_Nov, Tot_Org_Dec])
+
+		dict_Tot_Conv = {}
+		dict_Tot_Conv['Total Conv'] = list([
+			self.Total_Jan_Conv,self.Total_Feb_Conv, self.Total_Mar_Conv, 
+			self.Total_Apr_Conv, self.Total_May_Conv, self.Total_Jun_Conv, 
+			self.Total_Jul_Conv, self.Total_Aug_Conv, self.Total_Sep_Conv, 
+			self.Total_Oct_Conv, self.Total_Nov_Conv, self.Total_Dec_Conv])
+		
+		Dict_Total_Sales = {}
+		Dict_Total_Sales['Total Sales'] = list([
+		self.total_Sales_Jan, self.total_Sales_Feb, self.total_Sales_Mar, 
+		self.total_Sales_Apr, self.total_Sales_May, self.total_Sales_Jun,
+		self.total_Sales_Jul, self.total_Sales_Aug, self.total_Sales_Sep, 
+		self.total_Sales_Oct, self.total_Sales_Nov, self.total_Sales_Dec])
+		
+		self.data_complete = [
+				Dict_Total_Brocc, Dict_Total_Caulif, Dict_Total_Br_Spr, Dict_Total_SSP,
+				Dict_Total_Yllow_Sq, Dict_Total_Green_Zucc, dict_others, Dict_Brocc_Org,
+				Dict_Caulif_Org, Dict_Carrots_Org, Dict_Corn_Org,  Dict_Edamame_Org,
+				dict_Tot_Org, dict_Tot_Conv, Dict_Total_Sales  ]
+
+		
+		
+
+		#self.pBtnReport.setEnabled(True)
+		generaExcel =self.genera_excel(self.data_complete)
+		
+
+
+	
+	def genera_excel(self,datos):
+		print('Hola Aqui se genera el archivo en excel')
+		import report_mbusasales_xls
+		genera_reporte = report_mbusasales_xls
+		genera_reporte.main(datos)
+
+
+	def inicializar_campós(self,datos):
 		"""
-		This function set all field values as Zero
+		This function set all field values according to the datafile values
 		"""
-		self.lEditTotSalesJan.insert(str(0))
-		self.lEditTotSalesFeb.insert(str(0))
-		self.lEditTotSalesMar.insert(str(0))
-		self.lEditTotSalesApr.insert(str(0))
-		self.lEditTotSalesMay.insert(str(0))
-		self.lEditTotSalesJun.insert(str(0))
-		self.lEditTotSalesJul.insert(str(0))
-		self.lEditTotSalesAug.insert(str(0))
-		self.lEditTotSalesSep.insert(str(0))
-		self.lEditTotSalesOct.insert(str(0))
-		self.lEditTotSalesNov.insert(str(0))
-		self.lEditTotSalesDec.insert(str(0))
+		Total_Sales = datos.get('Total_Sales')
+		self.lEditTotSalesJan.insert(str(Total_Sales[0]))
+		self.lEditTotSalesFeb.insert(str(Total_Sales[1]))
+		self.lEditTotSalesMar.insert(str(Total_Sales[2]))
+		self.lEditTotSalesApr.insert(str(Total_Sales[3]))
+		self.lEditTotSalesMay.insert(str(Total_Sales[4]))
+		self.lEditTotSalesJun.insert(str(Total_Sales[5]))
+		self.lEditTotSalesJul.insert(str(Total_Sales[6]))
+		self.lEditTotSalesAug.insert(str(Total_Sales[7]))
+		self.lEditTotSalesSep.insert(str(Total_Sales[8]))
+		self.lEditTotSalesOct.insert(str(Total_Sales[9]))
+		self.lEditTotSalesNov.insert(str(Total_Sales[10]))
+		self.lEditTotSalesDec.insert(str(Total_Sales[11]))
 
+		Brocc = datos.get('broc')
+		self.lEditBrJan.insert(str(Brocc[0]))
+		self.lEditBrFeb.insert(str(Brocc[1]))
+		self.lEditBrMar.insert(str(Brocc[2]))
+		self.lEditBrApr.insert(str(Brocc[3]))
+		self.lEditBrMay.insert(str(Brocc[4]))
+		self.lEditBrJun.insert(str(Brocc[5]))
+		self.lEditBrJul.insert(str(Brocc[6]))
+		self.lEditBrAug.insert(str(Brocc[7]))
+		self.lEditBrSep.insert(str(Brocc[8]))
+		self.lEditBrOct.insert(str(Brocc[9]))
+		self.lEditBrNov.insert(str(Brocc[10]))
+		self.lEditBrDec.insert(str(Brocc[11]))
+		
+		Cauliflower =datos.get('cauliflower')
+		self.lEditCaulifJan.insert(str(Cauliflower[0]))
+		self.lEditCaulifFeb.insert(str(Cauliflower[1]))
+		self.lEditCaulifMar.insert(str(Cauliflower[2]))
+		self.lEditCaulifApr.insert(str(Cauliflower[3]))
+		self.lEditCaulifMay.insert(str(Cauliflower[4]))
+		self.lEditCaulifJun.insert(str(Cauliflower[5]))
+		self.lEditCaulifJul.insert(str(Cauliflower[6]))
+		self.lEditCaulifAug.insert(str(Cauliflower[7]))
+		self.lEditCaulifSep.insert(str(Cauliflower[8]))
+		self.lEditCaulifOct.insert(str(Cauliflower[9]))
+		self.lEditCaulifNov.insert(str(Cauliflower[10]))
+		self.lEditCaulifDec.insert(str(Cauliflower[11]))
 
-		self.lEditBrJan.insert(str(0))
-		self.lEditBrFeb.insert(str(0))
-		self.lEditBrMar.insert(str(0))
-		self.lEditBrApr.insert(str(0))
-		self.lEditBrMay.insert(str(0))
-		self.lEditBrJun.insert(str(0))
-		self.lEditBrJul.insert(str(0))
-		self.lEditBrAug.insert(str(0))
-		self.lEditBrSep.insert(str(0))
-		self.lEditBrOct.insert(str(0))
-		self.lEditBrNov.insert(str(0))
-		self.lEditBrDec.insert(str(0))
+		ssp = datos.get('Sugar Snap Peas')
+		self.lEditSspJan.insert(str(ssp[0]))
+		self.lEditSspFeb.insert(str(ssp[1]))
+		self.lEditSspMar.insert(str(ssp[2]))
+		self.lEditSspApr.insert(str(ssp[3]))
+		self.lEditSspMay.insert(str(ssp[4]))
+		self.lEditSspJun.insert(str(ssp[5]))
+		self.lEditSspJul.insert(str(ssp[6]))
+		self.lEditSspAug.insert(str(ssp[7]))
+		self.lEditSspSep.insert(str(ssp[8]))
+		self.lEditSspOct.insert(str(ssp[9]))
+		self.lEditSspNov.insert(str(ssp[10]))
+		self.lEditSspDec.insert(str(ssp[11]))   
 		
-		self.lEditCaulifJan.insert(str(0))
-		self.lEditCaulifFeb.insert(str(0))
-		self.lEditCaulifMar.insert(str(0))
-		self.lEditCaulifApr.insert(str(0))
-		self.lEditCaulifMay.insert(str(0))
-		self.lEditCaulifJun.insert(str(0))
-		self.lEditCaulifJul.insert(str(0))
-		self.lEditCaulifAug.insert(str(0))
-		self.lEditCaulifSep.insert(str(0))
-		self.lEditCaulifOct.insert(str(0))
-		self.lEditCaulifNov.insert(str(0))
-		self.lEditCaulifDec.insert(str(0))
+		Brussel_Sprouts = datos.get('br spr')
+		self.lEditBSprJan.insert(str(Brussel_Sprouts[0]))
+		self.lEditBSprFeb.insert(str(Brussel_Sprouts[1]))
+		self.lEditBSprMar.insert(str(Brussel_Sprouts[2]))
+		self.lEditBSprApr.insert(str(Brussel_Sprouts[3]))
+		self.lEditBSprMay.insert(str(Brussel_Sprouts[4]))
+		self.lEditBSprJun.insert(str(Brussel_Sprouts[5]))
+		self.lEditBSprJul.insert(str(Brussel_Sprouts[6]))
+		self.lEditBSprAug.insert(str(Brussel_Sprouts[7]))
+		self.lEditBSprSep.insert(str(Brussel_Sprouts[8]))
+		self.lEditBSprOct.insert(str(Brussel_Sprouts[9]))
+		self.lEditBSprNov.insert(str(Brussel_Sprouts[10]))
+		self.lEditBSprDec.insert(str(Brussel_Sprouts[11]))   
+		
+		yq = datos.get('Yellow Sq')
+		self.lEditYSqJan.insert(str(yq[0]))
+		self.lEditYSqFeb.insert(str(yq[1]))
+		self.lEditYSqMar.insert(str(yq[2]))
+		self.lEditYSqApr.insert(str(yq[3]))
+		self.lEditYSqMay.insert(str(yq[4]))
+		self.lEditYSqJun.insert(str(yq[5]))
+		self.lEditYSqJul.insert(str(yq[6]))
+		self.lEditYSqAug.insert(str(yq[7]))
+		self.lEditYSqSep.insert(str(yq[8]))
+		self.lEditYSqOct.insert(str(yq[9]))
+		self.lEditYSqNov.insert(str(yq[10]))
+		self.lEditYSqDec.insert(str(yq[11]))
+		
+		gz = datos.get('Green Zucch')
+		self.lEditGZuccJan.insert(str(gz[0]))
+		self.lEditGZuccFeb.insert(str(gz[1]))
+		self.lEditGZuccMar.insert(str(gz[2]))
+		self.lEditGZuccApr.insert(str(gz[3]))
+		self.lEditGZuccMay.insert(str(gz[4]))
+		self.lEditGZuccJun.insert(str(gz[5]))
+		self.lEditGZuccJul.insert(str(gz[6]))
+		self.lEditGZuccAug.insert(str(gz[7]))
+		self.lEditGZuccSep.insert(str(gz[8]))
+		self.lEditGZuccOct.insert(str(gz[9]))
+		self.lEditGZuccNov.insert(str(gz[10]))
+		self.lEditGZuccDec.insert(str(gz[11]))
+		
+		broc_org = datos.get('Brocc Org')
+		self.lEditBroccOrgJan.insert(str(broc_org[0]))
+		self.lEditBroccOrgFeb.insert(str(broc_org[1]))
+		self.lEditBroccOrgMar.insert(str(broc_org[2]))
+		self.lEditBroccOrgApr.insert(str(broc_org[3]))
+		self.lEditBroccOrgMay.insert(str(broc_org[4]))
+		self.lEditBroccOrgJun.insert(str(broc_org[5]))
+		self.lEditBroccOrgJul.insert(str(broc_org[6]))
+		self.lEditBroccOrgAug.insert(str(broc_org[7]))
+		self.lEditBroccOrgSep.insert(str(broc_org[8]))
+		self.lEditBroccOrgOct.insert(str(broc_org[9]))
+		self.lEditBroccOrgNov.insert(str(broc_org[10]))
+		self.lEditBroccOrgDec.insert(str(broc_org[11]))
+		
+		caulif_org = datos.get('Caulif Org')
+		self.lEditCaulifOrgJan.insert(str(caulif_org[0]))
+		self.lEditCaulifOrgFeb.insert(str(caulif_org[1]))
+		self.lEditCaulifOrgMar.insert(str(caulif_org[2]))
+		self.lEditCaulifOrgApr.insert(str(caulif_org[3]))
+		self.lEditCaulifOrgMay.insert(str(caulif_org[4]))
+		self.lEditCaulifOrgJun.insert(str(caulif_org[5]))
+		self.lEditCaulifOrgJul.insert(str(caulif_org[6]))
+		self.lEditCaulifOrgAug.insert(str(caulif_org[7]))
+		self.lEditCaulifOrgSep.insert(str(caulif_org[8]))
+		self.lEditCaulifOrgOct.insert(str(caulif_org[9]))
+		self.lEditCaulifOrgNov.insert(str(caulif_org[10]))
+		self.lEditCaulifOrgDec.insert(str(caulif_org[11]))
+		
+		carrot_org = datos.get('Carrots Org')
+		self.lEditCarrotsOrgJan.insert(str(carrot_org[0]))
+		self.lEditCarrotsOrgFeb.insert(str(carrot_org[1]))
+		self.lEditCarrotsOrgMar.insert(str(carrot_org[2]))
+		self.lEditCarrotsOrgApr.insert(str(carrot_org[3]))
+		self.lEditCarrotsOrgMay.insert(str(carrot_org[4]))
+		self.lEditCarrotsOrgJun.insert(str(carrot_org[5]))
+		self.lEditCarrotsOrgJul.insert(str(carrot_org[6]))
+		self.lEditCarrotsOrgAug.insert(str(carrot_org[7]))
+		self.lEditCarrotsOrgSep.insert(str(carrot_org[8]))
+		self.lEditCarrotsOrgOct.insert(str(carrot_org[9]))
+		self.lEditCarrotsOrgNov.insert(str(carrot_org[10]))
+		self.lEditCarrotsOrgDec.insert(str(carrot_org[11]))
+		
+		corn_org = datos.get('Corn Org')
+		self.lEditCornOrgJan.insert(str(corn_org[0]))
+		self.lEditCornOrgFeb.insert(str(corn_org[1]))
+		self.lEditCornOrgMar.insert(str(corn_org[2]))
+		self.lEditCornOrgApr.insert(str(corn_org[3]))
+		self.lEditCornOrgMay.insert(str(corn_org[4]))
+		self.lEditCornOrgJun.insert(str(corn_org[5]))
+		self.lEditCornOrgJul.insert(str(corn_org[6]))
+		self.lEditCornOrgAug.insert(str(corn_org[7]))
+		self.lEditCornOrgSep.insert(str(corn_org[8]))
+		self.lEditCornOrgOct.insert(str(corn_org[9]))
+		self.lEditCornOrgNov.insert(str(corn_org[10]))
+		self.lEditCornOrgDec.insert(str(corn_org[11]))
+		
 
-		self.lEditSspJan.insert(str(0))
-		self.lEditSspFeb.insert(str(0))
-		self.lEditSspMar.insert(str(0))
-		self.lEditSspApr.insert(str(0))
-		self.lEditSspMay.insert(str(0))
-		self.lEditSspJun.insert(str(0))
-		self.lEditSspJul.insert(str(0))
-		self.lEditSspAug.insert(str(0))
-		self.lEditSspSep.insert(str(0))
-		self.lEditSspOct.insert(str(0))
-		self.lEditSspNov.insert(str(0))
-		self.lEditSspDec.insert(str(0))   
-		
-		self.lEditBSprJan.insert(str(0))
-		self.lEditBSprFeb.insert(str(0))
-		self.lEditBSprMar.insert(str(0))
-		self.lEditBSprApr.insert(str(0))
-		self.lEditBSprMay.insert(str(0))
-		self.lEditBSprJun.insert(str(0))
-		self.lEditBSprJul.insert(str(0))
-		self.lEditBSprAug.insert(str(0))
-		self.lEditBSprSep.insert(str(0))
-		self.lEditBSprOct.insert(str(0))
-		self.lEditBSprNov.insert(str(0))
-		self.lEditBSprDec.insert(str(0))
-		
-		self.lEditYSqJan.insert(str(0))
-		self.lEditYSqFeb.insert(str(0))
-		self.lEditYSqMar.insert(str(0))
-		self.lEditYSqApr.insert(str(0))
-		self.lEditYSqMay.insert(str(0))
-		self.lEditYSqJun.insert(str(0))
-		self.lEditYSqJul.insert(str(0))
-		self.lEditYSqAug.insert(str(0))
-		self.lEditYSqSep.insert(str(0))
-		self.lEditYSqOct.insert(str(0))
-		self.lEditYSqNov.insert(str(0))
-		self.lEditYSqDec.insert(str(0))
-		
-		self.lEditGZuccJan.insert(str(0))
-		self.lEditGZuccFeb.insert(str(0))
-		self.lEditGZuccMar.insert(str(0))
-		self.lEditGZuccApr.insert(str(0))
-		self.lEditGZuccMay.insert(str(0))
-		self.lEditGZuccJun.insert(str(0))
-		self.lEditGZuccJul.insert(str(0))
-		self.lEditGZuccAug.insert(str(0))
-		self.lEditGZuccSep.insert(str(0))
-		self.lEditGZuccOct.insert(str(0))
-		self.lEditGZuccNov.insert(str(0))
-		self.lEditGZuccDec.insert(str(0))
-		
-		self.lEditBroccOrgJan.insert(str(0))
-		self.lEditBroccOrgFeb.insert(str(0))
-		self.lEditBroccOrgMar.insert(str(0))
-		self.lEditBroccOrgApr.insert(str(0))
-		self.lEditBroccOrgMay.insert(str(0))
-		self.lEditBroccOrgJun.insert(str(0))
-		self.lEditBroccOrgJul.insert(str(0))
-		self.lEditBroccOrgAug.insert(str(0))
-		self.lEditBroccOrgSep.insert(str(0))
-		self.lEditBroccOrgOct.insert(str(0))
-		self.lEditBroccOrgNov.insert(str(0))
-		self.lEditBroccOrgDec.insert(str(0))
-		
-		self.lEditCaulifOrgJan.insert(str(0))
-		self.lEditCaulifOrgFeb.insert(str(0))
-		self.lEditCaulifOrgMar.insert(str(0))
-		self.lEditCaulifOrgApr.insert(str(0))
-		self.lEditCaulifOrgMay.insert(str(0))
-		self.lEditCaulifOrgJun.insert(str(0))
-		self.lEditCaulifOrgJul.insert(str(0))
-		self.lEditCaulifOrgAug.insert(str(0))
-		self.lEditCaulifOrgSep.insert(str(0))
-		self.lEditCaulifOrgOct.insert(str(0))
-		self.lEditCaulifOrgNov.insert(str(0))
-		self.lEditCaulifOrgDec.insert(str(0))
-		
-		self.lEditCarrotsOrgJan.insert(str(0))
-		self.lEditCarrotsOrgFeb.insert(str(0))
-		self.lEditCarrotsOrgMar.insert(str(0))
-		self.lEditCarrotsOrgApr.insert(str(0))
-		self.lEditCarrotsOrgMay.insert(str(0))
-		self.lEditCarrotsOrgJun.insert(str(0))
-		self.lEditCarrotsOrgJul.insert(str(0))
-		self.lEditCarrotsOrgAug.insert(str(0))
-		self.lEditCarrotsOrgSep.insert(str(0))
-		self.lEditCarrotsOrgOct.insert(str(0))
-		self.lEditCarrotsOrgNov.insert(str(0))
-		self.lEditCarrotsOrgDec.insert(str(0))
-		
-		self.lEditCornOrgJan.insert(str(0))
-		self.lEditCornOrgFeb.insert(str(0))
-		self.lEditCornOrgMar.insert(str(0))
-		self.lEditCornOrgApr.insert(str(0))
-		self.lEditCornOrgMay.insert(str(0))
-		self.lEditCornOrgJun.insert(str(0))
-		self.lEditCornOrgJul.insert(str(0))
-		self.lEditCornOrgAug.insert(str(0))
-		self.lEditCornOrgSep.insert(str(0))
-		self.lEditCornOrgOct.insert(str(0))
-		self.lEditCornOrgNov.insert(str(0))
-		self.lEditCornOrgDec.insert(str(0))
-		
-		self.lEditEdamameOrgJan.insert(str(0))
-		self.lEditEdamameOrgFeb.insert(str(0))
-		self.lEditEdamameOrgMar.insert(str(0))
-		self.lEditEdamameOrgApr.insert(str(0))
-		self.lEditEdamameOrgMay.insert(str(0))
-		self.lEditEdamameOrgJun.insert(str(0))
-		self.lEditEdamameOrgJul.insert(str(0))
-		self.lEditEdamameOrgAug.insert(str(0))
-		self.lEditEdamameOrgSep.insert(str(0))
-		self.lEditEdamameOrgOct.insert(str(0))
-		self.lEditEdamameOrgNov.insert(str(0))
-		self.lEditEdamameOrgDec.insert(str(0))
+		edamame_org = datos.get('Edamame Org')
+		self.lEditEdamameOrgJan.insert(str(edamame_org[0]))
+		self.lEditEdamameOrgFeb.insert(str(edamame_org[1]))
+		self.lEditEdamameOrgMar.insert(str(edamame_org[2]))
+		self.lEditEdamameOrgApr.insert(str(edamame_org[3]))
+		self.lEditEdamameOrgMay.insert(str(edamame_org[4]))
+		self.lEditEdamameOrgJun.insert(str(edamame_org[5]))
+		self.lEditEdamameOrgJul.insert(str(edamame_org[6]))
+		self.lEditEdamameOrgAug.insert(str(edamame_org[7]))
+		self.lEditEdamameOrgSep.insert(str(edamame_org[8]))
+		self.lEditEdamameOrgOct.insert(str(edamame_org[9]))
+		self.lEditEdamameOrgNov.insert(str(edamame_org[10]))
+		self.lEditEdamameOrgDec.insert(str(edamame_org[11]))
 		self.unlock_fields()
 
 	def issue_keys(self):
@@ -1340,175 +1474,175 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.lEditEdamameOrgDec.setEnabled(False)
 		
 	def unlock_fields(self):
-		self.lEditTotSalesJan.setEnabled(True)
-		self.lEditTotSalesFeb.setEnabled(True)
-		self.lEditTotSalesMar.setEnabled(True)
-		self.lEditTotSalesApr.setEnabled(True)
-		self.lEditTotSalesMay.setEnabled(True)
-		self.lEditTotSalesJun.setEnabled(True)
-		self.lEditTotSalesJul.setEnabled(True)
-		self.lEditTotSalesAug.setEnabled(True)
-		self.lEditTotSalesSep.setEnabled(True)
-		self.lEditTotSalesOct.setEnabled(True)
-		self.lEditTotSalesNov.setEnabled(True)
-		self.lEditTotSalesDec.setEnabled(True)
-
-
-		self.lEditBrJan.setEnabled(True)
-		self.lEditBrFeb.setEnabled(True)
-		self.lEditBrMar.setEnabled(True)
-		self.lEditBrApr.setEnabled(True)
-		self.lEditBrMay.setEnabled(True)
-		self.lEditBrJun.setEnabled(True)
-		self.lEditBrJul.setEnabled(True)
-		self.lEditBrAug.setEnabled(True)
-		self.lEditBrSep.setEnabled(True)
-		self.lEditBrOct.setEnabled(True)
-		self.lEditBrNov.setEnabled(True)
-		self.lEditBrDec.setEnabled(True)
-		
-		self.lEditCaulifJan.setEnabled(True)
-		self.lEditCaulifFeb.setEnabled(True)
-		self.lEditCaulifMar.setEnabled(True)
-		self.lEditCaulifApr.setEnabled(True)
-		self.lEditCaulifMay.setEnabled(True)
-		self.lEditCaulifJun.setEnabled(True)
-		self.lEditCaulifJul.setEnabled(True)
-		self.lEditCaulifAug.setEnabled(True)
-		self.lEditCaulifSep.setEnabled(True)
-		self.lEditCaulifOct.setEnabled(True)
-		self.lEditCaulifNov.setEnabled(True)
-		self.lEditCaulifDec.setEnabled(True)
-		
-		self.lEditBSprJan.setEnabled(True)
-		self.lEditBSprFeb.setEnabled(True)
-		self.lEditBSprMar.setEnabled(True)
-		self.lEditBSprApr.setEnabled(True)
-		self.lEditBSprMay.setEnabled(True)
-		self.lEditBSprJun.setEnabled(True)
-		self.lEditBSprJul.setEnabled(True)
-		self.lEditBSprAug.setEnabled(True)
-		self.lEditBSprSep.setEnabled(True)
-		self.lEditBSprOct.setEnabled(True)
-		self.lEditBSprNov.setEnabled(True)
-		self.lEditBSprDec.setEnabled(True)
-		
-		self.lEditSspJan.setEnabled(True)
-		self.lEditSspFeb.setEnabled(True)
-		self.lEditSspMar.setEnabled(True)
-		self.lEditSspApr.setEnabled(True)
-		self.lEditSspMay.setEnabled(True)
-		self.lEditSspJun.setEnabled(True)
-		self.lEditSspJul.setEnabled(True)
-		self.lEditSspAug.setEnabled(True)
-		self.lEditSspSep.setEnabled(True)
-		self.lEditSspOct.setEnabled(True)
-		self.lEditSspNov.setEnabled(True)
-		self.lEditSspDec.setEnabled(True)
-		
-		self.lEditYSqJan.setEnabled(True)
-		self.lEditYSqFeb.setEnabled(True)
-		self.lEditYSqMar.setEnabled(True)
-		self.lEditYSqApr.setEnabled(True)
-		self.lEditYSqMay.setEnabled(True)
-		self.lEditYSqJun.setEnabled(True)
-		self.lEditYSqJul.setEnabled(True)
-		self.lEditYSqAug.setEnabled(True)
-		self.lEditYSqSep.setEnabled(True)
-		self.lEditYSqOct.setEnabled(True)
-		self.lEditYSqNov.setEnabled(True)
-		self.lEditYSqDec.setEnabled(True)
-		
-		self.lEditGZuccJan.setEnabled(True)
-		self.lEditGZuccFeb.setEnabled(True)
-		self.lEditGZuccMar.setEnabled(True)
-		self.lEditGZuccApr.setEnabled(True)
-		self.lEditGZuccMay.setEnabled(True)
-		self.lEditGZuccJun.setEnabled(True)
-		self.lEditGZuccJul.setEnabled(True)
-		self.lEditGZuccAug.setEnabled(True)
-		self.lEditGZuccSep.setEnabled(True)
-		self.lEditGZuccOct.setEnabled(True)
-		self.lEditGZuccNov.setEnabled(True)
-		self.lEditGZuccDec.setEnabled(True)
-		
-		self.lEditGZuccJan.setEnabled(True)
-		self.lEditGZuccFeb.setEnabled(True)
-		self.lEditGZuccMar.setEnabled(True)
-		self.lEditGZuccApr.setEnabled(True)
-		self.lEditGZuccMay.setEnabled(True)
-		self.lEditGZuccJun.setEnabled(True)
-		self.lEditGZuccJul.setEnabled(True)
-		self.lEditGZuccAug.setEnabled(True)
-		self.lEditGZuccSep.setEnabled(True)
-		self.lEditGZuccOct.setEnabled(True)
-		self.lEditGZuccNov.setEnabled(True)
-		self.lEditGZuccDec.setEnabled(True)
-		
-		self.lEditBroccOrgJan.setEnabled(True)
-		self.lEditBroccOrgFeb.setEnabled(True)
-		self.lEditBroccOrgMar.setEnabled(True)
-		self.lEditBroccOrgApr.setEnabled(True)
-		self.lEditBroccOrgMay.setEnabled(True)
-		self.lEditBroccOrgJun.setEnabled(True)
-		self.lEditBroccOrgJul.setEnabled(True)
-		self.lEditBroccOrgAug.setEnabled(True)
-		self.lEditBroccOrgSep.setEnabled(True)
-		self.lEditBroccOrgOct.setEnabled(True)
-		self.lEditBroccOrgNov.setEnabled(True)
-		self.lEditBroccOrgDec.setEnabled(True)
-		
-		self.lEditCaulifOrgJan.setEnabled(True)
-		self.lEditCaulifOrgFeb.setEnabled(True)
-		self.lEditCaulifOrgMar.setEnabled(True)
-		self.lEditCaulifOrgApr.setEnabled(True)
-		self.lEditCaulifOrgMay.setEnabled(True)
-		self.lEditCaulifOrgJun.setEnabled(True)
-		self.lEditCaulifOrgJul.setEnabled(True)
-		self.lEditCaulifOrgAug.setEnabled(True)
-		self.lEditCaulifOrgSep.setEnabled(True)
-		self.lEditCaulifOrgOct.setEnabled(True)
-		self.lEditCaulifOrgNov.setEnabled(True)
-		self.lEditCaulifOrgDec.setEnabled(True)
-		
-		self.lEditCarrotsOrgJan.setEnabled(True)
-		self.lEditCarrotsOrgFeb.setEnabled(True)
-		self.lEditCarrotsOrgMar.setEnabled(True)
-		self.lEditCarrotsOrgApr.setEnabled(True)
-		self.lEditCarrotsOrgMay.setEnabled(True)
-		self.lEditCarrotsOrgJun.setEnabled(True)
-		self.lEditCarrotsOrgJul.setEnabled(True)
-		self.lEditCarrotsOrgAug.setEnabled(True)
-		self.lEditCarrotsOrgSep.setEnabled(True)
-		self.lEditCarrotsOrgOct.setEnabled(True)
-		self.lEditCarrotsOrgNov.setEnabled(True)
-		self.lEditCarrotsOrgDec.setEnabled(True)
-		
-		self.lEditCornOrgJan.setEnabled(True)
-		self.lEditCornOrgFeb.setEnabled(True)
-		self.lEditCornOrgMar.setEnabled(True)
-		self.lEditCornOrgApr.setEnabled(True)
-		self.lEditCornOrgMay.setEnabled(True)
-		self.lEditCornOrgJun.setEnabled(True)
-		self.lEditCornOrgJul.setEnabled(True)
-		self.lEditCornOrgAug.setEnabled(True)
-		self.lEditCornOrgSep.setEnabled(True)
-		self.lEditCornOrgOct.setEnabled(True)
-		self.lEditCornOrgNov.setEnabled(True)
-		self.lEditCornOrgDec.setEnabled(True)
-		
-		self.lEditEdamameOrgJan.setEnabled(True)
-		self.lEditEdamameOrgFeb.setEnabled(True)
-		self.lEditEdamameOrgMar.setEnabled(True)
-		self.lEditEdamameOrgApr.setEnabled(True)
-		self.lEditEdamameOrgMay.setEnabled(True)
-		self.lEditEdamameOrgJun.setEnabled(True)
-		self.lEditEdamameOrgJul.setEnabled(True)
-		self.lEditEdamameOrgAug.setEnabled(True)
-		self.lEditEdamameOrgSep.setEnabled(True)
-		self.lEditEdamameOrgOct.setEnabled(True)
-		self.lEditEdamameOrgNov.setEnabled(True)
-		self.lEditEdamameOrgDec.setEnabled(True)
+		"""self.lEditTotSalesJan.setEnabled(True)
+								self.lEditTotSalesFeb.setEnabled(True)
+								self.lEditTotSalesMar.setEnabled(True)
+								self.lEditTotSalesApr.setEnabled(True)
+								self.lEditTotSalesMay.setEnabled(True)
+								self.lEditTotSalesJun.setEnabled(True)
+								self.lEditTotSalesJul.setEnabled(True)
+								self.lEditTotSalesAug.setEnabled(True)
+								self.lEditTotSalesSep.setEnabled(True)
+								self.lEditTotSalesOct.setEnabled(True)
+								self.lEditTotSalesNov.setEnabled(True)
+								self.lEditTotSalesDec.setEnabled(True)
+						
+						
+								self.lEditBrJan.setEnabled(True)
+								self.lEditBrFeb.setEnabled(True)
+								self.lEditBrMar.setEnabled(True)
+								self.lEditBrApr.setEnabled(True)
+								self.lEditBrMay.setEnabled(True)
+								self.lEditBrJun.setEnabled(True)
+								self.lEditBrJul.setEnabled(True)
+								self.lEditBrAug.setEnabled(True)
+								self.lEditBrSep.setEnabled(True)
+								self.lEditBrOct.setEnabled(True)
+								self.lEditBrNov.setEnabled(True)
+								self.lEditBrDec.setEnabled(True)
+								
+								self.lEditCaulifJan.setEnabled(True)
+								self.lEditCaulifFeb.setEnabled(True)
+								self.lEditCaulifMar.setEnabled(True)
+								self.lEditCaulifApr.setEnabled(True)
+								self.lEditCaulifMay.setEnabled(True)
+								self.lEditCaulifJun.setEnabled(True)
+								self.lEditCaulifJul.setEnabled(True)
+								self.lEditCaulifAug.setEnabled(True)
+								self.lEditCaulifSep.setEnabled(True)
+								self.lEditCaulifOct.setEnabled(True)
+								self.lEditCaulifNov.setEnabled(True)
+								self.lEditCaulifDec.setEnabled(True)
+								
+								self.lEditBSprJan.setEnabled(True)
+								self.lEditBSprFeb.setEnabled(True)
+								self.lEditBSprMar.setEnabled(True)
+								self.lEditBSprApr.setEnabled(True)
+								self.lEditBSprMay.setEnabled(True)
+								self.lEditBSprJun.setEnabled(True)
+								self.lEditBSprJul.setEnabled(True)
+								self.lEditBSprAug.setEnabled(True)
+								self.lEditBSprSep.setEnabled(True)
+								self.lEditBSprOct.setEnabled(True)
+								self.lEditBSprNov.setEnabled(True)
+								self.lEditBSprDec.setEnabled(True)
+								
+								self.lEditSspJan.setEnabled(True)
+								self.lEditSspFeb.setEnabled(True)
+								self.lEditSspMar.setEnabled(True)
+								self.lEditSspApr.setEnabled(True)
+								self.lEditSspMay.setEnabled(True)
+								self.lEditSspJun.setEnabled(True)
+								self.lEditSspJul.setEnabled(True)
+								self.lEditSspAug.setEnabled(True)
+								self.lEditSspSep.setEnabled(True)
+								self.lEditSspOct.setEnabled(True)
+								self.lEditSspNov.setEnabled(True)
+								self.lEditSspDec.setEnabled(True)
+								
+								self.lEditYSqJan.setEnabled(True)
+								self.lEditYSqFeb.setEnabled(True)
+								self.lEditYSqMar.setEnabled(True)
+								self.lEditYSqApr.setEnabled(True)
+								self.lEditYSqMay.setEnabled(True)
+								self.lEditYSqJun.setEnabled(True)
+								self.lEditYSqJul.setEnabled(True)
+								self.lEditYSqAug.setEnabled(True)
+								self.lEditYSqSep.setEnabled(True)
+								self.lEditYSqOct.setEnabled(True)
+								self.lEditYSqNov.setEnabled(True)
+								self.lEditYSqDec.setEnabled(True)
+								
+								self.lEditGZuccJan.setEnabled(True)
+								self.lEditGZuccFeb.setEnabled(True)
+								self.lEditGZuccMar.setEnabled(True)
+								self.lEditGZuccApr.setEnabled(True)
+								self.lEditGZuccMay.setEnabled(True)
+								self.lEditGZuccJun.setEnabled(True)
+								self.lEditGZuccJul.setEnabled(True)
+								self.lEditGZuccAug.setEnabled(True)
+								self.lEditGZuccSep.setEnabled(True)
+								self.lEditGZuccOct.setEnabled(True)
+								self.lEditGZuccNov.setEnabled(True)
+								self.lEditGZuccDec.setEnabled(True)
+								
+								self.lEditGZuccJan.setEnabled(True)
+								self.lEditGZuccFeb.setEnabled(True)
+								self.lEditGZuccMar.setEnabled(True)
+								self.lEditGZuccApr.setEnabled(True)
+								self.lEditGZuccMay.setEnabled(True)
+								self.lEditGZuccJun.setEnabled(True)
+								self.lEditGZuccJul.setEnabled(True)
+								self.lEditGZuccAug.setEnabled(True)
+								self.lEditGZuccSep.setEnabled(True)
+								self.lEditGZuccOct.setEnabled(True)
+								self.lEditGZuccNov.setEnabled(True)
+								self.lEditGZuccDec.setEnabled(True)
+								
+								self.lEditBroccOrgJan.setEnabled(True)
+								self.lEditBroccOrgFeb.setEnabled(True)
+								self.lEditBroccOrgMar.setEnabled(True)
+								self.lEditBroccOrgApr.setEnabled(True)
+								self.lEditBroccOrgMay.setEnabled(True)
+								self.lEditBroccOrgJun.setEnabled(True)
+								self.lEditBroccOrgJul.setEnabled(True)
+								self.lEditBroccOrgAug.setEnabled(True)
+								self.lEditBroccOrgSep.setEnabled(True)
+								self.lEditBroccOrgOct.setEnabled(True)
+								self.lEditBroccOrgNov.setEnabled(True)
+								self.lEditBroccOrgDec.setEnabled(True)
+								
+								self.lEditCaulifOrgJan.setEnabled(True)
+								self.lEditCaulifOrgFeb.setEnabled(True)
+								self.lEditCaulifOrgMar.setEnabled(True)
+								self.lEditCaulifOrgApr.setEnabled(True)
+								self.lEditCaulifOrgMay.setEnabled(True)
+								self.lEditCaulifOrgJun.setEnabled(True)
+								self.lEditCaulifOrgJul.setEnabled(True)
+								self.lEditCaulifOrgAug.setEnabled(True)
+								self.lEditCaulifOrgSep.setEnabled(True)
+								self.lEditCaulifOrgOct.setEnabled(True)
+								self.lEditCaulifOrgNov.setEnabled(True)
+								self.lEditCaulifOrgDec.setEnabled(True)
+								
+								self.lEditCarrotsOrgJan.setEnabled(True)
+								self.lEditCarrotsOrgFeb.setEnabled(True)
+								self.lEditCarrotsOrgMar.setEnabled(True)
+								self.lEditCarrotsOrgApr.setEnabled(True)
+								self.lEditCarrotsOrgMay.setEnabled(True)
+								self.lEditCarrotsOrgJun.setEnabled(True)
+								self.lEditCarrotsOrgJul.setEnabled(True)
+								self.lEditCarrotsOrgAug.setEnabled(True)
+								self.lEditCarrotsOrgSep.setEnabled(True)
+								self.lEditCarrotsOrgOct.setEnabled(True)
+								self.lEditCarrotsOrgNov.setEnabled(True)
+								self.lEditCarrotsOrgDec.setEnabled(True)
+								
+								self.lEditCornOrgJan.setEnabled(True)
+								self.lEditCornOrgFeb.setEnabled(True)
+								self.lEditCornOrgMar.setEnabled(True)
+								self.lEditCornOrgApr.setEnabled(True)
+								self.lEditCornOrgMay.setEnabled(True)
+								self.lEditCornOrgJun.setEnabled(True)
+								self.lEditCornOrgJul.setEnabled(True)
+								self.lEditCornOrgAug.setEnabled(True)
+								self.lEditCornOrgSep.setEnabled(True)
+								self.lEditCornOrgOct.setEnabled(True)
+								self.lEditCornOrgNov.setEnabled(True)
+								self.lEditCornOrgDec.setEnabled(True)
+								
+								self.lEditEdamameOrgJan.setEnabled(True)
+								self.lEditEdamameOrgFeb.setEnabled(True)
+								self.lEditEdamameOrgMar.setEnabled(True)
+								self.lEditEdamameOrgApr.setEnabled(True)
+								self.lEditEdamameOrgMay.setEnabled(True)
+								self.lEditEdamameOrgJun.setEnabled(True)
+								self.lEditEdamameOrgJul.setEnabled(True)
+								self.lEditEdamameOrgAug.setEnabled(True)
+								self.lEditEdamameOrgSep.setEnabled(True)
+								self.lEditEdamameOrgOct.setEnabled(True)
+								self.lEditEdamameOrgNov.setEnabled(True)
+								self.lEditEdamameOrgDec.setEnabled(True)"""
 		self.pBtnUpdate.setEnabled(True)
 	
 	def label_others (self, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec):

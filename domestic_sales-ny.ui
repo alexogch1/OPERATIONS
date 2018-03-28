@@ -1,0 +1,5502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1345</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblYear">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>10</y>
+     <width>31</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Year</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOrgBrocc">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>40</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Org. Brocc.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPeas">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Peas</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblCaulif">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cauliflower</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPoblano">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Poblano Pepper</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOrgCauli">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Org. Cauliflower</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSnp">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cnv, Carr. Crnk</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblGZucc">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Green Zucc.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOrgCarrots">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Org. Carrots</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalCorn">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Corn</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrg">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Org.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvMonth">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Conv.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJan">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>January</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFeb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>61</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>February</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMar">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>March</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblApr">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>135</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>April</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMay">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>May</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJun">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>185</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>June</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJul">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>July</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOct">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>285</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>October</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblNov">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>310</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>November</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDec">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>335</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>December</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbltotalAnual">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Anual</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAug">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>235</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>August</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSep">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>September</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBtnUpdate">
+   <property name="geometry">
+    <rect>
+     <x>1250</x>
+     <y>480</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualOrgBroc">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>360</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualCaulif">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualOrgCauli">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualConvCarrCrkl">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualGZucc">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgJan">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotCornAnual">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>360</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgJul">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgAug">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgDec">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgMar">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgMay">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgSep">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgOct">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgApr">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgFeb">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgJun">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalJulConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalJanConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalMayConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSepConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAugConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalFebConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalJunConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalDecConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAprConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalNovConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOctConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>705</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalMarConv">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>350</y>
+     <width>1100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotAnualCarrotOrg">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>360</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualPoblano">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>360</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualPeas">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualOrg">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>705</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Title">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>0</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>DOMESTIC SALES (POUNDS)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalOrgNov">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBtnSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1250</x>
+     <y>450</y>
+     <width>71</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>Start a New Year</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_year_selected">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>10</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBtnSelectYear">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>10</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select Year</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbtnClose">
+   <property name="geometry">
+    <rect>
+     <x>1250</x>
+     <y>420</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close Window</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblConvBrocc">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Conv. Brocc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualConvBrocc">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>360</y>
+     <width>90</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccJan">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>60</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccFeb">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>85</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccMar">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>110</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccApr">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>135</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccAug">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>235</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccMay">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>160</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccJun">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>185</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccJul">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>210</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccSep">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>260</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccNov">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>310</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccOct">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>285</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifJan">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliJan">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklJan">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccJan">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifFeb">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliFeb">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccFeb">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklFeb">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccFeb">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccMar">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifMar">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliMar">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklMar">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccMar">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifApr">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccApr">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklApr">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliApr">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccMay">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifMay">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccApr">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklMay">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliMay">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccMay">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccJun">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifJun">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliJun">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklJun">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccJun">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifJul">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccJul">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklJul">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliJul">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifAug">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccJul">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccAug">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklAug">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliAug">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccAug">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccSep">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifSep">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklSep">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliSep">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccSep">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccOct">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliOct">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifOct">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklOct">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccNov">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccOct">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklNov">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifNov">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliNov">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccNov">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccJan">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCaulifDec">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvBroccDec">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>335</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgCauliDec">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOrgBroccDec">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGZuccDec">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrCrklDec">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasJan">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoJan">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgJan">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornJan">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasFeb">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoFeb">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgFeb">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornFeb">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasMar">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoMar">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornMar">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgMar">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgApr">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasApr">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoApr">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasMay">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornApr">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoMay">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgMay">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornMay">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasJun">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoJun">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornJun">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgJun">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgJul">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoJul">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasJul">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornJul">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasAug">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornAug">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoAug">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgAug">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoSep">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasSep">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgSep">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornSep">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasOct">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoOct">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornOct">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgOct">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoNov">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgNov">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasNov">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornNov">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPeasDec">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditTotalCornDec">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPoblanoDec">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditCarrotsOrgDec">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotWCorn">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>360</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornJan">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornAug">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblWCorn">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Whole Corn</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornJul">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornMar">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornJun">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornNov">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornDec">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornApr">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornMay">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornSep">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornFeb">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCornOct">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornSep">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornOct">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCorn">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Sweet Corn Gr</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotAnualSweetCorn">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>360</y>
+     <width>75</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornNov">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornJul">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornJun">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornJan">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornApr">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornMar">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornAug">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornFeb">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornDec">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSweetCornMay">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachJul">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualOnion">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualRedPepper">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushSep">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersApr">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushJan">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualSpinach">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachSep">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansNov">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>655</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperMay">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasJan">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasNov">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNJun">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperFeb">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSnowPeas">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Snow Peas</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNMar">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansApr">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>480</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachAug">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasAug">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOthers">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Others</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersJul">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperMar">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesAug">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionOct">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblApr_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>480</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>April</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotAnualSnowPeas">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>705</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNApr">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersSep">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPotatoes">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Potatoes</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperSep">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachFeb">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushOct">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperJan">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushNov">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionMar">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasJul">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushJul">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasMar">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionSep">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJan_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>405</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>January</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushApr">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNDec">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachDec">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansOct">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>630</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionMay">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesFeb">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNFeb">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDec_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>680</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>December</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachMar">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperJun">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushMar">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersJun">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesApr">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOnion">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Onion</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionDec">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansMay">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>505</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperDec">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblWCN">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Water Ch Nuts</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNSep">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblOct_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>630</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>October</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesJun">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionFeb">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNJul">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualPotatoes">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualGreenBeans">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>705</y>
+     <width>90</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersMar">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansAug">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>580</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesJul">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperNov">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNNov">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasApr">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNAug">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansJun">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>530</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasDec">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansDec">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>680</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesSep">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachJan">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJul_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>555</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>July</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>695</y>
+     <width>1100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesMay">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMay_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>505</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>May</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasOct">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNOct">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperOct">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersDec">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionAug">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSep_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>605</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>September</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersAug">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperJul">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansFeb">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>430</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansJan">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>405</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushDec">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFeb_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>435</y>
+     <width>61</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>February</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMushr">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>385</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mushrooms</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesDec">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>680</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansJul">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>555</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualWCN">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNMay">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachMay">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesOct">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJun_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>June</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansSep">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>605</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachJun">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblRedPepper">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Red Pepper</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAug_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>580</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>August</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblNov_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>655</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>November</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualOthers">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>705</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushAug">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasJun">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditGreenBeansMar">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>455</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachNov">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesMar">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>455</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersJan">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachApr">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersMay">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperAug">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>580</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersFeb">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditWCNJan">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasSep">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>605</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionJan">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersNov">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionNov">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblGreenBeans">
+   <property name="geometry">
+    <rect>
+     <x>65</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Green Beans</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionJun">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesNov">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>655</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualMush">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>705</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasMay">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMar_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>455</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>March</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditRedPepperApr">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionApr">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>480</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditPotatoesJan">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>405</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushJun">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>530</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushMay">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>505</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSpinach">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Spinach</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbltotalAnual_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>705</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Anual</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOnionJul">
+   <property name="geometry">
+    <rect>
+     <x>247</x>
+     <y>555</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditOthersOct">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSpinachOct">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>630</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditSnowPeasFeb">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditMushFeb">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>430</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesJan">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>400</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesApr">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>475</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesJun">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>525</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesMay">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>500</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesSep">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>600</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesDec">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>675</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesAnual">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>700</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSales">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>385</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Sales</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesAug">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>575</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesNov">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>650</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesMar">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>450</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesFeb">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>425</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesOct">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>625</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalSalesJul">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>550</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdJul">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdMay">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdMar">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdJan">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdJun">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdApr">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSnp_2">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Conv. Carr. Dice</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdAug">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdSep">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdNov">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdDec">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalAnualConvCarrDcd">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>360</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdFeb">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEditConvCarrDcdOct">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotJan">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>60</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarr">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>40</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Conv. Carr.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotNov">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>310</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotAug">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>235</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotAnualConvCarrot">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>360</y>
+     <width>75</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotFeb">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>85</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotApr">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>135</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotJun">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>185</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotDec">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>335</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotMar">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>110</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotMay">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotOct">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>285</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotJul">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>210</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotalConvCarrotSep">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <zorder>lEditConvBroccJan</zorder>
+  <zorder>lEditConvBroccFeb</zorder>
+  <zorder>lEditConvBroccMar</zorder>
+  <zorder>lEditConvBroccApr</zorder>
+  <zorder>lEditConvBroccAug</zorder>
+  <zorder>lEditConvBroccMay</zorder>
+  <zorder>lEditConvBroccJun</zorder>
+  <zorder>lEditConvBroccJul</zorder>
+  <zorder>lEditConvBroccSep</zorder>
+  <zorder>lEditConvBroccNov</zorder>
+  <zorder>lEditConvBroccOct</zorder>
+  <zorder>lEditCaulifJan</zorder>
+  <zorder>lEditOrgCauliJan</zorder>
+  <zorder>lEditConvCarrCrklJan</zorder>
+  <zorder>lEditGZuccJan</zorder>
+  <zorder>lEditCaulifFeb</zorder>
+  <zorder>lEditOrgCauliFeb</zorder>
+  <zorder>lEditOrgBroccFeb</zorder>
+  <zorder>lEditConvCarrCrklFeb</zorder>
+  <zorder>lEditGZuccFeb</zorder>
+  <zorder>lEditOrgBroccMar</zorder>
+  <zorder>lEditCaulifMar</zorder>
+  <zorder>lEditOrgCauliMar</zorder>
+  <zorder>lEditConvCarrCrklMar</zorder>
+  <zorder>lEditGZuccMar</zorder>
+  <zorder>lEditCaulifApr</zorder>
+  <zorder>lEditOrgBroccApr</zorder>
+  <zorder>lEditConvCarrCrklApr</zorder>
+  <zorder>lEditOrgCauliApr</zorder>
+  <zorder>lEditOrgBroccMay</zorder>
+  <zorder>lEditCaulifMay</zorder>
+  <zorder>lEditGZuccApr</zorder>
+  <zorder>lEditConvCarrCrklMay</zorder>
+  <zorder>lEditOrgCauliMay</zorder>
+  <zorder>lEditGZuccMay</zorder>
+  <zorder>lEditOrgBroccJun</zorder>
+  <zorder>lEditCaulifJun</zorder>
+  <zorder>lEditOrgCauliJun</zorder>
+  <zorder>lEditConvCarrCrklJun</zorder>
+  <zorder>lEditGZuccJun</zorder>
+  <zorder>lEditCaulifJul</zorder>
+  <zorder>lEditOrgBroccJul</zorder>
+  <zorder>lEditConvCarrCrklJul</zorder>
+  <zorder>lEditOrgCauliJul</zorder>
+  <zorder>lEditCaulifAug</zorder>
+  <zorder>lEditGZuccJul</zorder>
+  <zorder>lEditOrgBroccAug</zorder>
+  <zorder>lEditConvCarrCrklAug</zorder>
+  <zorder>lEditOrgCauliAug</zorder>
+  <zorder>lEditGZuccAug</zorder>
+  <zorder>lEditOrgBroccSep</zorder>
+  <zorder>lEditCaulifSep</zorder>
+  <zorder>lEditConvCarrCrklSep</zorder>
+  <zorder>lEditOrgCauliSep</zorder>
+  <zorder>lEditGZuccSep</zorder>
+  <zorder>lEditOrgBroccOct</zorder>
+  <zorder>lEditOrgCauliOct</zorder>
+  <zorder>lEditCaulifOct</zorder>
+  <zorder>lEditConvCarrCrklOct</zorder>
+  <zorder>lEditOrgBroccNov</zorder>
+  <zorder>lEditGZuccOct</zorder>
+  <zorder>lEditConvCarrCrklNov</zorder>
+  <zorder>lEditCaulifNov</zorder>
+  <zorder>lEditOrgCauliNov</zorder>
+  <zorder>lEditGZuccNov</zorder>
+  <zorder>lEditOrgBroccJan</zorder>
+  <zorder>lEditCaulifDec</zorder>
+  <zorder>lEditConvBroccDec</zorder>
+  <zorder>lEditOrgCauliDec</zorder>
+  <zorder>lEditOrgBroccDec</zorder>
+  <zorder>lEditGZuccDec</zorder>
+  <zorder>lEditConvCarrCrklDec</zorder>
+  <zorder>lEditPeasJan</zorder>
+  <zorder>lEditPoblanoJan</zorder>
+  <zorder>lEditCarrotsOrgJan</zorder>
+  <zorder>lEditTotalCornJan</zorder>
+  <zorder>lEditPeasFeb</zorder>
+  <zorder>lEditPoblanoFeb</zorder>
+  <zorder>lEditCarrotsOrgFeb</zorder>
+  <zorder>lEditTotalCornFeb</zorder>
+  <zorder>lEditPeasMar</zorder>
+  <zorder>lEditPoblanoMar</zorder>
+  <zorder>lEditTotalCornMar</zorder>
+  <zorder>lEditCarrotsOrgMar</zorder>
+  <zorder>lEditCarrotsOrgApr</zorder>
+  <zorder>lEditPeasApr</zorder>
+  <zorder>lEditPoblanoApr</zorder>
+  <zorder>lEditPeasMay</zorder>
+  <zorder>lEditTotalCornApr</zorder>
+  <zorder>lEditPoblanoMay</zorder>
+  <zorder>lEditCarrotsOrgMay</zorder>
+  <zorder>lEditTotalCornMay</zorder>
+  <zorder>lEditPeasJun</zorder>
+  <zorder>lEditPoblanoJun</zorder>
+  <zorder>lEditTotalCornJun</zorder>
+  <zorder>lEditCarrotsOrgJun</zorder>
+  <zorder>lEditCarrotsOrgJul</zorder>
+  <zorder>lEditPoblanoJul</zorder>
+  <zorder>lEditPeasJul</zorder>
+  <zorder>lEditTotalCornJul</zorder>
+  <zorder>lEditPeasAug</zorder>
+  <zorder>lEditTotalCornAug</zorder>
+  <zorder>lEditPoblanoAug</zorder>
+  <zorder>lEditCarrotsOrgAug</zorder>
+  <zorder>lEditPoblanoSep</zorder>
+  <zorder>lEditPeasSep</zorder>
+  <zorder>lEditCarrotsOrgSep</zorder>
+  <zorder>lEditTotalCornSep</zorder>
+  <zorder>lEditPeasOct</zorder>
+  <zorder>lEditPoblanoOct</zorder>
+  <zorder>lEditTotalCornOct</zorder>
+  <zorder>lEditCarrotsOrgOct</zorder>
+  <zorder>lEditPoblanoNov</zorder>
+  <zorder>lEditCarrotsOrgNov</zorder>
+  <zorder>lEditPeasNov</zorder>
+  <zorder>lEditTotalCornNov</zorder>
+  <zorder>lEditPeasDec</zorder>
+  <zorder>lEditTotalCornDec</zorder>
+  <zorder>lEditPoblanoDec</zorder>
+  <zorder>lEditCarrotsOrgDec</zorder>
+  <zorder>lblYear</zorder>
+  <zorder>lblOrgBrocc</zorder>
+  <zorder>lblPeas</zorder>
+  <zorder>lblCaulif</zorder>
+  <zorder>lblPoblano</zorder>
+  <zorder>lblOrgCauli</zorder>
+  <zorder>lblSnp</zorder>
+  <zorder>lblGZucc</zorder>
+  <zorder>lblOrgCarrots</zorder>
+  <zorder>lblTotalCorn</zorder>
+  <zorder>lblTotalOrg</zorder>
+  <zorder>lblTotalConvMonth</zorder>
+  <zorder>lblJan</zorder>
+  <zorder>lblFeb</zorder>
+  <zorder>lblMar</zorder>
+  <zorder>lblApr</zorder>
+  <zorder>lblMay</zorder>
+  <zorder>lblJun</zorder>
+  <zorder>lblJul</zorder>
+  <zorder>lblOct</zorder>
+  <zorder>lblNov</zorder>
+  <zorder>lblDec</zorder>
+  <zorder>lbltotalAnual</zorder>
+  <zorder>lblAug</zorder>
+  <zorder>lblSep</zorder>
+  <zorder>pBtnUpdate</zorder>
+  <zorder>lblTotalAnualOrgBroc</zorder>
+  <zorder>lblTotalAnualCaulif</zorder>
+  <zorder>lblTotalAnualOrgCauli</zorder>
+  <zorder>lblTotalAnualConvCarrCrkl</zorder>
+  <zorder>lblTotalAnualGZucc</zorder>
+  <zorder>lblTotalOrgJan</zorder>
+  <zorder>lblTotCornAnual</zorder>
+  <zorder>lblTotalOrgJul</zorder>
+  <zorder>lblTotalOrgAug</zorder>
+  <zorder>lblTotalOrgDec</zorder>
+  <zorder>lblTotalOrgMar</zorder>
+  <zorder>lblTotalOrgMay</zorder>
+  <zorder>lblTotalOrgSep</zorder>
+  <zorder>lblTotalOrgOct</zorder>
+  <zorder>lblTotalOrgApr</zorder>
+  <zorder>lblTotalOrgFeb</zorder>
+  <zorder>lblTotalOrgJun</zorder>
+  <zorder>lblTotalJulConv</zorder>
+  <zorder>lblTotalJanConv</zorder>
+  <zorder>lblTotalMayConv</zorder>
+  <zorder>lblTotalSepConv</zorder>
+  <zorder>lblTotalAugConv</zorder>
+  <zorder>lblTotalFebConv</zorder>
+  <zorder>lblTotalJunConv</zorder>
+  <zorder>lblTotalDecConv</zorder>
+  <zorder>lblTotalAprConv</zorder>
+  <zorder>lblTotalNovConv</zorder>
+  <zorder>lblTotalOctConv</zorder>
+  <zorder>lblTotalAnualConv</zorder>
+  <zorder>lblTotalMarConv</zorder>
+  <zorder>line</zorder>
+  <zorder>lblTotAnualCarrotOrg</zorder>
+  <zorder>lblTotalAnualPoblano</zorder>
+  <zorder>lblTotalAnualPeas</zorder>
+  <zorder>lblTotalAnualOrg</zorder>
+  <zorder>Title</zorder>
+  <zorder>lblTotalOrgNov</zorder>
+  <zorder>pBtnSave</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lbl_year_selected</zorder>
+  <zorder>pBtnSelectYear</zorder>
+  <zorder>pbtnClose</zorder>
+  <zorder>lblConvBrocc</zorder>
+  <zorder>lblTotalAnualConvBrocc</zorder>
+  <zorder>lblTotWCorn</zorder>
+  <zorder>lEditWCornJan</zorder>
+  <zorder>lEditWCornAug</zorder>
+  <zorder>lblWCorn</zorder>
+  <zorder>lEditWCornJul</zorder>
+  <zorder>lEditWCornMar</zorder>
+  <zorder>lEditWCornJun</zorder>
+  <zorder>lEditWCornNov</zorder>
+  <zorder>lEditWCornDec</zorder>
+  <zorder>lEditWCornApr</zorder>
+  <zorder>lEditWCornMay</zorder>
+  <zorder>lEditWCornSep</zorder>
+  <zorder>lEditWCornFeb</zorder>
+  <zorder>lEditWCornOct</zorder>
+  <zorder>lblSweetCornSep</zorder>
+  <zorder>lblSweetCornOct</zorder>
+  <zorder>lblSweetCorn</zorder>
+  <zorder>lblTotAnualSweetCorn</zorder>
+  <zorder>lblSweetCornNov</zorder>
+  <zorder>lblSweetCornJul</zorder>
+  <zorder>lblSweetCornJun</zorder>
+  <zorder>lblSweetCornJan</zorder>
+  <zorder>lblSweetCornApr</zorder>
+  <zorder>lblSweetCornMar</zorder>
+  <zorder>lblSweetCornAug</zorder>
+  <zorder>lblSweetCornFeb</zorder>
+  <zorder>lblSweetCornDec</zorder>
+  <zorder>lblSweetCornMay</zorder>
+  <zorder>lEditSpinachJul</zorder>
+  <zorder>lblTotalAnualOnion</zorder>
+  <zorder>lblTotalAnualRedPepper</zorder>
+  <zorder>lEditMushSep</zorder>
+  <zorder>lEditOthersApr</zorder>
+  <zorder>lEditMushJan</zorder>
+  <zorder>lblTotalAnualSpinach</zorder>
+  <zorder>lEditSpinachSep</zorder>
+  <zorder>lEditGreenBeansNov</zorder>
+  <zorder>lEditRedPepperMay</zorder>
+  <zorder>lEditSnowPeasJan</zorder>
+  <zorder>lEditSnowPeasNov</zorder>
+  <zorder>lEditWCNJun</zorder>
+  <zorder>lEditRedPepperFeb</zorder>
+  <zorder>lblSnowPeas</zorder>
+  <zorder>lEditWCNMar</zorder>
+  <zorder>lEditGreenBeansApr</zorder>
+  <zorder>lEditSpinachAug</zorder>
+  <zorder>lEditSnowPeasAug</zorder>
+  <zorder>lblOthers</zorder>
+  <zorder>lEditOthersJul</zorder>
+  <zorder>lEditRedPepperMar</zorder>
+  <zorder>lEditPotatoesAug</zorder>
+  <zorder>lEditOnionOct</zorder>
+  <zorder>lblApr_2</zorder>
+  <zorder>lblTotAnualSnowPeas</zorder>
+  <zorder>lEditWCNApr</zorder>
+  <zorder>lEditOthersSep</zorder>
+  <zorder>lblPotatoes</zorder>
+  <zorder>lEditRedPepperSep</zorder>
+  <zorder>lEditSpinachFeb</zorder>
+  <zorder>lEditMushOct</zorder>
+  <zorder>lEditRedPepperJan</zorder>
+  <zorder>lEditMushNov</zorder>
+  <zorder>lEditOnionMar</zorder>
+  <zorder>lEditSnowPeasJul</zorder>
+  <zorder>lEditMushJul</zorder>
+  <zorder>lEditSnowPeasMar</zorder>
+  <zorder>lEditOnionSep</zorder>
+  <zorder>lblJan_2</zorder>
+  <zorder>lEditMushApr</zorder>
+  <zorder>lEditWCNDec</zorder>
+  <zorder>lEditSpinachDec</zorder>
+  <zorder>lEditGreenBeansOct</zorder>
+  <zorder>lEditOnionMay</zorder>
+  <zorder>lEditPotatoesFeb</zorder>
+  <zorder>lEditWCNFeb</zorder>
+  <zorder>lblDec_2</zorder>
+  <zorder>lEditSpinachMar</zorder>
+  <zorder>lEditRedPepperJun</zorder>
+  <zorder>lEditMushMar</zorder>
+  <zorder>lEditOthersJun</zorder>
+  <zorder>lEditPotatoesApr</zorder>
+  <zorder>lblOnion</zorder>
+  <zorder>lEditOnionDec</zorder>
+  <zorder>lEditGreenBeansMay</zorder>
+  <zorder>lEditRedPepperDec</zorder>
+  <zorder>lblWCN</zorder>
+  <zorder>lEditWCNSep</zorder>
+  <zorder>lblOct_2</zorder>
+  <zorder>lEditPotatoesJun</zorder>
+  <zorder>lEditOnionFeb</zorder>
+  <zorder>lEditWCNJul</zorder>
+  <zorder>lblTotalAnualPotatoes</zorder>
+  <zorder>lblTotalAnualGreenBeans</zorder>
+  <zorder>lEditOthersMar</zorder>
+  <zorder>lEditGreenBeansAug</zorder>
+  <zorder>lEditPotatoesJul</zorder>
+  <zorder>lEditRedPepperNov</zorder>
+  <zorder>lEditWCNNov</zorder>
+  <zorder>lEditSnowPeasApr</zorder>
+  <zorder>lEditWCNAug</zorder>
+  <zorder>lEditGreenBeansJun</zorder>
+  <zorder>lEditSnowPeasDec</zorder>
+  <zorder>lEditGreenBeansDec</zorder>
+  <zorder>lEditPotatoesSep</zorder>
+  <zorder>lEditSpinachJan</zorder>
+  <zorder>lblJul_2</zorder>
+  <zorder>line_2</zorder>
+  <zorder>lEditPotatoesMay</zorder>
+  <zorder>lblMay_2</zorder>
+  <zorder>lEditSnowPeasOct</zorder>
+  <zorder>lEditWCNOct</zorder>
+  <zorder>lEditRedPepperOct</zorder>
+  <zorder>lEditOthersDec</zorder>
+  <zorder>lEditOnionAug</zorder>
+  <zorder>lblSep_2</zorder>
+  <zorder>lEditOthersAug</zorder>
+  <zorder>lEditRedPepperJul</zorder>
+  <zorder>lEditGreenBeansFeb</zorder>
+  <zorder>lEditGreenBeansJan</zorder>
+  <zorder>lEditMushDec</zorder>
+  <zorder>lblFeb_2</zorder>
+  <zorder>lblMushr</zorder>
+  <zorder>lEditPotatoesDec</zorder>
+  <zorder>lEditGreenBeansJul</zorder>
+  <zorder>lblTotalAnualWCN</zorder>
+  <zorder>lEditWCNMay</zorder>
+  <zorder>lEditSpinachMay</zorder>
+  <zorder>lEditPotatoesOct</zorder>
+  <zorder>lblJun_2</zorder>
+  <zorder>lEditGreenBeansSep</zorder>
+  <zorder>lEditSpinachJun</zorder>
+  <zorder>lblRedPepper</zorder>
+  <zorder>lblAug_2</zorder>
+  <zorder>lblNov_2</zorder>
+  <zorder>lblTotalAnualOthers</zorder>
+  <zorder>lEditMushAug</zorder>
+  <zorder>lEditSnowPeasJun</zorder>
+  <zorder>lEditGreenBeansMar</zorder>
+  <zorder>lEditSpinachNov</zorder>
+  <zorder>lEditPotatoesMar</zorder>
+  <zorder>lEditOthersJan</zorder>
+  <zorder>lEditSpinachApr</zorder>
+  <zorder>lEditOthersMay</zorder>
+  <zorder>lEditRedPepperAug</zorder>
+  <zorder>lEditOthersFeb</zorder>
+  <zorder>lEditWCNJan</zorder>
+  <zorder>lEditSnowPeasSep</zorder>
+  <zorder>lEditOnionJan</zorder>
+  <zorder>lEditOthersNov</zorder>
+  <zorder>lEditOnionNov</zorder>
+  <zorder>lblGreenBeans</zorder>
+  <zorder>lEditOnionJun</zorder>
+  <zorder>lEditPotatoesNov</zorder>
+  <zorder>lblTotalAnualMush</zorder>
+  <zorder>lEditSnowPeasMay</zorder>
+  <zorder>lblMar_2</zorder>
+  <zorder>lEditRedPepperApr</zorder>
+  <zorder>lEditOnionApr</zorder>
+  <zorder>lEditPotatoesJan</zorder>
+  <zorder>lEditMushJun</zorder>
+  <zorder>lEditMushMay</zorder>
+  <zorder>lblSpinach</zorder>
+  <zorder>lbltotalAnual_2</zorder>
+  <zorder>lEditOnionJul</zorder>
+  <zorder>lEditOthersOct</zorder>
+  <zorder>lEditSpinachOct</zorder>
+  <zorder>lEditSnowPeasFeb</zorder>
+  <zorder>lEditMushFeb</zorder>
+  <zorder>lblTotalSalesJan</zorder>
+  <zorder>lblTotalSalesApr</zorder>
+  <zorder>lblTotalSalesJun</zorder>
+  <zorder>lblTotalSalesMay</zorder>
+  <zorder>lblTotalSalesSep</zorder>
+  <zorder>lblTotalSalesDec</zorder>
+  <zorder>lblTotalSalesAnual</zorder>
+  <zorder>lblTotalSales</zorder>
+  <zorder>lblTotalSalesAug</zorder>
+  <zorder>lblTotalSalesNov</zorder>
+  <zorder>lblTotalSalesMar</zorder>
+  <zorder>lblTotalSalesFeb</zorder>
+  <zorder>lblTotalSalesOct</zorder>
+  <zorder>lblTotalSalesJul</zorder>
+  <zorder>lEditConvCarrDcdJul</zorder>
+  <zorder>lEditConvCarrDcdMay</zorder>
+  <zorder>lEditConvCarrDcdMar</zorder>
+  <zorder>lEditConvCarrDcdJan</zorder>
+  <zorder>lEditConvCarrDcdJun</zorder>
+  <zorder>lEditConvCarrDcdApr</zorder>
+  <zorder>lblSnp_2</zorder>
+  <zorder>lEditConvCarrDcdAug</zorder>
+  <zorder>lEditConvCarrDcdSep</zorder>
+  <zorder>lEditConvCarrDcdNov</zorder>
+  <zorder>lEditConvCarrDcdDec</zorder>
+  <zorder>lblTotalAnualConvCarrDcd</zorder>
+  <zorder>lEditConvCarrDcdFeb</zorder>
+  <zorder>lEditConvCarrDcdOct</zorder>
+  <zorder>lblTotalConvCarrotJan</zorder>
+  <zorder>lblTotalConvCarr</zorder>
+  <zorder>lblTotalConvCarrotNov</zorder>
+  <zorder>lblTotalConvCarrotAug</zorder>
+  <zorder>lblTotAnualConvCarrot</zorder>
+  <zorder>lblTotalConvCarrotFeb</zorder>
+  <zorder>lblTotalConvCarrotApr</zorder>
+  <zorder>lblTotalConvCarrotJun</zorder>
+  <zorder>lblTotalConvCarrotDec</zorder>
+  <zorder>lblTotalConvCarrotMar</zorder>
+  <zorder>lblTotalConvCarrotMay</zorder>
+  <zorder>lblTotalConvCarrotOct</zorder>
+  <zorder>lblTotalConvCarrotJul</zorder>
+  <zorder>lblTotalConvCarrotSep</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>pBtnSelectYear</tabstop>
+  <tabstop>lEditConvBroccJan</tabstop>
+  <tabstop>lEditOrgBroccJan</tabstop>
+  <tabstop>lEditCaulifJan</tabstop>
+  <tabstop>lEditOrgCauliJan</tabstop>
+  <tabstop>lEditConvCarrCrklJan</tabstop>
+  <tabstop>lEditConvCarrDcdJan</tabstop>
+  <tabstop>lEditCarrotsOrgJan</tabstop>
+  <tabstop>lEditGZuccJan</tabstop>
+  <tabstop>lEditPeasJan</tabstop>
+  <tabstop>lEditPoblanoJan</tabstop>
+  <tabstop>lEditWCornJan</tabstop>
+  <tabstop>lEditTotalCornJan</tabstop>
+  <tabstop>lEditGreenBeansJan</tabstop>
+  <tabstop>lEditMushJan</tabstop>
+  <tabstop>lEditOnionJan</tabstop>
+  <tabstop>lEditPotatoesJan</tabstop>
+  <tabstop>lEditRedPepperJan</tabstop>
+  <tabstop>lEditSnowPeasJan</tabstop>
+  <tabstop>lEditSpinachJan</tabstop>
+  <tabstop>lEditWCNJan</tabstop>
+  <tabstop>lEditOthersJan</tabstop>
+  <tabstop>lEditConvBroccFeb</tabstop>
+  <tabstop>lEditOrgBroccFeb</tabstop>
+  <tabstop>lEditCaulifFeb</tabstop>
+  <tabstop>lEditOrgCauliFeb</tabstop>
+  <tabstop>lEditConvCarrCrklFeb</tabstop>
+  <tabstop>lEditConvCarrDcdFeb</tabstop>
+  <tabstop>lEditCarrotsOrgFeb</tabstop>
+  <tabstop>lEditGZuccFeb</tabstop>
+  <tabstop>lEditPeasFeb</tabstop>
+  <tabstop>lEditPoblanoFeb</tabstop>
+  <tabstop>lEditWCornFeb</tabstop>
+  <tabstop>lEditTotalCornFeb</tabstop>
+  <tabstop>lEditGreenBeansFeb</tabstop>
+  <tabstop>lEditMushFeb</tabstop>
+  <tabstop>lEditOnionFeb</tabstop>
+  <tabstop>lEditPotatoesFeb</tabstop>
+  <tabstop>lEditRedPepperFeb</tabstop>
+  <tabstop>lEditSnowPeasFeb</tabstop>
+  <tabstop>lEditSpinachFeb</tabstop>
+  <tabstop>lEditWCNFeb</tabstop>
+  <tabstop>lEditOthersFeb</tabstop>
+  <tabstop>lEditConvBroccMar</tabstop>
+  <tabstop>lEditOrgBroccMar</tabstop>
+  <tabstop>lEditCaulifMar</tabstop>
+  <tabstop>lEditOrgCauliMar</tabstop>
+  <tabstop>lEditConvCarrCrklMar</tabstop>
+  <tabstop>lEditConvCarrDcdMar</tabstop>
+  <tabstop>lEditCarrotsOrgMar</tabstop>
+  <tabstop>lEditGZuccMar</tabstop>
+  <tabstop>lEditPeasMar</tabstop>
+  <tabstop>lEditPoblanoMar</tabstop>
+  <tabstop>lEditWCornMar</tabstop>
+  <tabstop>lEditTotalCornMar</tabstop>
+  <tabstop>lEditGreenBeansMar</tabstop>
+  <tabstop>lEditMushMar</tabstop>
+  <tabstop>lEditOnionMar</tabstop>
+  <tabstop>lEditPotatoesMar</tabstop>
+  <tabstop>lEditRedPepperMar</tabstop>
+  <tabstop>lEditSnowPeasMar</tabstop>
+  <tabstop>lEditSpinachMar</tabstop>
+  <tabstop>lEditWCNMar</tabstop>
+  <tabstop>lEditOthersMar</tabstop>
+  <tabstop>lEditConvBroccApr</tabstop>
+  <tabstop>lEditOrgBroccApr</tabstop>
+  <tabstop>lEditCaulifApr</tabstop>
+  <tabstop>lEditOrgCauliApr</tabstop>
+  <tabstop>lEditConvCarrCrklApr</tabstop>
+  <tabstop>lEditConvCarrDcdApr</tabstop>
+  <tabstop>lEditCarrotsOrgApr</tabstop>
+  <tabstop>lEditGZuccApr</tabstop>
+  <tabstop>lEditPeasApr</tabstop>
+  <tabstop>lEditPoblanoApr</tabstop>
+  <tabstop>lEditWCornApr</tabstop>
+  <tabstop>lEditTotalCornApr</tabstop>
+  <tabstop>lEditGreenBeansApr</tabstop>
+  <tabstop>lEditMushApr</tabstop>
+  <tabstop>lEditOnionApr</tabstop>
+  <tabstop>lEditPotatoesApr</tabstop>
+  <tabstop>lEditRedPepperApr</tabstop>
+  <tabstop>lEditSnowPeasApr</tabstop>
+  <tabstop>lEditSpinachApr</tabstop>
+  <tabstop>lEditWCNApr</tabstop>
+  <tabstop>lEditOthersApr</tabstop>
+  <tabstop>lEditConvBroccMay</tabstop>
+  <tabstop>lEditOrgBroccMay</tabstop>
+  <tabstop>lEditCaulifMay</tabstop>
+  <tabstop>lEditOrgCauliMay</tabstop>
+  <tabstop>lEditConvCarrCrklMay</tabstop>
+  <tabstop>lEditConvCarrDcdMay</tabstop>
+  <tabstop>lEditCarrotsOrgMay</tabstop>
+  <tabstop>lEditGZuccMay</tabstop>
+  <tabstop>lEditPeasMay</tabstop>
+  <tabstop>lEditPoblanoMay</tabstop>
+  <tabstop>lEditWCornMay</tabstop>
+  <tabstop>lEditTotalCornMay</tabstop>
+  <tabstop>lEditGreenBeansMay</tabstop>
+  <tabstop>lEditMushMay</tabstop>
+  <tabstop>lEditOnionMay</tabstop>
+  <tabstop>lEditPotatoesMay</tabstop>
+  <tabstop>lEditRedPepperMay</tabstop>
+  <tabstop>lEditSnowPeasMay</tabstop>
+  <tabstop>lEditSpinachMay</tabstop>
+  <tabstop>lEditWCNMay</tabstop>
+  <tabstop>lEditOthersMay</tabstop>
+  <tabstop>lEditConvBroccJun</tabstop>
+  <tabstop>lEditOrgBroccJun</tabstop>
+  <tabstop>lEditCaulifJun</tabstop>
+  <tabstop>lEditOrgCauliJun</tabstop>
+  <tabstop>lEditConvCarrCrklJun</tabstop>
+  <tabstop>lEditConvCarrDcdJun</tabstop>
+  <tabstop>lEditCarrotsOrgJun</tabstop>
+  <tabstop>lEditGZuccJun</tabstop>
+  <tabstop>lEditPeasJun</tabstop>
+  <tabstop>lEditPoblanoJun</tabstop>
+  <tabstop>lEditWCornJun</tabstop>
+  <tabstop>lEditTotalCornJun</tabstop>
+  <tabstop>lEditGreenBeansJun</tabstop>
+  <tabstop>lEditMushJun</tabstop>
+  <tabstop>lEditOnionJun</tabstop>
+  <tabstop>lEditPotatoesJun</tabstop>
+  <tabstop>lEditRedPepperJun</tabstop>
+  <tabstop>lEditSnowPeasJun</tabstop>
+  <tabstop>lEditSpinachJun</tabstop>
+  <tabstop>lEditWCNJun</tabstop>
+  <tabstop>lEditOthersJun</tabstop>
+  <tabstop>lEditConvBroccJul</tabstop>
+  <tabstop>lEditOrgBroccJul</tabstop>
+  <tabstop>lEditCaulifJul</tabstop>
+  <tabstop>lEditOrgCauliJul</tabstop>
+  <tabstop>lEditConvCarrCrklJul</tabstop>
+  <tabstop>lEditConvCarrDcdJul</tabstop>
+  <tabstop>lEditCarrotsOrgJul</tabstop>
+  <tabstop>lEditGZuccJul</tabstop>
+  <tabstop>lEditPeasJul</tabstop>
+  <tabstop>lEditPoblanoJul</tabstop>
+  <tabstop>lEditWCornJul</tabstop>
+  <tabstop>lEditTotalCornJul</tabstop>
+  <tabstop>lEditGreenBeansJul</tabstop>
+  <tabstop>lEditMushJul</tabstop>
+  <tabstop>lEditOnionJul</tabstop>
+  <tabstop>lEditPotatoesJul</tabstop>
+  <tabstop>lEditRedPepperJul</tabstop>
+  <tabstop>lEditSnowPeasJul</tabstop>
+  <tabstop>lEditSpinachJul</tabstop>
+  <tabstop>lEditWCNJul</tabstop>
+  <tabstop>lEditOthersJul</tabstop>
+  <tabstop>lEditConvBroccAug</tabstop>
+  <tabstop>lEditOrgBroccAug</tabstop>
+  <tabstop>lEditCaulifAug</tabstop>
+  <tabstop>lEditOrgCauliAug</tabstop>
+  <tabstop>lEditConvCarrCrklAug</tabstop>
+  <tabstop>lEditConvCarrDcdAug</tabstop>
+  <tabstop>lEditCarrotsOrgAug</tabstop>
+  <tabstop>lEditGZuccAug</tabstop>
+  <tabstop>lEditPeasAug</tabstop>
+  <tabstop>lEditPoblanoAug</tabstop>
+  <tabstop>lEditWCornAug</tabstop>
+  <tabstop>lEditTotalCornAug</tabstop>
+  <tabstop>lEditGreenBeansAug</tabstop>
+  <tabstop>lEditMushAug</tabstop>
+  <tabstop>lEditOnionAug</tabstop>
+  <tabstop>lEditPotatoesAug</tabstop>
+  <tabstop>lEditRedPepperAug</tabstop>
+  <tabstop>lEditSnowPeasAug</tabstop>
+  <tabstop>lEditSpinachAug</tabstop>
+  <tabstop>lEditWCNAug</tabstop>
+  <tabstop>lEditOthersAug</tabstop>
+  <tabstop>lEditConvBroccSep</tabstop>
+  <tabstop>lEditOrgBroccSep</tabstop>
+  <tabstop>lEditCaulifSep</tabstop>
+  <tabstop>lEditOrgCauliSep</tabstop>
+  <tabstop>lEditConvCarrCrklSep</tabstop>
+  <tabstop>lEditConvCarrDcdSep</tabstop>
+  <tabstop>lEditCarrotsOrgSep</tabstop>
+  <tabstop>lEditGZuccSep</tabstop>
+  <tabstop>lEditPeasSep</tabstop>
+  <tabstop>lEditPoblanoSep</tabstop>
+  <tabstop>lEditWCornSep</tabstop>
+  <tabstop>lEditTotalCornSep</tabstop>
+  <tabstop>lEditGreenBeansSep</tabstop>
+  <tabstop>lEditMushSep</tabstop>
+  <tabstop>lEditOnionSep</tabstop>
+  <tabstop>lEditPotatoesSep</tabstop>
+  <tabstop>lEditRedPepperSep</tabstop>
+  <tabstop>lEditSnowPeasSep</tabstop>
+  <tabstop>lEditSpinachSep</tabstop>
+  <tabstop>lEditWCNSep</tabstop>
+  <tabstop>lEditOthersSep</tabstop>
+  <tabstop>lEditConvBroccOct</tabstop>
+  <tabstop>lEditOrgBroccOct</tabstop>
+  <tabstop>lEditCaulifOct</tabstop>
+  <tabstop>lEditOrgCauliOct</tabstop>
+  <tabstop>lEditConvCarrCrklOct</tabstop>
+  <tabstop>lEditConvCarrDcdOct</tabstop>
+  <tabstop>lEditCarrotsOrgOct</tabstop>
+  <tabstop>lEditGZuccOct</tabstop>
+  <tabstop>lEditPeasOct</tabstop>
+  <tabstop>lEditPoblanoOct</tabstop>
+  <tabstop>lEditWCornOct</tabstop>
+  <tabstop>lEditTotalCornOct</tabstop>
+  <tabstop>lEditGreenBeansOct</tabstop>
+  <tabstop>lEditMushOct</tabstop>
+  <tabstop>lEditOnionOct</tabstop>
+  <tabstop>lEditPotatoesOct</tabstop>
+  <tabstop>lEditRedPepperOct</tabstop>
+  <tabstop>lEditSnowPeasOct</tabstop>
+  <tabstop>lEditSpinachOct</tabstop>
+  <tabstop>lEditWCNOct</tabstop>
+  <tabstop>lEditOthersOct</tabstop>
+  <tabstop>lEditConvBroccNov</tabstop>
+  <tabstop>lEditOrgBroccNov</tabstop>
+  <tabstop>lEditCaulifNov</tabstop>
+  <tabstop>lEditOrgCauliNov</tabstop>
+  <tabstop>lEditConvCarrCrklNov</tabstop>
+  <tabstop>lEditConvCarrDcdNov</tabstop>
+  <tabstop>lEditCarrotsOrgNov</tabstop>
+  <tabstop>lEditGZuccNov</tabstop>
+  <tabstop>lEditPeasNov</tabstop>
+  <tabstop>lEditPoblanoNov</tabstop>
+  <tabstop>lEditWCornNov</tabstop>
+  <tabstop>lEditTotalCornNov</tabstop>
+  <tabstop>lEditGreenBeansNov</tabstop>
+  <tabstop>lEditMushNov</tabstop>
+  <tabstop>lEditOnionNov</tabstop>
+  <tabstop>lEditPotatoesNov</tabstop>
+  <tabstop>lEditRedPepperNov</tabstop>
+  <tabstop>lEditSnowPeasNov</tabstop>
+  <tabstop>lEditSpinachNov</tabstop>
+  <tabstop>lEditWCNNov</tabstop>
+  <tabstop>lEditOthersNov</tabstop>
+  <tabstop>lEditConvBroccDec</tabstop>
+  <tabstop>lEditOrgBroccDec</tabstop>
+  <tabstop>lEditCaulifDec</tabstop>
+  <tabstop>lEditOrgCauliDec</tabstop>
+  <tabstop>lEditConvCarrCrklDec</tabstop>
+  <tabstop>lEditConvCarrDcdDec</tabstop>
+  <tabstop>lEditCarrotsOrgDec</tabstop>
+  <tabstop>lEditGZuccDec</tabstop>
+  <tabstop>lEditPeasDec</tabstop>
+  <tabstop>lEditPoblanoDec</tabstop>
+  <tabstop>lEditWCornDec</tabstop>
+  <tabstop>lEditTotalCornDec</tabstop>
+  <tabstop>lEditGreenBeansDec</tabstop>
+  <tabstop>lEditMushDec</tabstop>
+  <tabstop>lEditOnionDec</tabstop>
+  <tabstop>lEditPotatoesDec</tabstop>
+  <tabstop>lEditRedPepperDec</tabstop>
+  <tabstop>lEditSnowPeasDec</tabstop>
+  <tabstop>lEditSpinachDec</tabstop>
+  <tabstop>lEditWCNDec</tabstop>
+  <tabstop>lEditOthersDec</tabstop>
+  <tabstop>pBtnUpdate</tabstop>
+  <tabstop>pBtnSave</tabstop>
+  <tabstop>pbtnClose</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

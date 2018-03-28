@@ -1,3 +1,19 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+In thismodule it is input the data of MB USA sales
+"""
+__author__ = "Alejandro Othoniel Gomez Chavez"
+__copyright__ = "Copyright 2018 AOGCH"
+__credits__ = "Mar Bran S.A. de C.V."
+
+__licence__= "Open Code"
+__version__ = "0.1"
+__maintainer__ = "Alejandro Othoniel Gomez Chavez"
+__email__ = "agomez@marbran.com.mx"
+__status__ = "Developer"
+
 import sys
 import pandas as pd
 import numpy as np
