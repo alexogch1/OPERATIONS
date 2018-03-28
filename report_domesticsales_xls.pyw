@@ -383,7 +383,7 @@ class XLS():
         print(acum)
         self.ingresa_datos(hoja,columna,prod1,values, acum )
 
-        ngresa_datos(hoja,columna,prod1,values,acum)
+        
 
     def ingresa_datos(self,hoja, columna,prod,values, acum):
         total = acum
