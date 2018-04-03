@@ -96,7 +96,29 @@ class Principal(QMainWindow):
         
         # Add a Sub Menu to the menu Start
         menu_Purchases = menu_start.addMenu("&Purchases")
-        menu_Purchases_Domestic = menu_Purchases.addMenu('&Domestic Purchases')
+        menu_start_Purchases_Domestic = menu_Purchases.addMenu('&Domestic Purchases')
+        #Add an action elemento to the menu start
+        menu_start_Purchases_Domestic_ny_add = QAction(QIcon(), "&Domestic Purchases New Year Data",self)
+        #menu_start_sales_mbusasales_ny_add.setShortcut("Ctrl+U") # keyboard Shortcut
+        menu_start_Purchases_Domestic_ny_add.setStatusTip("Start input data to Domestic Sales")#Message in status bar
+        menu_start_Purchases_Domestic_ny_add.triggered.connect(self.menu_Start_Purchases_Domestic_ny)#Launcher
+        menu_start_Purchases_Domestic.addAction(menu_start_Purchases_Domestic_ny_add)
+
+        #Add an action elemento to the menu start
+        menu_start_Purchases_Domestic_table_edit = QAction(QIcon(), "&Domestic Purchases Edit",self)
+        #menu_start_sales_mbusasales_ny_add.setShortcut("Ctrl+U") # keyboard Shortcut
+        menu_start_Purchases_Domestic_table_edit.setStatusTip("Start input data to Domestic Sales")#Message in status bar
+        menu_start_Purchases_Domestic_table_edit.triggered.connect(self.menu_start_Purchases_Domestic_data_table)#Launcher
+        menu_start_Purchases_Domestic.addAction(menu_start_Purchases_Domestic_table_edit)
+
+        #Add an action elemento to the menu start
+        menu_start_Purchases_Domestic_xls_report = QAction(QIcon(), "&Domestic Purchases Generate Xls Report",self)
+        #menu_start_sales_mbusasales_ny_add.setShortcut("Ctrl+U") # keyboard Shortcut
+        menu_start_Purchases_Domestic_xls_report.setStatusTip("Generate report Xls")#Message in status bar
+        menu_start_Purchases_Domestic_xls_report.triggered.connect(self.menu_start_domesticpurchases_xls)#Launcher
+        menu_start_Purchases_Domestic.addAction(menu_start_Purchases_Domestic_xls_report)
+
+
         menu_Purchases_Import = menu_Purchases.addMenu('&Import Purchases')
 
         # Add a Sub Menu to the menu Start
@@ -153,6 +175,23 @@ class Principal(QMainWindow):
         Dialog =  domesticsales_xls_report.MyWindowClass()
         Dialog.exec_()
 
+    def menu_Start_Purchases_Domestic_ny(self):
+        QMessageBox.information(self,"Domestic Purchases","You will generate a new year file", QMessageBox.Discard)       
+        import domestic_purchases_ny
+        Dialog =  domestic_purchases_ny.MyWindowClass()
+        Dialog.exec_()
+
+    def menu_start_Purchases_Domestic_data_table(self):
+        QMessageBox.information(self,"Domestic Purchases","You will edit the saved data of Domestic Purchases", QMessageBox.Discard)       
+        import domestic_purchases_table_edit
+        Dialog =  domestic_purchases_table_edit.Dialogo()
+        Dialog.exec_()
+
+    def menu_start_domesticpurchases_xls(self):
+        QMessageBox.information(self,"Domestic Purchases","You will generate a XLS file", QMessageBox.Discard)       
+        import domesticpurchases_xls_report
+        Dialog =  domesticpurchases_xls_report.MyWindowClass()
+        Dialog.exec_()
 
     def menu_exit(self):
         import salir_programa

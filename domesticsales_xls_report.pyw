@@ -646,7 +646,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		
 
 		Dict_Conv_Brocc = {}
-		Dict_Conv_Brocc['Conventional Broccoli'] = list([
+		Dict_Conv_Brocc['Conventional_Broccoli'] = list([
 			self.Brocc_Conv_Jan, self.Brocc_Conv_Feb, self.Brocc_Conv_Mar, 
 			self.Brocc_Conv_Apr, self.Brocc_Conv_May, self.Brocc_Conv_Jun, 
 			self.Brocc_Conv_Jul, self.Brocc_Conv_Aug, self.Brocc_Conv_Sep, 
@@ -862,7 +862,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 	def inicializar_campós(self,datos):
 
 		"""
-		This function set all field values as Zero
+		This function set all field values as the value in the file
 		"""
 
 		Conv_Brocc = datos.get('Conv Brocc')
@@ -1215,8 +1215,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Jan
 				WCN = self.WCN_Jan
 				Others = self.Others_Jan
-				
-				
+					
 			elif values.find('feb')>0: 
 				indice = values
 				month = 'February'
@@ -1242,8 +1241,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				WCN = self.WCN_Feb
 				Others = self.Others_Feb
 
-				
-				
 			elif values.find('mar')>0: 
 				indice = values
 				month = 'March'
@@ -1268,7 +1265,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Mar
 				WCN = self.WCN_Mar
 				Others = self.Others_Mar
-
 				
 			elif values.find('apr')>0: 
 				indice = values
@@ -1344,8 +1340,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Jun
 				WCN = self.WCN_Jun
 				Others = self.Others_Jun
-			
-				
+							
 			elif values.find('jul')>0: 
 				indice = values
 				month = 'July'
@@ -1370,8 +1365,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Jul
 				WCN = self.WCN_Jul
 				Others = self.Others_Jul
-				
-				
+								
 			elif values.find('aug')>0: 
 				indice = values
 				month = 'August'
@@ -1396,8 +1390,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Aug
 				WCN = self.WCN_Aug
 				Others = self.Others_Aug
-				
-				
+								
 			elif values.find('sep')>0: 
 				indice = values
 				month = 'September'
@@ -1448,7 +1441,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				WCN = self.WCN_Oct
 				Others = self.Others_Oct
 				
-
 			elif values.find('nov')>0: 
 				indice = values
 				month = 'November'
@@ -1498,9 +1490,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				Spinach = self.Spinach_Dec
 				WCN = self.WCN_Dec
 				Others = self.Others_Dec
-				
 		
-				
 				
 			data = {values : [sequence , indice, year, month, broc_Conv, brocc_Org, cauliflower, Caulif_Org,
 				Crkl_Carrot, Dcd_Carrot, Org_Carrot, GZucc,
@@ -1679,7 +1669,6 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		self.Caulif_Org_Oct = float(self.lEditOrgCauliOct.text())
 		self.Caulif_Org_Nov = float(self.lEditOrgCauliNov.text())
 		self.Caulif_Org_Dec = float(self.lEditOrgCauliDec.text())
-
 
 		self.ConvCarrCrklJan = float(self.lEditConvCarrCrklJan.text())
 		self.ConvCarrCrklFeb = float(self.lEditConvCarrCrklFeb.text())
