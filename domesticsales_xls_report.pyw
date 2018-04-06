@@ -847,7 +847,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		print(self.data_complete)
 		input()
 
-		#self.pBtnReport.setEnabled(True)
+		self.pBtnReport.setEnabled(True)
 		generaExcel =self.genera_excel(self.data_complete)
 		
 

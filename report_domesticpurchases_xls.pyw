@@ -104,7 +104,7 @@ class XLS():
         
 
         prod2 = {}
-        prod2 = self.datos[2]
+        prod2 = self.datos[1]
         values = list(prod2.values())
         product = list(prod2.keys())
         columna = 2
@@ -115,7 +115,7 @@ class XLS():
         self.ingresa_datos(hoja,columna,product,values, acum )
 
         prod3 = {}
-        prod3 = self.datos[3]
+        prod3 = self.datos[2]
         values = list(prod3.values())
         product = list(prod3.keys())
         columna = 3
@@ -126,7 +126,7 @@ class XLS():
         self.ingresa_datos(hoja,columna,product,values, acum )
 
         prod4 = {}
-        prod4 = self.datos[4]
+        prod4 = self.datos[3]
         values = list(prod4.values())
         product = list(prod4.keys())
         columna = 4

@@ -227,7 +227,7 @@
     <string>IMPORT PURCHASES (POUNDS)</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pBtnSave">
+  <widget class="QPushButton" name="pBtnReport">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -240,7 +240,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>Report</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_year_selected">
@@ -5913,7 +5913,7 @@
   <zorder>lblSep</zorder>
   <zorder>pBtnUpdate</zorder>
   <zorder>Title</zorder>
-  <zorder>pBtnSave</zorder>
+  <zorder>pBtnReport</zorder>
   <zorder>lbl_year_selected</zorder>
   <zorder>pBtnSelectYear</zorder>
   <zorder>pbtnClose</zorder>
@@ -6820,7 +6820,7 @@
   <tabstop>lEditNovProd_34</tabstop>
   <tabstop>lEditDecProd_34</tabstop>
   <tabstop>pBtnUpdate</tabstop>
-  <tabstop>pBtnSave</tabstop>
+  <tabstop>pBtnReport</tabstop>
   <tabstop>pbtnClose</tabstop>
  </tabstops>
  <resources/>

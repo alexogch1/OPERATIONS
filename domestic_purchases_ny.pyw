@@ -31,8 +31,8 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 	def __init__(self, parent=None):
 		
 		QtWidgets.QDialog.__init__(self, parent)
-		list_ingredients = ['Diced Red Pper', 'Strip Red Pper', 'Corn Kernels', 'Organic Broccoli Florets', 'none',
-         						'none', 'none', 'none', 'none', 'none', 'none' ]
+		list_ingredients = ['Diced Red Pper', 'Strips Red Pper', 'Corn Kernels', 'Organic Broccoli Florets', 
+							'prod5', 'prod6', 'prod7', 'prod8', 'prod9', 'prod10']
         
 
 
@@ -692,39 +692,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			ex = 'The file wou want to save is already open: ' + str(ex)
 			self.caja_mensaje('Error when saving data ', ex,0)
 		
-		"""data = {values : [sequence , indice, year, month, broc_Conv, brocc_Org, cauliflower, Caulif_Org,
-										Crkl_Carrot, Dcd_Carrot, Org_Carrot, GZucc,
-										Peas, Poblano, WCorn, Total_Corn,
-										GreenBeans, Mushrooms, Onion, Potatoes, 
-										RedPepper, snowPeas, Spinach, WCN, Others]}
-									data_dict.update(data)
-						
-								message = 'Now we are going to save the file'
-								self.caja_mensaje('Save data;', message,0)
-								datos_Sales_Domestic =pd.read_csv('domesticsales.csv', index_col = 0, encoding = 'utf-8')
-								datos_Sales_Domestic.apply(lambda x: pd.lib.infer_dtype(x.values))
-								num_datos = int(datos_Sales_Domestic['indice'].count())
-								datos_Sales_Domestic.index = range(datos_Sales_Domestic.shape[0])
-								indice_archivo = list(datos_Sales_Domestic.indice)
-								llaves = data_dict.keys()
-								nuevo_Valor = num_datos+1
-								valores = list(data_dict.values())
-								
-								for i, valor in enumerate(valores):
-									nuevo_valor = int(nuevo_Valor)+i
-									datos_Sales_Domestic.loc[int(nuevo_valor)]= [
-										valor[1], valor[2], valor[3], valor[4], valor[5], valor[6], 
-										valor[7], valor[8], valor[9], valor[10], valor[11], 
-										valor[12], valor[13], valor[14], valor [15], valor [16], valor [17], valor [18], 
-										valor [19], valor [20], valor[21],  valor [22], valor [23], valor [24]]
-								try: 
-									datos_Sales_Domestic.to_csv('domesticsales.csv',  encoding = 'utf-8',) 
-									self.caja_mensaje('Data Saved;', 'Data saved Succesfully!!!',1)
-								except Exception as ex:
-									ex = 'The file wou want to save is already open: ' + str(ex)
-									self.caja_mensaje('Error when saving data ', ex,0)
-						
-						"""
+		
 
 	def read_data_from_fields(self):
 
@@ -882,18 +850,18 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		print(list_ingredients[9])
 		
 		
-		print(list_ingredients[0] == 'none')
-		print(list_ingredients[1] == 'none')
-		print(list_ingredients[2] == 'none')
-		print(list_ingredients[3] == 'none')
-		print(list_ingredients[4] == 'none')
-		print(list_ingredients[5] == 'none')
-		print(list_ingredients[6] == 'none')
-		print(list_ingredients[7] == 'none')
-		print(list_ingredients[8] == 'none')
-		print(list_ingredients[9] == 'none')
+		print(list_ingredients[0] == 'prod')
+		print(list_ingredients[1] == 'prod2')
+		print(list_ingredients[2] == 'prod3')
+		print(list_ingredients[3] == 'prod4')
+		print(list_ingredients[4] == 'prod5')
+		print(list_ingredients[5] == 'prod6')
+		print(list_ingredients[6] == 'prod7')
+		print(list_ingredients[7] == 'prod8')
+		print(list_ingredients[8] == 'prod9')
+		print(list_ingredients[9] == 'prod10')
 
-		if list_ingredients[0] == 'none':
+		if list_ingredients[0] == 'prod':
 
 			self.lblProd.setVisible(False)
 			self.lEditJanProd.setVisible(False)
@@ -911,7 +879,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd.setVisible(False)
 		else:
 			pass
-		if list_ingredients[1] == 'none':
+		if list_ingredients[1] == 'prod2':
 			self.lblProd_2.setVisible(False)
 			self.lEditJanProd_2.setVisible(False)
 			self.lEditFebProd_2.setVisible(False)
@@ -928,7 +896,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_2.setVisible(False)
 		else:
 			pass
-		if list_ingredients[2] == 'none':
+		if list_ingredients[2] == 'prod3':
 			self.lblProd_3.setVisible(False)
 			self.lEditJanProd_3.setVisible(False)
 			self.lEditFebProd_3.setVisible(False)
@@ -945,7 +913,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_3.setVisible(False)
 		else:
 			pass
-		if list_ingredients[3] == 'none':
+		if list_ingredients[3] == 'prod4':
 			self.lblProd_4.setVisible(False)
 			self.lEditJanProd_4.setVisible(False)
 			self.lEditFebProd_4.setVisible(False)
@@ -962,7 +930,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_4.setVisible(False)
 		else:
 			pass
-		if list_ingredients[4] == 'none':
+		if list_ingredients[4] == 'prod5':
 			self.lblProd_5.setVisible(False)
 			self.lEditJanProd_5.setVisible(False)
 			self.lEditFebProd_5.setVisible(False)
@@ -979,7 +947,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_5.setVisible(False)
 		else:
 			pass
-		if list_ingredients[5] == 'none':
+		if list_ingredients[5] == 'prod6':
 			self.lblProd_6.setVisible(False)
 			self.lEditJanProd_6.setVisible(False)
 			self.lEditFebProd_6.setVisible(False)
@@ -996,7 +964,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_6.setVisible(False)
 		else:
 			pass
-		if list_ingredients[6] == 'none':
+		if list_ingredients[6] == 'prod7':
 			self.lblProd_7.setVisible(False)
 			self.lEditJanProd_7.setVisible(False)
 			self.lEditFebProd_7.setVisible(False)
@@ -1013,7 +981,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_7.setVisible(False)
 		else:
 			pass
-		if list_ingredients[7] == 'none':
+		if list_ingredients[7] == 'prod8':
 			self.lblProd_8.setVisible(False)
 			self.lEditJanProd_8.setVisible(False)
 			self.lEditFebProd_8.setVisible(False)
@@ -1030,7 +998,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_8.setVisible(False)
 		else:
 			pass
-		if list_ingredients[8] == 'none':
+		if list_ingredients[8] == 'prod9':
 			self.lblProd_9.setVisible(False)
 			self.lEditJanProd_9.setVisible(False)
 			self.lEditFebProd_9.setVisible(False)
@@ -1047,7 +1015,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 			self.lblTotalAnualProd_9.setVisible(False)
 		else:
 			pass
-		if list_ingredients[9] == 'none':
+		if list_ingredients[9] == 'prod10':
 			self.lblProd_10.setVisible(False)
 			self.lEditJanProd_10.setVisible(False)
 			self.lEditFebProd_10.setVisible(False)
