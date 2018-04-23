@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-In thismodule it is input the data of INVENTORIES MB USA
+In thismodule it is input the data of Broccoli Inventories
 """
 __author__ = "Alejandro Othoniel Gomez Chavez"
 __copyright__ = "Copyright 2018 AOGCH"
@@ -23,7 +23,7 @@ from PyQt5 import uic
 class Dialogo(QDialog):
 	def __init__(self):
 		QDialog.__init__(self)
-		self.setWindowTitle("Import Purchases") #Título
+		self.setWindowTitle("Inventories Broccoli") #Título
 		self.resize(2000, 450) #Tamaño inicial
 		self.layout = QGridLayout() #Crear un layout grid
 		self.setLayout(self.layout) #Agregar el layout al cuadro de diálogo
@@ -39,15 +39,15 @@ class Dialogo(QDialog):
 	def Seleccionar(self):
 		self.table.setColumnCount(38)
 		self.table.setHorizontalHeaderLabels(['ID', 'indice', 'year', 'month', 
-												'BROCCOLI', 'ORGANIC BROCCOLI', 'CAULIFLOWER', 'ORGANIC CAULIFLOWER', 'BLENDS',
-							'ORGANIC BLENDS', 'BRUSSELS SPROUTS', ' YELLOW SQUASH', 'GREEN ZUCCHINI', 'SUGAR SNAP PEAS',
-							 'CARROTS', 'PICKLES', 'MELONS', 'EDAMAME', 'prod15', 
-							 'prod16', 'prod17','prod18', 'prod19', 'prod20',
-							 'prod21', 'prod22', 'prod23', 'prod24', 'prod25',
-							 'prod26', 'prod27', 'prod28', 'prod29', 'prod30',
+												'F Spears','F Flrts Conv', 'F Crowns' ,'F Flrts Org', 'F Stalks Conv', 
+							'F Stalks Org', 'F Chopped', 'F Sori Pearls', 'F Cuts', 'F Cuts Org',
+							'prod11', 'prod12', 'prod13', 'prod14','prod15', 
+							 'prod16', 'prod17','prod18', 'P Spears', 'P Florets',
+							 'P Crowns', 'P Flrts Org', 'P Stalks Conv', 'P Stalks Org', 'P Chopped',
+							 'P Sori Pearls', 'P Cuts Conv', 'P Cuts Org', 'prod29', 'prod30',
 							 'prod31', 'prod32', 'prod33', 'prod34'])
 		
-		datos = pd.read_csv('inventoriesmbusa.csv', index_col = 0, encoding = 'utf-8')
+		datos = pd.read_csv('inventoriesbroccoli.csv', index_col = 0, encoding = 'utf-8')
 		datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 		datos.index = range(datos.shape[0])
 		num_datos = int(datos['year'].count())
@@ -70,46 +70,46 @@ class Dialogo(QDialog):
 			month1 = datos['month'][row]
 			month = QTableWidgetItem(str(month1))
 			self.table.setItem(row, 3,month)
-			prod01 = datos['BROCCOLI'][row]
+			prod01 = datos['F Spears'][row]
 			prod0 = QTableWidgetItem(str(prod01))
 			self.table.setItem(row, 4,prod0)
-			prod11 = datos['ORGANIC BROCCOLI'][row]
+			prod11 = datos['F Flrts Conv'][row]
 			prod1 = QTableWidgetItem(str(prod11))
 			self.table.setItem(row, 5,prod1)
-			prod21 = datos['CAULIFLOWER'][row]
+			prod21 = datos['F Crowns'][row]
 			prod2=QTableWidgetItem(str(prod21))
 			self.table.setItem(row, 6,prod2)
-			prod31 = datos['ORGANIC CAULIFLOWER'][row]
+			prod31 = datos['F Flrts Org'][row]
 			prod3=QTableWidgetItem(str(prod31))
 			self.table.setItem(row,7,prod3)
-			prod41 = datos['BLENDS'][row]
+			prod41 = datos['F Stalks Conv'][row]
 			prod4 = QTableWidgetItem(str(prod41))
 			self.table.setItem(row,8,prod4)
-			prod51 = datos['ORGANIC BLENDS'][row]
+			prod51 = datos['F Stalks Org'][row]
 			prod5 = QTableWidgetItem(str(prod51))
 			self.table.setItem(row,9,prod5)
-			prod61= datos['BRUSSELS SPROUTS'][row]
+			prod61= datos['F Chopped'][row]
 			prod6 = QTableWidgetItem(str(prod61))
 			self.table.setItem(row,10,prod6)
-			prod71 = datos['YELLOW SQUASH'][row]
+			prod71 = datos['F Sori Pearls'][row]
 			prod7 = QTableWidgetItem(str(prod71))
 			self.table.setItem(row,11,prod7)
-			prod81 = datos['GREEN ZUCCHINI'][row]
+			prod81 = datos['F Cuts'][row]
 			prod8 = QTableWidgetItem(str(prod81))
 			self.table.setItem(row,12,prod8)
-			prod91= datos['SUGAR SNAP PEAS'][row]
+			prod91= datos['F Cuts Org'][row]
 			prod9 = QTableWidgetItem(str(prod91))
 			self.table.setItem(row,13,prod9)
-			prod101 = datos['CARROTS'][row]
+			prod101 = datos['prod11'][row]
 			prod10 = QTableWidgetItem(str(prod101))
 			self.table.setItem(row, 14,prod10)
-			prod111 = datos['PICKLES'][row]
+			prod111 = datos['prod12'][row]
 			prod11 = QTableWidgetItem(str(prod111))
 			self.table.setItem(row, 15,prod11)
-			prod121 = datos['MELONS'][row]
+			prod121 = datos['prod13'][row]
 			prod12=QTableWidgetItem(str(prod121))
 			self.table.setItem(row, 16,prod12)
-			prod131 = datos['EDAMAME'][row]
+			prod131 = datos['prod14'][row]
 			prod13=QTableWidgetItem(str(prod131))
 			self.table.setItem(row,17,prod13)
 			
@@ -125,34 +125,34 @@ class Dialogo(QDialog):
 			prod171 = datos['prod18'][row]
 			prod17 = QTableWidgetItem(str(prod171))
 			self.table.setItem(row,21,prod17)
-			prod181 = datos['prod19'][row]
+			prod181 = datos['P Spears'][row]
 			prod18 = QTableWidgetItem(str(prod181))
 			self.table.setItem(row,22,prod18)
-			prod191= datos['prod20'][row]
+			prod191= datos['P Florets'][row]
 			prod19 = QTableWidgetItem(str(prod191))
 			self.table.setItem(row,23,prod19)
-			prod201 = datos['prod21'][row]
+			prod201 = datos['P Crowns'][row]
 			prod20 = QTableWidgetItem(str(prod201))
 			self.table.setItem(row, 24,prod20)
-			prod211 = datos['prod22'][row]
+			prod211 = datos['P Flrts Org'][row]
 			prod21 = QTableWidgetItem(str(prod211))
 			self.table.setItem(row, 25,prod21)
-			prod221 = datos['prod23'][row]
+			prod221 = datos['P Stalks Conv'][row]
 			prod22=QTableWidgetItem(str(prod221))
 			self.table.setItem(row, 26,prod22)
-			prod231 = datos['prod24'][row]
+			prod231 = datos['P Stalks Org'][row]
 			prod23=QTableWidgetItem(str(prod231))
 			self.table.setItem(row,27,prod23)
-			prod241 = datos['prod25'][row]
+			prod241 = datos['P Chopped'][row]
 			prod24 = QTableWidgetItem(str(prod241))
 			self.table.setItem(row,28,prod24)
-			prod251 = datos['prod26'][row]
+			prod251 = datos['P Sori Pearls'][row]
 			prod25 = QTableWidgetItem(str(prod251))
 			self.table.setItem(row,29,prod25)
-			prod261= datos['prod27'][row]
+			prod261= datos['P Cuts Conv'][row]
 			prod26 = QTableWidgetItem(str(prod261))
 			self.table.setItem(row,30,prod26)
-			prod271 = datos['prod28'][row]
+			prod271 = datos['P Cuts Org'][row]
 			prod27 = QTableWidgetItem(str(prod271))
 			self.table.setItem(row,31,prod27)
 			prod281 = datos['prod29'][row]
@@ -180,7 +180,7 @@ class Dialogo(QDialog):
 
 	def Actualizar(self):
 					print("modulo actualizar")
-					datos = pd.read_csv('inventoriesmbusa.csv', index_col = 0, encoding = 'utf-8')
+					datos = pd.read_csv('inventoriesbroccoli.csv', index_col = 0, encoding = 'utf-8')
 					datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 					column = self.table.currentColumn()-1
 					row = self.table.currentRow()
@@ -291,7 +291,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "BROCCOLI" :
+					elif nombre_columna == "F Spears" :
 						print("vamos a actualizar la tabla con BRUSSEL SPR")
 						prod0 = value
 						print(year)
@@ -308,7 +308,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "ORGANIC BROCCOLI" :
+					elif nombre_columna == "F Flrts Conv" :
 						print("vamos a actualizar la tabla con el CRKLE CARR CONV ")
 						prod1 = value
 						print(year)
@@ -325,7 +325,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "CAULIFLOWER" :
+					elif nombre_columna == "F Crowns" :
 						print("vamos a actualizar la tabla con el BABY ORG CARR")
 						prod2 = value
 						print(year)
@@ -342,7 +342,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "ORGANIC CAULIFLOWER" :
+					elif nombre_columna == "F Flrts Org" :
 						print("vamos a actualizar la tabla con COrganic YLLW ORG CARR ")
 						prod3 = value
 						print(year)
@@ -356,7 +356,7 @@ class Dialogo(QDialog):
 						prod30, prod31, prod32, prod33]
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "BLENDS" :
+					elif nombre_columna == "F Stalks Conv" :
 						print("vamos a actualizar la tabla con YLLW BIAS CARR")
 						prod4 = value
 						print(year)
@@ -373,7 +373,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "ORGANIC BLENDS" :
+					elif nombre_columna == "F Stalks Org" :
 						print("vamos a actualizar la tabla con GRN BEANS")
 						prod5 = value
 						print(year)
@@ -390,7 +390,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "BRUSSELS SPROUTS" :
+					elif nombre_columna == "F Chopped" :
 						print("vamos a actualizar la tabla con SLAB GR BEANS")
 						prod6 = value
 						print(year)
@@ -407,7 +407,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "YELLOW SQUASH" :
+					elif nombre_columna == "F Sori Pearls" :
 						print("vamos a actualizar la tabla con SUGAR SNAP P")
 						prod7 = value
 						print(year)
@@ -423,7 +423,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "GREEN ZUCCHINI" :
+					elif nombre_columna == "F Cuts" :
 						print("vamos a actualizar la tabla con BROC FLTS")
 						prod8 = value
 						print(year)
@@ -440,7 +440,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "SUGAR SNAP PEAS" :
+					elif nombre_columna == "F Cuts Org" :
 						print("vamos a actualizar la tabla con ORG JUL. CARR")
 						prod9 = value
 						print(year)
@@ -458,7 +458,7 @@ class Dialogo(QDialog):
 						self.guarda_archivo(datos)
 						
 
-					elif nombre_columna == "CARROTS" :
+					elif nombre_columna == "prod11" :
 						print("vamos a actualizar la tabla con STRPS GR PEPPER")
 						prod10 = value
 						print(year)
@@ -475,7 +475,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "PICKLES" :
+					elif nombre_columna == "prod12" :
 						print("vamos a actualizar la tabla con el CELERY ")
 						prod11 = value
 						print(year)
@@ -492,7 +492,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "MELONS" :
+					elif nombre_columna == "prod13" :
 						print("vamos a actualizar la tabla con el BABY ORG ONION")
 						prod12 = value
 						print(year)
@@ -509,7 +509,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "EDAMAME" :
+					elif nombre_columna == "prod14" :
 						print("vamos a actualizar la tabla con MUSHROOM ")
 						prod13 = value
 						print(year)
@@ -591,7 +591,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod19" :
+					elif nombre_columna == "P Spears" :
 						print("vamos a actualizar la tabla con GREEN PEPPER")
 						prod18 = value
 						print(year)
@@ -608,7 +608,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod20" :
+					elif nombre_columna == "P Florets" :
 						print("vamos a actualizar la tabla con KIDNEY BEANS")
 						prod19 = value
 						print(year)
@@ -624,7 +624,7 @@ class Dialogo(QDialog):
 						print("listado actualizado")
 						print(datos)
 						self.guarda_archivo(datos)
-					elif nombre_columna == "prod21" :
+					elif nombre_columna == "P Crowns" :
 						print("vamos a actualizar la tabla con NAVY BEANS")
 						prod20 = value
 						print(year)
@@ -641,7 +641,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod22" :
+					elif nombre_columna == "P Flrts Org" :
 						print("vamos a actualizar la tabla con el RED PEPPER ")
 						prod21 = value
 						print(year)
@@ -658,7 +658,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod23" :
+					elif nombre_columna == "P Stalks Conv" :
 						print("vamos a actualizar la tabla con el GREEN PEAS")
 						prod22 = value
 						print(year)
@@ -675,7 +675,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod24" :
+					elif nombre_columna == "P Stalks Org" :
 						print("vamos a actualizar la tabla con COrganic ITALIAN GR BEANS ")
 						prod23 = value
 						print(year)
@@ -690,7 +690,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod25" :
+					elif nombre_columna == "P Chopped" :
 						print("vamos a actualizar la tabla con DCED POTATOES")
 						prod24 = value
 						print(year)
@@ -707,7 +707,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod26" :
+					elif nombre_columna == "P Sori Pearls" :
 						print("vamos a actualizar la tabla con LIMA BEANS")
 						prod25 = value
 						print(year)
@@ -724,7 +724,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod27" :
+					elif nombre_columna == "P Cuts Conv" :
 						print("vamos a actualizar la tabla con CUT GR BEANS")
 						prod26 = value
 						print(year)
@@ -741,7 +741,7 @@ class Dialogo(QDialog):
 						print(datos)
 						self.guarda_archivo(datos)
 
-					elif nombre_columna == "prod28" :
+					elif nombre_columna == "P Cuts Org" :
 						print("vamos a actualizar la tabla con BROC CUTS")
 						prod27 = value
 						print(year)
@@ -871,17 +871,17 @@ class Dialogo(QDialog):
 	def guarda_archivo(self,datos):
 		datos.index = range(datos.shape[0])
 		try: 
-			datos.to_csv('inventoriesmbusa.csv',  encoding = 'utf-8',) 
+			datos.to_csv('inventoriesbroccoli.csv',  encoding = 'utf-8',) 
 			self.caja_mensaje('Data Saved;', 'Data saved Succesfully!!!',1)
 		except Exception as ex:
 			ex = 'The file wou want to save is already open: ' + str(ex)
 			self.caja_mensaje('Error when saving data ', ex,0)
 				
 	def Eliminar(self):
-		datos = pd.read_csv('inventoriesmbusa.csv', index_col = 0)
+		datos = pd.read_csv('inventoriesbroccoli.csv', index_col = 0)
 		QMessageBox.information(self,"Mensaje","Se eliminará el renglón seleccionado", QMessageBox.Discard) 
 
-		datos = pd.read_csv('inventoriesmbusa.csv', index_col = 0, encoding = 'utf-8')
+		datos = pd.read_csv('inventoriesbroccoli.csv', index_col = 0, encoding = 'utf-8')
 		datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 		column = self.table.currentColumn()-1
 		row = self.table.currentRow()

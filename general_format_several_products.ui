@@ -437,7 +437,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesJan">
+  <widget class="QLabel" name="lblTotalJan">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -456,7 +456,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesApr">
+  <widget class="QLabel" name="lblTotalApr">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -475,7 +475,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesJun">
+  <widget class="QLabel" name="lblTotalJun">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -494,7 +494,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesMay">
+  <widget class="QLabel" name="lblTotalMay">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -513,7 +513,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesSep">
+  <widget class="QLabel" name="lblTotalSep">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -532,7 +532,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesDec">
+  <widget class="QLabel" name="lblTotalDec">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -551,7 +551,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesAnual">
+  <widget class="QLabel" name="lblTotalAnual">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -583,10 +583,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Total Purchases</string>
+    <string>Total</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesAug">
+  <widget class="QLabel" name="lblTotalAug">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -605,7 +605,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesNov">
+  <widget class="QLabel" name="lblTotalNov">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -624,7 +624,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesMar">
+  <widget class="QLabel" name="lblTotalMar">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -643,7 +643,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesFeb">
+  <widget class="QLabel" name="lblTotalFeb">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -662,7 +662,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesOct">
+  <widget class="QLabel" name="lblTotalOct">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -681,7 +681,7 @@
     <string>0</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lblTotalPurchasesJul">
+  <widget class="QLabel" name="lblTotalJul">
    <property name="geometry">
     <rect>
      <x>1680</x>
@@ -5885,6 +5885,22 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="pBtnReport">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1760</x>
+     <y>530</y>
+     <width>71</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Report</string>
+   </property>
+  </widget>
   <zorder>lEditJanProd</zorder>
   <zorder>lEditFebProd</zorder>
   <zorder>lEditMarProd</zorder>
@@ -5919,20 +5935,20 @@
   <zorder>pbtnClose</zorder>
   <zorder>lblProd</zorder>
   <zorder>lblTotalAnualProd</zorder>
-  <zorder>lblTotalPurchasesJan</zorder>
-  <zorder>lblTotalPurchasesApr</zorder>
-  <zorder>lblTotalPurchasesJun</zorder>
-  <zorder>lblTotalPurchasesMay</zorder>
-  <zorder>lblTotalPurchasesSep</zorder>
-  <zorder>lblTotalPurchasesDec</zorder>
-  <zorder>lblTotalPurchasesAnual</zorder>
+  <zorder>lblTotalJan</zorder>
+  <zorder>lblTotalApr</zorder>
+  <zorder>lblTotalJun</zorder>
+  <zorder>lblTotalMay</zorder>
+  <zorder>lblTotalSep</zorder>
+  <zorder>lblTotalDec</zorder>
+  <zorder>lblTotalAnual</zorder>
   <zorder>lblTotalPurchases</zorder>
-  <zorder>lblTotalPurchasesAug</zorder>
-  <zorder>lblTotalPurchasesNov</zorder>
-  <zorder>lblTotalPurchasesMar</zorder>
-  <zorder>lblTotalPurchasesFeb</zorder>
-  <zorder>lblTotalPurchasesOct</zorder>
-  <zorder>lblTotalPurchasesJul</zorder>
+  <zorder>lblTotalAug</zorder>
+  <zorder>lblTotalNov</zorder>
+  <zorder>lblTotalMar</zorder>
+  <zorder>lblTotalFeb</zorder>
+  <zorder>lblTotalOct</zorder>
+  <zorder>lblTotalJul</zorder>
   <zorder>lEditFebProd_2</zorder>
   <zorder>lEditMarProd_2</zorder>
   <zorder>lEditMayProd_2</zorder>
@@ -6408,6 +6424,7 @@
   <zorder>lblProd_34</zorder>
   <zorder>lblTotalAnualProd_34</zorder>
   <zorder>lEditAprProd_34</zorder>
+  <zorder>pBtnReport</zorder>
  </widget>
  <tabstops>
   <tabstop>pBtnSelectYear</tabstop>
