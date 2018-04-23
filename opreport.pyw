@@ -240,7 +240,7 @@ class Principal(QMainWindow):
         #Add an action elemento to the menu Inventories Carrots 
         menu_Inventories_Carrots_ny_add = QAction(QIcon(), "&Inventories Carrots new year",self)
         menu_Inventories_Carrots_ny_add.setStatusTip("Start input data of a new year")#Message in status bar
-        menu_Inventories_Carrots_ny_add.triggered.connect(self.menu_Inventories_cauliflower_ny)#Launcher
+        menu_Inventories_Carrots_ny_add.triggered.connect(self.menu_Inventories_carrots_ny)#Launcher
         menu_Inventories_Carrots_Finissh_Process.addAction(menu_Inventories_Carrots_ny_add)
 
         

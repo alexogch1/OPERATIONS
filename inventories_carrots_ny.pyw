@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-In thismodule it is input the data of Cauliflower Inventories
+In this module it is input the data of Carrots Inventories
 """
 __author__ = "Alejandro Othoniel Gomez Chavez"
 __copyright__ = "Copyright 2018 AOGCH"
@@ -32,26 +32,24 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 		
 		QtWidgets.QDialog.__init__(self, parent)
 
-		list_ingredients = ['Japan', '1 1/2" - 2"', '1 1/4"-1 3/4"', '1" - 2"', '3/4"-1 1/2"',
-							'3/4"-1 3/8"', '3/4"-1 1/4"', 'IZ PREMIUM', 'RICED CONV.', 'RICED ORG.',
-							'ORGANIC', 'WET PACK', 'NUGGETS', 'OTHERS','LA HUERTA',
-							'prod16', 'prod17', 'prod18', 'prod19', 'prod20',
+		list_ingredients = ['Crkle Markon', 'Crkle small/med', 'Crkle P. Ch.', 'Crkle Org', 'Juliene Conv.',
+							'Julinene Org', 'Bias Smooth Oran','Smooth Slices', 'Baby Conv', 'Baby Org', 
+							'Bias Yllow Org','Bias Yllow Conv' ,'Diced', 'Shoestring', 'Parisian',
+							'Finished', 'prod17', 'prod18', 'prod19', 'prod20',
 							'prod21', 'prod22', 'prod23', 'prod24', 'prod25',
 							'prod26', 'prod27', 'prod28',  'prod29', 'prod30',
 							 'prod31', 'prod32', 'prod33', 'prod34']
 		 
         
 		self.setupUi(self)
-		self.Title.setText(str('MB MEX CAULIFLOWER INVENTORIES'))
+		self.Title.setText(str('MB MEX CARROTS INVENTORIES'))
 		self.lblTotalAnual.setText(str('TOTAL'))
 
 		titles = self.set_titles(list_ingredients)
 
-
-
 		self.pBtnSelectYear.setEnabled(True)
 		self.pBtnUpdate.setEnabled(False)
-		self.table = 'inventoriescauliflower'
+		self.table = 'inventoriescarrots'
 		self.lock_fields()
 		
 		self.pBtnSave.clicked.connect(self.save_data)
@@ -114,7 +112,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 	
 	def search_In_File(self, year):
 		self.list_keys = self.issue_keys()
-		datos = pd.read_csv('inventoriescauliflower.csv', index_col = 0, encoding = 'utf-8' )
+		datos = pd.read_csv('inventoriescarrots.csv', index_col = 0, encoding = 'utf-8' )
 		datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 		num_datos = int(datos['indice'].count())
 		nuevo_Valor = num_datos+1
@@ -1642,7 +1640,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 
 		message = 'Now we are going to save the file'
 		self.caja_mensaje('Save data;', message,0)
-		datos =pd.read_csv('inventoriescauliflower.csv', index_col = 0, encoding = 'utf-8')
+		datos =pd.read_csv('inventoriescarrots.csv', index_col = 0, encoding = 'utf-8')
 		datos.apply(lambda x: pd.lib.infer_dtype(x.values))
 		num_datos = int(datos['indice'].count())
 		datos.index = range(datos.shape[0])
@@ -1665,7 +1663,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 				valor[31], valor[32], valor[33], valor[34], valor[35], 
 				valor[36], valor[37]]
 		try: 
-			datos.to_csv('inventoriescauliflower.csv',  encoding = 'utf-8',) 
+			datos.to_csv('inventoriescarrots.csv',  encoding = 'utf-8',) 
 			self.caja_mensaje('Data Saved;', 'Data saved Succesfully!!!',1)
 		except Exception as ex:
 			ex = 'The file wou want to save is already open: ' + str(ex)
@@ -2155,9 +2153,7 @@ class MyWindowClass(QtWidgets.QDialog, form_class):
 
 		for i, valor in enumerate(list_ingredients):
 			print(i, valor)
-		
 	
-		
 		print(list_ingredients[0],' ', 'prod', list_ingredients[0] == 'prod')
 		print(list_ingredients[1],' ', 'prod2', list_ingredients[1] == 'prod2')
 		print(list_ingredients[2],' ', 'prod3', list_ingredients[2] == 'prod3')
