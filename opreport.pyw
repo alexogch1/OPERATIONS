@@ -256,8 +256,29 @@ class Principal(QMainWindow):
         menu_Inventories_Carrots_xls_report.setStatusTip("Generate a Excel file of Carrots Inventories")#Message in status bar
         menu_Inventories_Carrots_xls_report.triggered.connect(self.menu_Inventories_Carrots_xls)#Launcher
         menu_Inventories_Carrots_Finissh_Process.addAction(menu_Inventories_Carrots_xls_report)        
-        
+
         menu_Inventories_Ingredients = menu_Inventories.addMenu('& Inventories Ingredients')
+
+
+        #Add an action elemento to the menu Inventories Ingredients
+        menu_Inventories_Ingredients_ny_add = QAction(QIcon(), "&Inventories Ingredients new year",self)
+        menu_Inventories_Ingredients_ny_add.setStatusTip("Start input data of a new year")#Message in status bar
+        menu_Inventories_Ingredients_ny_add.triggered.connect(self.menu_Inventories_Ingredients_ny)#Launcher
+        menu_Inventories_Ingredients.addAction(menu_Inventories_Ingredients_ny_add)
+
+        
+        #Add an action elemento to the menu start
+        menu_Inventories_Ingredients_table_edit = QAction(QIcon(), "&Edit data of Ingredients Inventories",self)
+        menu_Inventories_Ingredients_table_edit.setStatusTip("Edit data of Ingredients Inventories")#Message in status bar
+        menu_Inventories_Ingredients_table_edit.triggered.connect(self.menu_Inventories_Ingredients_Edit)#Launcher
+        menu_Inventories_Ingredients.addAction(menu_Inventories_Ingredients_table_edit)
+
+        
+        #Add an action elemento to the menu start
+        menu_Inventories_Ingredients_xls_report = QAction(QIcon(), "&Ingredients Inventories Generate XLS Report",self)
+        menu_Inventories_Ingredients_xls_report.setStatusTip("Generate a Excel file of Ingredients Inventories")#Message in status bar
+        menu_Inventories_Ingredients_xls_report.triggered.connect(self.menu_Inventories_Ingredients_xls)#Launcher
+        menu_Inventories_Ingredients.addAction(menu_Inventories_Ingredients_xls_report)        
         
         menu_Inventories_Mbusa = menu_Inventories.addMenu('&Inventories MB USA')
         #Add an action elemento to the menu start
@@ -446,6 +467,24 @@ class Principal(QMainWindow):
         QMessageBox.information(self,"Inventories Carrots","You will generate a XLS file of Carrots Inventories", QMessageBox.Discard)       
         import inventories_carrots_xls_report
         Dialog =  inventories_carrots_xls_report.MyWindowClass()
+        Dialog.exec_()        
+
+    def menu_Inventories_Ingredients_ny(self):
+        QMessageBox.information(self,"Inventories Carrots","You will start a New year data", QMessageBox.Discard)       
+        import inventories_Ingredients_ny
+        Dialog =  inventories_Ingredients_ny.MyWindowClass()
+        Dialog.exec_()
+
+    def menu_Inventories_Ingredients_Edit (self):
+        QMessageBox.information(self,"Inventories Carrots","You will edit the saved data of Carrots Inventories", QMessageBox.Discard)       
+        import inventories_ingredients_table_edit
+        Dialog =  inventories_ingredients_table_edit.Dialogo()
+        Dialog.exec_()
+
+    def menu_Inventories_Ingredients_xls (self):
+        QMessageBox.information(self,"Inventories Carrots","You will generate a XLS file of Carrots Inventories", QMessageBox.Discard)       
+        import inventories_ingredients_xls_report
+        Dialog =  inventories_ingredients_xls_report.MyWindowClass()
         Dialog.exec_()        
             
 
