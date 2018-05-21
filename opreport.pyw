@@ -299,8 +299,27 @@ class Principal(QMainWindow):
         menu_Inventories_Mbusa_xls_report.triggered.connect(self.menu_Inventories_Mbusa_xls)#Launcher
         menu_Inventories_Mbusa.addAction(menu_Inventories_Mbusa_xls_report)
 
-                
+        menu_production = menu_start.addMenu("&Production")
         
+        #Add an action elemento to the menu start
+        menu_Production_ny_add = QAction(QIcon(), "&Production new year",self)
+        menu_Production_ny_add.setStatusTip("Start input data of a new year")#Message in status bar
+        menu_Production_ny_add.triggered.connect(self.menu_Production_ny)#Launcher
+        menu_production.addAction(menu_Production_ny_add)
+
+        #Add an action elemento to the menu start
+        menu_Production_table_edit = QAction(QIcon(), "&Edit data of Production",self)
+        menu_Production_table_edit.setStatusTip("Edit data of Production")#Message in status bar
+        menu_Production_table_edit.triggered.connect(self.menu_Production_Table_Edit)#Launcher
+        menu_production.addAction(menu_Production_table_edit)
+
+        #Add an action elemento to the menu start
+        menu_Production_xls_report = QAction(QIcon(), "&Production Generate XLS Report",self)
+        menu_Production_xls_report.setStatusTip("Generate a Excel file of Productions")#Message in status bar
+        menu_Production_xls_report.triggered.connect(self.menu_Production_xls)#Launcher
+        menu_production.addAction(menu_Production_xls_report)
+
+
 
         
 
@@ -522,6 +541,24 @@ class Principal(QMainWindow):
         QMessageBox.information(self,"Sales Others","You will generate a XLS file of Others Sales", QMessageBox.Discard)       
         import sales_others_xls_report
         Dialog =  sales_others_xls_report.MyWindowClass()
+        Dialog.exec_()
+
+    def menu_Production_ny(self):
+        QMessageBox.information(self,"Production","You will start a New year data", QMessageBox.Discard)       
+        import production_ny
+        Dialog =  production_ny.MyWindowClass()
+        Dialog.exec_()
+
+    def menu_Production_Table_Edit (self):
+        QMessageBox.information(self,"Production","You will edit the saved data of Production", QMessageBox.Discard)       
+        import production_table_edit
+        Dialog =  production_table_edit.Dialogo()
+        Dialog.exec_()
+
+    def menu_Production_xls (self):
+        QMessageBox.information(self,"Production","You will generate a XLS file of Production Data", QMessageBox.Discard)       
+        import production_xls_report
+        Dialog =  production_xls_report.MyWindowClass()
         Dialog.exec_()
 
     """

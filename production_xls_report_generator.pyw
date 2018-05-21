@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-In this module is generated the report of Ingredients Inventories
+In this module is generated the report of Production
 """
 __author__ = "Alejandro Othoniel Gomez Chavez"
 __copyright__ = "Copyright 2018 AOGCH"
@@ -57,7 +57,7 @@ class XLS():
         list_row = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
         self.book = xlwt.Workbook()
-        self.sheet1 = self.book.add_sheet('INGREDIENTS INVENTORIES')          # Crea las columnas con los datos correspondientes
+        self.sheet1 = self.book.add_sheet('PRODUCTION')          # Crea las columnas con los datos correspondientes
         
         encabezado = self.header(self.sheet1, list_row)
         encabezado
@@ -73,7 +73,7 @@ class XLS():
         import caja_mensaje as mensaje
         title = 'Mar Bran S.A. de C.V.'
         title2 = 'Innovación, Mejora Continua y Six Sigma'
-        title3 = 'INGREDIENTS INVENTORIES'
+        title3 = 'PRODUCTION'
         rows = rows
         hoja = hoja
         hoja.write(0,0,title)  
@@ -268,7 +268,7 @@ class XLS():
         print(acum)
         renglon = 7
         self.ingresa_datos(hoja,columna,renglon,product,values, acum )
-        
+        """
         prod16 = {}
         prod16 = self.datos[15]
         values = list(prod16.values())
@@ -379,7 +379,7 @@ class XLS():
         renglon = 7
         self.ingresa_datos(hoja,columna,renglon,product,values, acum )
 
-        """
+        
         prod25 = {}
         prod25 = self.datos[24]
         values = list(prod25.values())
@@ -499,23 +499,23 @@ class XLS():
         np_group1 = np_prod + np_prod2 + np_prod3 + np_prod4 + np_prod5 
         np_group2 = np_prod6 + np_prod7 + np_prod8 + np_prod9 + np_prod10
         np_group3 = np_prod11 + np_prod12 + np_prod13 + np_prod14 + np_prod15 
-        np_group4 = np_prod16 + np_prod17 + np_prod18 + np_prod19 + np_prod20
-        np_group5 = np_prod21 + np_prod22 + np_prod23 + np_prod24 
+        #np_group4 = np_prod16 + np_prod17 + np_prod18 + np_prod19 + np_prod20
+        #np_group5 = np_prod21 + np_prod22 + np_prod23 + np_prod24 
 
-        np_ingredients_inventories_total = np_group1+ np_group2 + np_group3 + np_group4 + np_group5
-        print(np_ingredients_inventories_total)
+        np_production_total = np_group1+ np_group2 + np_group3 
+        print(np_production_total)
 
         
-        Total_ingredients  = np_ingredients_inventories_total.tolist()
-        print('Total Ingredients  ', Total_ingredients[0])
-        dict_total_ingredients = {}
-        dict_total_ingredients['total Ingredients'] = Total_ingredients[0] 
-        print(dict_total_ingredients)
-        values = list(dict_total_ingredients.values())
-        producto = list(dict_total_ingredients.keys()) 
-        np_Total_IngInventories = np.array(values)
-        acum = np_Total_IngInventories.sum()
-        columna = 25
+        Total_production  = np_production_total.tolist()
+        print('Total Production  ', Total_production[0])
+        dict_total_production = {}
+        dict_total_production['total Production'] = Total_production[0] 
+        print(dict_total_production)
+        values = list(dict_total_production.values())
+        producto = list(dict_total_production.keys()) 
+        np_Total_prod = np.array(values)
+        acum = np_Total_prod.sum()
+        columna = 18
         renglon = 7
         self.ingresa_datos(hoja,columna,renglon,producto,values, acum )
 
@@ -533,12 +533,12 @@ class XLS():
         for i, valor in  enumerate(values[0]):
             print( i, valor)
             hoja.write(renglon+2+i, columna,valor)
-        #hoja.write(renglon+14, columna,total)
+        hoja.write(renglon+14, columna,total)
      
 
    
     def save_sheet(self):
-        name = "ingredients inventories.xls"
+        name = "Production MB Mex.xls"
         try:
             self.book.save(name)
             self.book.save(TemporaryFile())

@@ -54,7 +54,7 @@ class XLS():
 
   
 
-        list_row = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Total']
+        list_row = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
 
         self.book = xlwt.Workbook()
         self.sheet1 = self.book.add_sheet('MB USA INVENTORIES')          # Crea las columnas con los datos correspondientes
@@ -481,7 +481,7 @@ class XLS():
         Total_Mbusa_Inventories = np_Total_Mbusa_Inventories.tolist()
         print('Total MBUSA INVENTORIES ', Total_Mbusa_Inventories[0])
         dict_total_Mbusa_Inventories = {}
-        dict_total_Mbusa_Inventories['total import Purchases'] = Total_Mbusa_Inventories[0]
+        dict_total_Mbusa_Inventories['Total MBUSA INVENTORIESs'] = Total_Mbusa_Inventories[0]
         print(dict_total_Mbusa_Inventories)
         values = list(dict_total_Mbusa_Inventories.values())
         producto = list(dict_total_Mbusa_Inventories.keys())
@@ -536,7 +536,7 @@ class XLS():
         for i, valor in  enumerate(values[0]):
             print( i, valor)
             hoja.write(6+i, columna,valor)
-        hoja.write(18, columna,total)
+        #hoja.write(18, columna,total)
      
 
    
